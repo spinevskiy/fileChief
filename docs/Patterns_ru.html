@@ -1,0 +1,870 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.1.2.2 (Windows)"/>
+	<meta name="created" content="2016-08-19T08:36:53.235000000"/>
+	<meta name="changed" content="2017-10-22T13:55:19.389000000"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 120% }
+		h3.western { font-family: "Times New Roman", serif; font-size: 14pt }
+		h3.cjk { font-family: "Microsoft YaHei"; font-size: 14pt }
+		h3.ctl { font-family: "Mangal"; font-size: 14pt }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<p style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 16pt"><b>1.
+Зачем нужны шаблоны ?</b></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU">Шаблоны
+позволяют упростить создание типовых цепочек обработки файлов</span>.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №1.</b></u>
+Надо грузить некий поток файлов с сервера по ftp.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream1&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000">
+<font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpServer
+= &quot;10.10.10.1&quot;  ftpUser = &quot;user&quot;  ftpPassword =
+&quot;pwd&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpSrcDir
+= &quot;/home/outdata/ready/stream1&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpTimeout
+= &quot;30&quot;  saveTime = &quot;false&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^DAT&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &quot;/home/incoming/stream1&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	lagInterval
+= &quot;1h&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №2.</b></u><b>
+</b>Добавился второй поток.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">И к первому агенту
+мы добавляем второй.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"> 
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream1&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpServer
+= &quot;10.10.10.1&quot;  ftpUser = &quot;user&quot;  ftpPassword =
+&quot;pwd&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpSrcDir
+= &quot;/home/outdata/ready/stream1&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpTimeout
+= &quot;30&quot;  saveTime = &quot;false&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^DAT&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &quot;/home/indata/stream1&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	lagInterval
+= &quot;1h&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream2&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366">
+<font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpServer
+= &quot;10.10.10.1&quot;  ftpUser = &quot;user&quot;  ftpPassword =
+&quot;pwd&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpSrcDir
+= &quot;/home/outdata/ready/stream2&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpTimeout
+= &quot;30&quot;  saveTime = &quot;false&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^CDR&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &quot;/home/indata/stream2&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	lagInterval
+= &quot;1h&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Отличия в
+конфигурациях агентов минимальны:</p>
+<p style="margin-bottom: 0cm; line-height: 100%">name - имя агента
+(должно быть уникальным);</p>
+<p style="margin-bottom: 0cm; line-height: 100%">ftpSrcDir - исходный
+каталог на ftp-сервере;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">dstDir - целевой
+каталог;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">fileMask - маска
+загружаемых файлов.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Но ведь далее могут
+появиться потоки 3,4,5 и т.д.. При таком подходе всё вроде настроено
+и работает корректно, файлы забираются как положено.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Однако есть и
+минусы:</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- конфигурация
+разбухает от повторяющихся строк, что повышает вероятность ошибки при
+правках;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- ухудшается
+читабельность, навскидку не определить, отличается ли принципиально
+агент bigsrv_stream&lt;X&gt; от bigsrv_stream&lt;X+1&gt;, или же это
+однотипные клоны;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- при переводе
+выгрузки файлов на другой ftp сервер необходимо менять одну и ту же
+информацию (адрес, логин, пароль, путь) во многих местах.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 16pt"><b>2.
+Что такое шаблон ?</b></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	Напрашивается
+выход: вынести все атрибуты с повторяющимися значениями в отдельный
+узел (шаблон), и ссылаться на него в конфигурации агентов.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Такой подход
+позволит обеспечить простоту настройки типовых агентов, лучшую
+читабельность, легкость изменения конфигурации.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №3</b></u><b>.</b>
+Создаём описание шаблона из агента bigsrv_stream1 в отдельной секции
+(patterns). Ссылаемся на него в агентах, используя атрибут &quot;pattern&quot;.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;patterns&gt;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366">
+<font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;pBigSrv&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366">
+<font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpServer
+= &quot;10.10.10.1&quot;  ftpUser = &quot;user&quot;  ftpPassword =
+&quot;pwd&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpTimeout
+= &quot;30&quot;  saveTime = &quot;false&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	lagInterval
+= &quot;1h&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366">
+<font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/patterns&gt;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream1&quot; <font color="#ff3366">pattern =
+&quot;pBigSrv&quot;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpSrcDir
+= &quot;/home/outdata/ready/stream1&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^DAT&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &quot;/home/indata/stream1&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream2&quot; <font color="#ff3366">pattern =
+&quot;pBigSrv&quot;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpSrcDir
+= &quot;/home/outdata/ready/stream2&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^CDR&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &quot;/home/indata/stream2&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	Результат: описания
+агентов стали лаконичнее, сразу видно, что они однотипны, а также чем
+один отличается от другого.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	Но это ещё не всё.
+Значения атрибутов ftpSrcDir и dstDir содержат в начале <span lang="ru-RU">од</span><span lang="en-US">и</span><span lang="en-US">наковые</span>
+подстроки. Можно ли и их убрать в шаблон ? Можно, если
+воспользоваться локальными параметрами.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №4.</b></u>
+Добавляем в шаблон ссылку на локальные параметры ( и тем самым
+обязываем пользователя шаблона определить их в агенте).</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;patterns&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpServer
+= &quot;10.10.10.1&quot;  ftpUser = &quot;user&quot;  ftpPassword =
+&quot;pwd&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpTimeout
+= &quot;30&quot;  saveTime = &quot;false&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	lagInterval
+= &quot;1h&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff3366">ftpSrcDir
+= &quot;/home/outdata/ready/{:sDir}&quot;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &quot;/home/indata/{:dDir}&quot;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/patterns&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream1&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff3366">param
+= &quot;:sDir=stream1&quot;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^DAT&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff3366">param1
+= &quot;:dDir=stream1&quot;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream2&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff3366">param
+= &quot;:sDir=stream2&quot;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^CDR&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff3366">param1
+= &quot;:dDir=stream2&quot;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Для задания значений
+параметров используются атрибуты с именами param, param1-param4.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Есть и другой способ
+задания значений параметров - во вложенном теге param:</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream1&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^DAT&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff3366">&lt;param
+name = &quot;:sDir&quot; value = &quot;stream1&quot; /&gt;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	&lt;param
+name = &quot;:dDir&quot; value = &quot;stream1&quot; /&gt;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	Далее. При загрузке
+множественных файловых потоков надо придумывать имена для
+соответствующих каталогов.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Но почему бы не
+ввести принцип - имя каталога должно совпадать с именем агента,
+который этот файл загрузил.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">И на вопрос - &quot;а
+куда мы принимаем файлы из данного потока ?&quot; ответ всегда будет
+очевиден.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №5.</b></u>
+Используем в шаблоне локальный параметр &quot;<b>:super</b>&quot;.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Имя &laquo;:super&raquo;
+зарезервировано. Параметр с этим именем заполняется, при</p>
+<p style="margin-bottom: 0cm; line-height: 100%">инициализации
+цепочки агентов, именем родительского агента.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;patterns&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpServer
+= &quot;10.10.10.1&quot;  ftpUser = &quot;user&quot;  ftpPassword =
+&quot;pwd&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpTimeout
+= &quot;30&quot;  saveTime = &quot;false&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	lagInterval
+= &quot;1h&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpSrcDir
+= &quot;/home/outdata/ready/{:sDir}&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &quot;/home/indata/<font color="#ff3366">{:super}</font>&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/patterns&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream1&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	param
+= &quot;:sDir=stream1&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^DAT&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream2&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	param
+= &quot;:sDir=stream2&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^DAT&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Теперь файлы
+загружаются в целевые каталоги /home/indata/bigsrv_stream&lt;N&gt; ,
+а описание агентов стало ещё короче.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">И для загрузки 3
+новых потоков с того же сервера достаточно добавить:</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream3&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	param
+= &quot;:sDir=stream3&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^XXX&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream4&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	param
+= &quot;:sDir=stream4&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^YYY&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&quot;bigsrv_stream5&quot; pattern = &quot;pBigSrv&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	param
+= &quot;:sDir=stream5&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	fileMask
+= &quot;^ZZZ&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Но этим возможности
+шаблонов не исчерпываются.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Рассмотрим типовую
+схему обработки cdr-файлов:</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- загрузили файл с
+удалённого источника;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- скопировали в
+каталог для обработки;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- отправили копию на
+сервер резервного копирования;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- удалили файл.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Построение цепочки
+для обработки файлов из одного удалённого источника, с двумя
+получателями, требует трёх агентов:</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №6.</b></u>
+Типовая цепочка.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&rdquo;a1&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpServer
+= &quot;...&quot; ftpUser = &quot;...&quot; ftpPassword = &quot;...&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpSrcDir
+= &quot;...&quot;  ftpTimeout = &quot;30&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>delayBetween
+= &quot;10&quot;  reconnect = &quot;false&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &ldquo;/home/indata/a1&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;copy
+name=&rdquo;a2&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>saveTime
+= &quot;false&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &ldquo;/home/data/forParse/parse_x1&rdquo; /&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpUpload
+name=&rdquo;a3&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpServer
+= &quot;backup&quot; ftpUser = &quot;buser&quot; ftpPassword = &quot;bpwd&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpTimeout
+= &quot;30&quot; delayBetween = &quot;10&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	ftpDstDir
+= &ldquo;/remote/files/forBackup/a1&rdquo; /&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	Раз данная цепочка
+является типовой, имеет смысл описать её в виде шаблона.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">При описании цепочки
+<span lang="ru-RU">использ</span><span lang="ru-RU">уем</span> тот же
+принцип, что и ранее - имена каталога, в который принимаются файлы, и
+удалённого каталога на сервере резервного копирования, совпадают с
+именем первого агента в цепочке (&quot;:super&quot;).</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Это позволит
+упростить конфигурацию (и поиск в backup-е). Если же по каким-либо
+причинам нам такое не подходит, то вместо &quot;:super&quot; надо
+использовать другие параметры. 
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	Для создания
+шаблона просто копируем цепочку из Примера №6 в раздел patterns.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Затем вносим
+изменения в имена агентов, составляющих шаблон. Имя первого агента -
+это имя шаблона, на которое мы будем ссылаться при его использовании.
+Для последующих - {:super}_&lt;некий суффикс&gt;. Суффикс указывает
+на действие выполняемое агентом.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Затем удаляем те
+атрибуты, которые будут задаваться явно.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №7.</b></u>
+Шаблон для цепочки агентов.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;patterns&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&rdquo;pNum1&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpTimeout
+= &quot;30&quot;  delayBetween = &quot;10&quot;  reconnect = &quot;false&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	dstDir
+= &ldquo;/home/indata/<font color="#ff3366">{:super}</font>&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;copy
+name=&rdquo;{:super}_to_parse&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">      <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>saveTime
+= &quot;false&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	
+ dstDir = &ldquo;/home/data/forParse/<font color="#ff3366">{:toParse}</font>&rdquo;
+/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpUpload
+name=&rdquo;{:super}_to_backup&rdquo; </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">      <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpServer
+= &quot;backup&quot; ftpUser = &quot;buser&quot; ftpPassword = &quot;bpwd&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	
+ ftpTimeout = &quot;30&quot; delayBetween = &quot;10&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	
+ ftpDstDir = &ldquo;/remote/files/forBackup/<font color="#ff3366">{:super}</font>&rdquo;
+/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"> <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/patterns&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №</b></u><span lang="en-US"><u><b>8</b></u></span><u><b>.</b></u>
+<span lang="ru-RU">Использование шаблона т</span><span lang="ru-RU">ипов</span><span lang="ru-RU">ой</span>
+цепочки.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Метод наложения
+шаблона <span lang="en-US">(applyMethod) </span><span lang="en-US"><b>set</b></span><span lang="en-US">.</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%">Из шаблона
+заполняются атрибуты <b>существующих</b> агентов. В данном случае
+дочерние агенты это <span lang="en-US">copy </span>и <span lang="en-US">ftpUpload
+</span>вообще без атрибутов &mdash; нет даже обязательного атрибута
+<span lang="en-US">name.</span></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU">Он</span>,
+<span lang="ru-RU">в числе других атрибутов, будет заполнен
+значениями из шаблона.</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&rdquo;a1&rdquo; <font color="#ff3366"><span lang="en-US">pattern
+= &ldquo;pNum1&rdquo; applyMethod = &ldquo;set&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpServer
+= &quot;...&quot; ftpUser = &quot;...&quot; ftpPassword = &quot;...&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpSrcDir
+= &quot;...&quot;  </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><font color="#ff3366"><span lang="en-US">param
+= &ldquo;:toParse=</span></font><font color="#ff3366"><span lang="en-US">parse_x1</span></font><font color="#ff3366"><span lang="en-US">&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;copy/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpUpload/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №</b></u><span lang="en-US"><u><b>9</b></u></span><u><b>.</b></u>
+<span lang="ru-RU">Использование шаблона т</span><span lang="ru-RU">ипов</span><span lang="ru-RU">о</span><span lang="ru-RU">й</span>
+цепочки.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Метод наложения
+шаблона <span lang="en-US">(applyMethod) </span><span lang="en-US"><b>a</b></span><span lang="en-US"><b>ppen</b></span><span lang="en-US"><b>d</b></span><span lang="en-US">.</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><i>Метод <span lang="en-US"><b>append</b></span><span lang="en-US">
+</span>можно применять только для наложения <u>шаблона цепочки</u> на
+<u>цепо</u><u>ч</u><u>ку агентов</u><span style="text-decoration: none">.</span></i></p>
+<p style="margin-bottom: 0cm; line-height: 100%">Из шаблона
+заполняются атрибуты <span style="font-weight: normal">существующих</span>
+агентов. А если агента нет - он создаётся. В данном случае исходная
+цепочка содержит два агента<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">,
+</span></font></font><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">недостающий
+третий будет создан </span></font></font><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">согласно
+описанию в шаблоне.</span></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&rdquo;a1&rdquo; <font color="#000000"><span lang="en-US">pattern
+= &ldquo;pNum1&rdquo;</span></font><font color="#ff3366"><span lang="en-US">
+applyMethod = &ldquo;</span></font><font color="#ff3366"><span lang="en-US">a</span></font><font color="#ff3366"><span lang="en-US">ppen</span></font><font color="#ff3366"><span lang="en-US">d</span></font><font color="#ff3366"><span lang="en-US">&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpServer
+= &quot;...&quot; ftpUser = &quot;...&quot; ftpPassword = &quot;...&quot;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>ftpSrcDir
+= &quot;...&quot;  </b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><font color="#ff3366">&lt;param
+name = &ldquo;:toParse&rdquo; value = &rdquo;p</font><font color="#ff3366">arse_x1&rdquo;
+/</font><font color="#ff3366">&gt;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><font color="#ff3366">&lt;copy
+name=&rdquo;a2&rdquo;  </font><font color="#ff3366"><span lang="en-US">prefix
+= &ldquo;'ASN_'&rdquo; </span></font><font color="#ff3366">/&gt;</font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №</b></u><u><b>10</b></u><u><b>.</b></u>
+ Использование нескольких шаблонов для одного агента.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU">Пусть
+в последнем примере мы работали с </span><span lang="en-US">ftp
+</span><span lang="ru-RU">сервером, для которого у нас уже есть
+шаблон.</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU">Можем
+ли мы использовать и его ? Да, мы можем указать в атрибуте </span><span lang="en-US">patten
+</span><span lang="ru-RU">список шаблонов,</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%">используя
+разделитель &mdash; точку с запятой. При этом аналогично списком
+задаются методы применения шаблонов.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><i>В данном случае
+используется метод <span lang="en-US"><b>add, </b></span><span style="font-weight: normal">его</span><span lang="en-US">
+</span>можно применять только для наложения <u>шаблона цепочки</u> на
+<u>одиночного агента</u><span style="text-decoration: none">.</span></i></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&rdquo;a1&rdquo; <font color="#ff3366"><span lang="en-US">pattern
+= &ldquo;</span></font><font color="#ff3366"><span lang="ru-RU">pBigSrv;</span></font><font color="#ff3366"><span lang="ru-RU">pNum1</span></font><font color="#ff3366"><span lang="en-US">&rdquo;
+applyMethod = &ldquo;</span></font><font color="#ff3366"><span lang="ru-RU">set</span></font><font color="#ff3366"><span lang="ru-RU">;</span></font><font color="#ff3366"><span lang="ru-RU">add</span></font><font color="#ff3366"><span lang="en-US">&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366">
+   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><span lang="en-US">param
+= &ldquo;:toParse=</span></font><font color="#ff3366"><span lang="en-US">parse_x1</span></font><font color="#ff3366"><span lang="en-US">&rdquo;
+param = &quot;:sDir=stream</span></font><font color="#ff3366"><span lang="en-US">A</span></font><font color="#ff3366"><span lang="en-US">1&quot;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №</b></u><u><b>1</b></u><u><b>1</b></u><u><b>.</b></u>
+ Добавление агентов к цепочке, создаваемой с использованием шаблонов,</p>
+<p style="margin-bottom: 0cm; line-height: 100%">используя метод
+<span lang="en-US"><b>before</b></span><span lang="en-US"><span style="font-weight: normal">.
+</span></span><span lang="ru-RU"><span style="font-weight: normal">Первый
+агент цепочки получит атрибуты из первого агента шаблона.</span></span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU"><span style="font-weight: normal">С</span></span><span lang="ru-RU"><span style="font-weight: normal">ледующие
+агенты будут вставлены в цепочку после него, </span></span><span lang="ru-RU"><b>перед
+(</b></span><span lang="en-US"><b>befor</b></span><span lang="ru-RU"><b>е)</b></span><span lang="ru-RU"><span style="font-weight: normal">
+дочерними агентами </span></span><span lang="en-US"><span style="font-weight: normal">(</span></span><span lang="ru-RU"><u><span style="font-weight: normal">внимание,
+</span></u></span><span lang="ru-RU"><u><span style="font-weight: normal">шаблон
+не внесёт никаких изменений в агента </span></u></span><span lang="en-US"><u><b>x1</b></u></span><span lang="en-US"><span style="font-weight: normal">).</span></span><span lang="ru-RU"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">Агент
+</span></span><span lang="en-US"><b>x1</b></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">будет
+последним в получившейся цепочке.</span></span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&rdquo;a1&rdquo; <font color="#000000"><span lang="en-US">pattern
+= &ldquo;</span></font><font color="#000000"><span lang="ru-RU">pBigSrv;</span></font><font color="#000000"><span lang="ru-RU">pNum1</span></font><font color="#000000"><span lang="en-US">&rdquo;
+applyMethod = &ldquo;</span></font><font color="#000000"><span lang="ru-RU">set</span></font><font color="#000000"><span lang="ru-RU">;</span></font><font color="#ff0000"><span lang="en-US">before</span></font><font color="#000000"><span lang="en-US">&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366">
+</font><font color="#000000">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><span lang="en-US">param
+= &ldquo;:toParse=</span></font><font color="#000000"><span lang="en-US">parse_x1</span></font><font color="#000000"><span lang="en-US">&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000">
+   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><span lang="en-US">param
+= &quot;:sDir=stream</span><span lang="en-US">A</span><span lang="en-US">1&quot;</span></b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<span lang="en-US">&lt;ftpUpload
+name = &ldquo;x1&rdquo;</span></b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>		ftpServer
+= &ldquo;...&rdquo; ftpUser = &ldquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>		ftpDstDir
+= &ldquo;/path/dir&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload<span lang="en-US">&gt;</span></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u><b>Пример №</b></u><u><b>1</b></u><u><b>2</b></u><u><b>.</b></u>
+ Добавление агентов к цепочке, создаваемой с использованием шаблонов,</p>
+<p style="margin-bottom: 0cm; line-height: 100%">используя метод
+<span lang="en-US"><b>after</b></span><span lang="en-US"><span style="font-weight: normal">.
+</span></span><span lang="ru-RU"><span style="font-weight: normal">Первый
+агент цепочки получит атрибуты из первого агента шаблона.</span></span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU"><span style="font-weight: normal">Следующие
+агенты будут вставлены в </span></span><span lang="ru-RU"><span style="font-weight: normal">конец
+</span></span><span lang="ru-RU"><span style="font-weight: normal">цепочк</span></span><span lang="ru-RU"><span style="font-weight: normal">и,</span></span><span lang="ru-RU"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><b>после</b></span><span lang="ru-RU"><b>(</b></span><span lang="en-US"><b>after</b></span><span lang="ru-RU"><b>)</b></span><span lang="ru-RU"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">последнего
+в цепочке агента</span></span><span lang="ru-RU"><span style="font-weight: normal">
+</span></span><span lang="en-US"><b>x1</b></span><span lang="ru-RU"><span style="font-weight: normal">,
+</span></span><span lang="en-US"><span style="font-weight: normal">(</span></span><span lang="ru-RU"><u><span style="font-weight: normal">внимание,
+</span></u></span><span lang="ru-RU"><u><span style="font-weight: normal">шаблон
+не внесёт никаких изменений в агента </span></u></span><span lang="en-US"><u><b>x1</b></u></span><span lang="en-US"><span style="font-weight: normal">).</span></span><span lang="ru-RU"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">Агент
+</span></span><span lang="en-US"><b>x1</b></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">будет
+</span></span><span lang="ru-RU"><span style="font-weight: normal">вторым</span></span><span lang="ru-RU"><span style="font-weight: normal">
+в получившейся цепочке.</span></span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+name=&rdquo;a1&rdquo; <font color="#000000"><span lang="en-US">pattern
+= &ldquo;</span></font><font color="#000000"><span lang="ru-RU">pBigSrv;</span></font><font color="#000000"><span lang="ru-RU">pNum1</span></font><font color="#000000"><span lang="en-US">&rdquo;
+applyMethod = &ldquo;</span></font><font color="#000000"><span lang="ru-RU">set</span></font><font color="#000000"><span lang="ru-RU">;</span></font><font color="#ff0000"><span lang="en-US">after</span></font><font color="#000000"><span lang="en-US">&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#ff3366">
+</font><font color="#000000">   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><span lang="en-US">param
+= &ldquo;:toParse=</span></font><font color="#000000"><span lang="en-US">parse_x1</span></font><font color="#000000"><span lang="en-US">&rdquo;</span></font></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000">
+   <font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b><span lang="en-US">param
+= &quot;:sDir=stream</span><span lang="en-US">A</span><span lang="en-US">1&quot;</span></b></font></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<span lang="en-US">&lt;ftpUpload
+name = &ldquo;x1&rdquo;</span></b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>		ftpServer
+= &ldquo;...&rdquo; ftpUser = &ldquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>		ftpDstDir
+= &ldquo;/path/dir&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload<span lang="en-US">&gt;</span></b></font></font></p>
+<h3 class="western">Использование applyMethod.</h3>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>set</b>
+&ndash; простое наложение атрибутов на <span lang="ru-RU">одиночного
+агента, либо на цепочку.</span></font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>add</b>
+&ndash; создание цепочки агентов на основе одиночного агента шаблона
+цепочки.</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Пусть
+у нас есть одна из многих цепочек, создаваемых по шаблону <span lang="en-US"><b>pNum1</b></span><span lang="en-US">.</span></font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">И
+нам потребовалось изменить её функционал &mdash; добавить ещё один
+агент.</font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Было<span lang="en-US">:</span></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+pattern=&rdquo;pNum1&rdquo; applyMethod=&rdquo;add&rdquo; &hellip; /&gt;</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Стало:</font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+pattern=&rdquo;pNum1&rdquo; applyMethod=&rdquo;add&rdquo; &hellip; &gt;</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff0000">&lt;copy
+name = &ldquo;cp&rdquo; dstDir = &ldquo;/dir/dir2&rdquo; /&gt;</font></b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload&gt;</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">	Однако
+данная конфигурация является неработоспособной &mdash; программа не
+запустится (начиная с версии 1.7.6), так как <span lang="en-US"><b>add</b></span><span lang="en-US">
+</span>предназначен для разворачивания цепочки из одиночного агента.</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">	То
+есть мало добавить агента в цепочку, надо ещё и указать, как именно
+шаблон должен быть применён к нашей цепочке:</font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;ftpDownload
+pattern=&rdquo;pNum1&rdquo; applyMethod=&rdquo;<font color="#ff0000">append/after/before</font>&rdquo;
+&hellip; &gt;</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>	<font color="#ff0000">&lt;copy
+name = &ldquo;cp&rdquo; dstDir = &ldquo;/dir/dir2&rdquo; /&gt;</font></b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 11pt"><b>&lt;/ftpDownload&gt;</b></font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>append</b></span>
+&ndash; добавление недостающих агентов в цепочку;</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>after
+</b>&ndash; вставка дочерних агентов из шаблона в хвост цепочки;</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>before</b>
+&ndash; вставка дочерних агентов из шаблона сразу после
+узла-родителя.</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,2880 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.1.2.2 (Windows)"/>
+	<meta name="created" content="2012-04-26T15:29:36.290000000"/>
+	<meta name="changed" content="2017-10-22T17:44:52.289000000"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.21cm; line-height: 150% }
+		p.cjk { font-size: 10pt }
+		h1 { margin-bottom: 0.21cm; line-height: 150% }
+		h1.western { font-family: "Arial", sans-serif; font-size: 18pt }
+		h1.cjk { font-family: "Arial Unicode MS"; font-size: 16pt }
+		h1.ctl { font-family: "Mangal"; font-size: 16pt }
+		h2 { margin-top: 0.42cm; line-height: 150% }
+		h2.western { font-family: "Arial", sans-serif; font-size: 14pt; font-style: italic }
+		h2.cjk { font-family: "Arial Unicode MS"; font-size: 14pt; font-style: italic }
+		h2.ctl { font-family: "Mangal"; font-size: 14pt; font-style: italic }
+		p.заметки-western { margin-left: 1.5cm; margin-bottom: 0cm; font-family: "Arial", sans-serif; font-size: 10pt; font-style: italic; font-weight: normal; page-break-before: auto }
+		p.заметки-cjk { margin-left: 1.5cm; margin-bottom: 0cm; font-size: 10pt; page-break-before: auto }
+		p.заметки-ctl { margin-left: 1.5cm; margin-bottom: 0cm; page-break-before: auto }
+		p.sdfootnote { margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0cm; font-size: 10pt }
+		a:link { so-language: zxx }
+		a.sdfootnoteanc { font-size: 57% }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p align="center" style="margin-bottom: 0cm; page-break-after: avoid">
+<font face="Arial, sans-serif"><font size="5" style="font-size: 18pt"><b>Программа
+<span lang="en-US">F</span><span lang="en-US">ileChief</span>, версия
+1.<span lang="en-US">8</span>.<span lang="en-US">0</span><span lang="en-US">.</span>
+</b></font></font>
+</p>
+<p align="center" style="margin-bottom: 0cm; page-break-after: avoid">
+<font face="Arial, sans-serif"><font size="5" style="font-size: 18pt"><b>Краткая
+документация.<br/>
+</b></font></font><br/>
+
+</p>
+<div id="Оглавление1" dir="ltr">
+	<div id="Оглавление1_Head" dir="ltr">
+		<p style="margin-bottom: 0cm; page-break-after: avoid"><font face="Arial, sans-serif"><font size="5" style="font-size: 18pt"><b>Оглавление</b></font></font></p>
+	</div>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2243_1809441960">1.Введение.</a>	2</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__1720_1809441960">2.Агенты.</a>	3</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2858_1809441960">2.1.Атрибуты,
+	общие для всех типов агентов, кроме вспомогательных.</a>	5</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2860_1809441960">2.2.Агент
+	ftpDownload</a>	11</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2862_1809441960">2.3.Агент
+	sftpDownload.</a>	12</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2864_1809441960">2.4.Агент
+	copy.</a>	12</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2866_1809441960">2.5.Агент
+	ftpUpload.</a>	13</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3144_475473340">2.6.Агент
+	sftpUpload.</a>	15</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3790_664749018">2.7.Агент
+	link.</a>	15</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading___Toc12171_1080271330">2.8.Агент
+	demux.</a>	15</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2890_1809441960">3.Цепочки
+	агентов.</a>	16</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3347_425227061">3.1.Принципы
+	построения цепочек</a>	17</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3350_425227061">3.2.Пример
+	описания цепочки агентов.</a>	17</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3792_664749018">3.3.Использование
+	жёстких ссылок в работе цепочки агентов.</a>	18</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2892_1809441960">4.Параметры.</a>	21</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2894_1809441960">4.1.Глобальные
+	параметры.</a>	22</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2896_1809441960">4.2.Локальные
+	параметры.</a>	22</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2898_1809441960">5.Шаблоны.</a>	22</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3123_1809441960">5.1.Пример
+	простого шаблона.</a>	24</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3125_1809441960">5.2.Пример
+	шаблона для цепочки агентов.</a>	24</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2900_1809441960">6.Структура
+	конфигурационного файла.</a>	26</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2612_1809441960">7.Настройка.</a>	27</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2614_1809441960">8.Журналирование
+	работы.</a>	28</p>
+	<p style="margin-bottom: 0cm"><a href="#__RefHeading__2616_1809441960">9.Запуск
+	и остановка программы.</a>	31</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__2257_1809441960">9.1.Запуск
+	в тестовом режиме.</a>	31</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3127_1809441960">9.2.Запуск
+	в &quot;боевом&quot; режиме.</a>	31</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3129_1809441960">9.3.Срочная
+	остановка работы программы.</a>	32</p>
+	<p style="margin-left: 0.5cm; margin-bottom: 0cm"><a href="#__RefHeading__3131_1809441960">9.4.&laquo;Чистая&raquo;
+	остановка работы программы.</a>	32</p>
+</div>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__2243_1809441960"></a>1.Введение.</h1>
+<p class="western" style="margin-bottom: 0cm">	Программа
+предназначена для работы с потоками файлов : загрузки с удалённых
+источников (протоколы ftp, sftp), локальных перемещений, выгрузки на
+удалённые <span lang="ru-RU">сервера</span> (протоколы ftp, sftp). 
+</p>
+<p class="western" style="margin-bottom: 0cm">	FileChief написан на
+<span lang="ru-RU">языке </span>Java, может быть запущен в любой
+операционной системе, для которой существует Java машина версии не
+ниже 1.<span lang="en-US">7</span>.</p>
+<p class="western" style="margin-bottom: 0cm">	Разработчик &mdash;
+Сергей Пиневский .</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	Основные возможности:</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">организация
+	различных схем обработки файлов, от простейших (перенос из источника
+	в целевой каталог), до сложных многоэтапных: загрузили файл по ftp -
+	отложили копию для резервного копирования - скопировали под
+	<span lang="ru-RU">обработчик №1</span> - запаковали и выгрузили по
+	ftp под обработчик <span lang="ru-RU">№2</span> - и так далее;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">механизм
+	шаблонов, позволяющий быстро клонировать типовые конфигурации
+	обработчиков файловых потоков;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">единый журнал
+	работы, с настраиваемым уровнем журналирования;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">архивирование,
+	разархивирование, переименование файлов при обработке;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">приостановка
+	обработки файлов в зависимости от внешних условий (количества файлов
+	в целевом каталоге, наличия файла-флага);</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">почтовое
+	информирование об ошибках, фактах запуска и остановки программы,
+	возможна отправка snmp трапов;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">обнаружение и
+	информирование о задержках поступления файлов;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">обнаружение и
+	информирование о возникновении файловых очередей.</p>
+</ul>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; page-break-before: always">
+<br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__1720_1809441960"></a>2.Агенты.</h1>
+<p class="western" style="margin-bottom: 0cm">	За работу с конкретным
+потоком файлов отвечает так называемый &laquo;агент&raquo; -
+компонент, занимающийся отдельной операцией по
+загрузке/выгрузке/копированию файлов. Агенты - это &laquo;кирпичики&raquo;,
+из которых выстраиваются требуемые конфигурации обработки файлов.</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	В настоящий момент
+реализованы следующие типы агентов:</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">загружающие
+	файлы с удалённых источников:</p>
+</ul>
+<ul>
+	<ul>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"> <b>ftpDownload</b>
+		- загрузка файлов по протоколу ftp;</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"> <b>sftpDownload</b>
+		- загрузка файлов по протоколу sftp; 
+		</p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">обработчики
+	локальных файлов:</p>
+	<ul>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><b>copy</b> -
+		локальное перемещение файлов;</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpUpload</b>
+		- отправка файлов по протоколу ftp;</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><b>sftpUpload</b>
+		- отправка файлов по протоколу sftp</p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">вспомогательные
+	агенты:</p>
+	<ul>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"> <span lang="en-US"><b>link</b></span><span lang="en-US">
+		&ndash; </span><span lang="ru-RU">создание жёстких ссылок на файл,
+		подлежащий обработке цепочкой агентов. Позволяет агентам цепочки
+		обрабатывать файлы не последовательно, а параллельно.</span></p>
+		<li/>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><b>demux</b>
+		&ndash; <span lang="ru-RU">распределяет файлы входного потока по
+		нескольким целевым каталогам.</span></p>
+	</ul>
+</ul>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	<span lang="ru-RU">Файлы
+</span>во входном каталоге агента фильтруются по маске, оставшиеся
+сортируются по дате изменения и обрабатываются, начиная с самых
+старых (возможны исключения &mdash; см. атрибут nonStrictOrder).</p>
+<p class="western" style="margin-bottom: 0cm">	Кроме выполнения
+основной задачи по переносу файла, агент может предварительно
+запаковать/распаковать его, изменить имя файла. Данные операции
+выполняются, если заданы соответствующие атрибуты, в следующем
+порядке:</p>
+<p class="western" style="margin-bottom: 0cm">1. Распаковка файла
+(см. атрибут <a href="#unpack">unpack</a>).</p>
+<p class="western" style="margin-bottom: 0cm">2. Архивация файла (см.
+атрибуты <a href="#gzip">gzip</a>, <a href="#zip">zip</a>).</p>
+<p class="western" style="margin-bottom: 0cm">3. Получение нового
+имени файла как конкатенация строк, сформированных в соответствии со
+значениями атрибутов <a href="#prefix">prefix</a> (если не задан &mdash;
+пустая строка), <a href="#substitute">substitute</a> (если не задан &mdash;
+оригинальное имя файла) и <a href="#suffix">suffix</a> (если не задан
+&mdash; пустая строка). <span lang="ru-RU"><span style="font-style: normal">Если
+в полученном имени есть подстрока &laquo;</span></span><span lang="ru-RU"><i><b>%</b></i></span><span lang="en-US"><i><b>seq</b></i></span><span lang="ru-RU"><i><b>%</b></i></span><span lang="ru-RU"><i>&raquo;</i></span><span lang="ru-RU"><span style="font-style: normal">
+, то она заменяется на строку, </span></span><span lang="ru-RU"><span style="font-style: normal">содержащую
+и</span></span><span lang="ru-RU"><span style="font-style: normal">ндекс
+текущего файла, дополненный слева нулями </span></span><span lang="ru-RU"><span style="font-style: normal">до
+</span></span><a href="#sequenceLength">sequenceLength</a><span lang="ru-RU"><span style="font-style: normal">
+символов.</span></span></p>
+<p class="western" style="margin-bottom: 0cm">	Все операции
+проводятся агентами с использованием каталога для временных файлов<a class="sdfootnoteanc" name="sdfootnote1anc" href="#sdfootnote1sym" sdfixed><sup>*</sup></a>
+ - файл копируется в него, а затем переносится в целевой каталог.
+Такая схема обеспечивает &laquo;атомарность&raquo; появления файла в
+целевом каталоге. В зависимости от типа агента, каталог для временных
+файлов описывается атрибутами <i><span style="font-weight: normal">ftpCacheDir</span></i>
+(для <span lang="ru-RU">агентов </span><i><span style="font-weight: normal">ftpUpload</span></i>)
+либо <i><span style="font-weight: normal">cacheDir</span></i> (для
+всех остальных). Если такой каталог в конфигурации агента не указан,
+то он будет назначен автоматически. 
+</p>
+<p class="western" style="margin-bottom: 0cm">	В описании каталога
+для временных файлов можно использовать символ <b>@</b> как ссылку на
+целевой каталог. 
+</p>
+<p class="western" style="margin-bottom: 0cm">	Например, <i>cacheDir
+= &quot;@/cache&quot;</i> при <i>dstDir = &quot;/home/</i><span lang="en-US"><i>data</i></span><i>/input&quot;</i>
+эквивалентно <i>cacheDir = &quot;/home/</i><span lang="en-US"><i>data</i></span><i>/input/cache&quot;</i>.</p>
+<p class="western" style="margin-bottom: 0cm">	Все агенты, перед
+переносом файла в целевой каталог, проверяют, нет ли там уже файла с
+таким именем. Если есть, то агент пытается сохранить файл под новым
+именем 
+</p>
+<p class="western" style="margin-bottom: 0cm">&lt;имя
+файла&gt;<span lang="en-US">&lt;</span><span lang="ru-RU">точка</span><span lang="en-US">&gt;</span>&lt;индекс&gt;.
+(индекс - число, начальное значение 1). Если же есть файл и с таким
+именем, то индекс увеличивается на единицу, снова проходит проверку
+на уникальность и так до тех пор, пока не будет получено уникальное
+имя файла. См. также <a href="#replaceExistingFiles">атрибут
+</a><span style="font-weight: normal"><a href="#replaceExistingFiles">replaceExistingFiles</a>.</span><br/>
+	После
+успешной обработки исходный файл <span lang="ru-RU">удаляется</span><span lang="en-US">
+(</span><span lang="ru-RU">либо</span><span lang="en-US">
+</span><span lang="ru-RU">переименовывается</span> &mdash; см.
+<a href="#ftpDstDir_ftpDownload">атрибут ftpDstDir агента
+ftpDownload</a>). Возможна ситуация, когда удалить/переименовать
+исходный файл не удалось - например, при обрыве соединения, либо
+изменении прав доступа. Тогда имя файла заносится в &laquo;чёрный&raquo;
+список, для исключения его повторной загрузки. Данный список хранится
+как в оперативной памяти, так и на жёстком диске, чтобы при
+перезапуске программы эта информация не потерялась. Для каждого файла
+из списка агент периодически будет повторять попытки выполнить
+неудавшуюся операцию - до тех пор, пока она не будет выполнена. Если
+очередь файлов на входе пуста - &laquo;чёрный&raquo; список
+очищается.</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	Агенты описываются в
+конфигурационном файле fileChief.xml:</p>
+<p class="заметки-western">------------ начало файла
+---------------------------------<br/>
+&lt;?xml version=&quot;1.0&quot;
+encoding=&quot;windows-1251&quot; ?&gt;<br/>
+&lt;fileChief pathSymbol
+= &quot;@&quot; port = &quot;8899&quot; &gt;<br/>
+	......
+<br/>
+&lt;ТИП_АГЕНТА атрибут1 = &quot;значение1&quot; <br/>
+	атрибут2
+= &quot;значение2&quot; <br/>
+	атрибут3 = &quot;значение3&quot;
+<br/>
+	...... <br/>
+/&gt;<br/>
+	...... <br/>
+&lt;ТИП_АГЕНТА2 атрибут1
+= &quot;значение1&quot; <br/>
+	 атрибут2 = &quot;значение2&quot; <br/>
+	
+атрибут3 = &quot;значение3&quot; <br/>
+	 ...... <br/>
+/&gt;<br/>
+	......
+<br/>
+&lt;fileChief&gt;<br/>
+------------ конец файла
+---------------------------------</p>
+<p class="western" style="margin-bottom: 0cm"><a name="solidAgent"></a>
+<br/>
+	Это пример описания независимых, или одиночных, агентов.
+&laquo;Независимый&raquo; в данном случае означает, что агенты ничего
+не знают друг о друге. Такие агенты просто выполняют свою
+элементарную операцию по переносу файла (скопировали во временный
+каталог - перенесли в целевой каталог - удалили исходный файл).<br/>
+	В
+значениях атрибутов можно использовать ссылки на <a href="#Параметры">параметры</a>
+.<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__2858_1809441960"></a>2.1.Атрибуты,
+общие для всех типов агентов, кроме <span lang="ru-RU">вспомогательны</span><span lang="ru-RU">х</span>.</h2>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>applyMethod</b>
+	= &quot;<i>set/add/</i><span lang="en-US"><i>append/</i></span><i>after/before</i>&quot;
+	- способ применения шаблона агента. 
+	</p>
+	<ul>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><i>set</i></span><span lang="en-US">
+		</span><span lang="en-US"><i>&ndash;</i></span><span lang="en-US"> </span>
+		простое наложение атрибутов на существующих агентов цепочки<span lang="en-US">;</span></p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><i>add</i><i> &ndash;
+		</i><span style="font-style: normal">создание цепочки агентов </span><span style="font-style: normal"><b>из
+		одиночного узла</b></span><span style="font-style: normal"> и
+		шаблона цепочки, с добавлением недостающих агентов</span>;</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><i>append &ndash;
+		</i><span style="font-style: normal">создание цепочки агентов </span><span style="font-style: normal"><b>из
+		цепочки</b></span><span style="font-style: normal"> и шаблона
+		цепочки, с добавлением недостающих агентов</span>;</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><i>after</i></span><span lang="en-US">
+		</span><span lang="en-US"><i>&ndash;</i></span><span lang="en-US">
+		</span>вставка дочерних агентов из шаблона в хвост цепочки;</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><i>before</i></span><span lang="en-US">
+		</span><span lang="en-US"><i>&ndash;</i></span> вставка дочерних
+		агентов из шаблона сразу после узла-родителя.</p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="batchMode"></a>
+	<span lang="en-US"><b>b</b></span><b>atchMode</b> = <span lang="en-US"><i>&rdquo;</i></span><span lang="en-US"><i>t</i></span><span lang="en-US"><i>rue</i></span><span lang="en-US"><i>&rdquo;</i></span><span style="font-style: normal">
+	&mdash; </span>агент <span style="font-style: normal">р</span>аботает
+	в пакетном режиме: обработал всё файлы и завершил работу. По
+	умолчанию <span lang="en-US">false.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>сheckFtpFileLength</b>
+	= <span lang="en-US"><i>&rdquo;</i></span><i>false</i><span lang="en-US"><i>&rdquo;</i></span><i>.</i></p>
+	<p class="western" style="margin-bottom: 0cm">Позволяет отключить
+	проверку соответствия размера принятого файла - размеру файла на
+	сервере. <span lang="ru-RU">Используется в редких случаях, когда
+	размер файла, сообщаемый </span><span lang="en-US">ftp </span><span lang="ru-RU">сервером,
+	не соответствует действительному размеру (например, </span><span lang="en-US">ftpd
+	</span>OS VMS размер файла на сервере сообщает в блоках по 512
+	байт).</p>
+	<p class="western" style="margin-bottom: 0cm">Значение по умолчанию
+	<span lang="en-US"><i>true</i></span>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>delayBetween</b>
+	= <span lang="en-US"><i>&rdquo;</i></span><span lang="en-US"><i>1</i></span><i>0</i><span lang="en-US"><i>&rdquo;</i></span>-
+	интервал проверки наличия новых файлов в исходном каталоге, секунды.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>deleteAfter</b>
+	= &quot;<i>false</i>&quot; - не удалять исходные файлы после
+	обработки.</p>
+	<p class="western" style="margin-bottom: 0cm">По умолчанию отключён
+	(<span lang="ru-RU">значение </span><span lang="ru-RU"><span style="font-weight: normal">&quot;</span></span><span lang="en-US"><i><span style="font-weight: normal">true</span></i></span><span lang="ru-RU"><span style="font-weight: normal">&quot;</span></span>).</p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Имена
+	</span><span lang="ru-RU">обработанных </span><span lang="ru-RU">файлов
+	заносятся в &laquo;чёрный&raquo; список</span><span lang="ru-RU">.
+	</span><span lang="ru-RU">Если файла с указанным именем больше нет в
+	исходном каталоге, то запись удаляется из списка. </span>
+	</p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Использовать
+		режим работы без удаления исходных файлов (</span><span lang="ru-RU"><span style="font-weight: normal">deleteAfter
+		= &quot;</span></span><span lang="ru-RU"><i><span style="font-weight: normal">false</span></i></span><span lang="ru-RU"><span style="font-weight: normal">&quot;</span></span><span lang="ru-RU">)</span></p>
+		<p class="western" style="margin-bottom: 0cm">надо с осторожностью,
+		так как:</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm">&laquo;чёрный&raquo;
+		список хранится в оперативной памяти, при сотнях тысяч файлов в
+		исходном каталоге увеличится объем памяти, занимаемый программой;</p>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Если
+		агент </span><span lang="ru-RU">сначала </span><span lang="ru-RU">работал
+		с </span><span lang="ru-RU">атрибутом </span><span lang="ru-RU"><span style="font-weight: normal">deleteAfter
+		= &quot;</span></span><span lang="ru-RU"><i><span style="font-weight: normal">false</span></i></span><span lang="ru-RU"><span style="font-weight: normal">&quot;,
+		а затем </span></span><span lang="ru-RU"><span style="font-weight: normal">его
+		изменили на </span></span><span lang="ru-RU"><span style="font-weight: normal">deleteAfter
+		= &quot;</span></span><span lang="en-US"><span style="font-weight: normal">true</span></span><span lang="ru-RU"><span style="font-weight: normal">&quot;
+		</span></span><span lang="ru-RU"><span style="font-weight: normal">(либо
+		просто удалили)</span></span><span lang="ru-RU"><span style="font-weight: normal">,
+		</span></span><span lang="ru-RU"><span style="font-weight: normal">то
+		</span></span><span lang="ru-RU"><span style="font-weight: normal">после
+		перезапуска </span></span><span lang="ru-RU"><span style="font-weight: normal">агент
+		попытается удалить все файлы, имена которых есть в </span></span><span lang="ru-RU"><span style="font-weight: normal">&laquo;чёрн</span></span><span lang="ru-RU"><span style="font-weight: normal">ом</span></span><span lang="ru-RU"><span style="font-weight: normal">&raquo;
+		</span></span><span lang="ru-RU"><span style="font-weight: normal">списке,
+		из исходного каталога.</span></span></p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="dstFileLimit"></a>
+	<b>dstFileLimit</b> = <span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU"><i>к</i></span><span lang="ru-RU"><i>оличество
+	файлов</i></span><span lang="en-US"><i>&rdquo;</i></span> - если в
+	целевом каталоге количество файлов (любых, не только соответствующих
+	маске) превышает заданное, прекращаем выгрузку до тех пор, пока
+	количество файлов не уменьшится. 
+	</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>d</b></span><b>stTimeZone</b>
+	<span lang="en-US">= </span><span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU"><i>целевая
+	временная зона</i></span><span lang="en-US"><i>&rdquo;.</i></span><span lang="en-US"><i>
+	</i></span><span style="font-style: normal"><span style="font-weight: normal">З</span></span>адаёт
+	временную зону, которая используется для перевода даты в строку при
+	использовании атрибутов <a href="#prefix">prefix</a>, <a href="#suffix">suffix</a>,
+	<a href="#substTimeStamp">substTimeStamp</a>, <span lang="ru-RU">а
+	также</span> при <i>dstDirTimeBased = &quot;true&quot;</i> <span lang="en-US">(</span><span lang="ru-RU">см.
+	</span><a href="#dstDirTimeBased_copy">copy</a><span lang="ru-RU"> и
+	</span><a href="#dstDirTimeBased_ftpup">ftpUpload</a><span lang="en-US">)</span>.</p>
+	<p class="western" style="margin-bottom: 0cm">По умолчанию -
+	системная временная зона.</p>
+	<p class="western" style="margin-bottom: 0cm">Пример: <span lang="en-US"><i>dstTimeZone
+	= </i></span><span lang="en-US"><i>&rdquo;</i></span><span lang="en-US"><i>E</i></span><span lang="en-US"><i>urope/Moscow</i></span><span lang="en-US"><i>&rdquo;.</i></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="gzip"></a>
+	<b>fileMask</b> = <span lang="en-US"><i>&rdquo;</i></span><i>шаблон
+	имени файла</i><span lang="en-US"><i>&rdquo; </i></span>- регулярное
+	выражение в формате Java Regular Expressions ( см. <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html#sum" name="ссылку">формат</a>
+	, там же указаны отличия от Perl Regular Expressions ).<br/>
+Если
+	имя файла содержит строку, соответствующую шаблону, то файл
+	принимается в обработку. Если атрибут не задан, то обрабатываются
+	все файлы.<br/>
+	Примеры шаблонов:<br/>
+	<b>&quot;.*&quot;</b> - все
+	файлы;<br/>
+	<b>&quot;^cdr.*dat$&quot;</b> - имя начинается на &quot;cdr&quot;
+	и заканчивается на &quot;dat&quot;;<br/>
+	<b>&quot;^ASN_(?!.*GPRS).*$&quot;</b>
+	- имя начинается на &quot;ASN_&quot; и дальше <span lang="ru-RU">в
+	строке </span><i>не встречается </i>&quot;GPRS&quot;;<br/>
+	<b>&quot;GPRS&quot;</b>
+	- имя содержит &quot;GPRS&quot;. <br/>
+<b>gzip</b> = <span lang="en-US"><i>&rdquo;</i></span><span lang="en-US"><i>t</i></span><i>rue/</i><span lang="en-US"><i>false</i></span><span lang="en-US"><i>&rdquo;
+	- </i></span>паковать исходный файл методом gzip, новое имя файла =
+	&lt;filename&gt;.gz  По умолчанию &mdash; <i>false</i>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="keepLastFiles"></a>
+	<b>keepLastFiles</b> = <span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU"><i>к</i></span><i>оличество
+	файлов</i><span lang="en-US"><i>&rdquo; </i></span>- сколько
+	последних, по дате изменения, файлов оставлять во входном каталоге.
+	Применяется, если в исходном каталоге может находится незакрытый,
+	ещё записываемый файл. Если выставим keepLastFiles = &quot;1&quot; ,
+	то <span lang="ru-RU">агент</span> будет оставлять необработанным
+	один файл с наибольшей датой (самый новый), тем самым исключается
+	возможность считывания недописанного файла (см<span lang="ru-RU">.
+	также </span><a href="#timeStampInName">timeStampInName</a><span lang="ru-RU">).</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="lagInterval"></a>
+	<span lang="ru-RU"><b>lagInterval</b></span><span lang="ru-RU"> =
+	</span><span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU"><i>допустимое
+	время отсутствия файлов</i></span><span lang="en-US"><i>[</i></span><span lang="ru-RU"><i>единицаИзмерения</i></span><span lang="en-US"><i>]</i></span><span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU">,</span></p>
+	<p class="western" style="margin-bottom: 0cm">где
+	&quot;единицаИзмерения&quot;:</p>
+	<ul>
+		<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">отсутствует
+		либо </span><span lang="en-US"><b>s </b></span><span lang="en-US"><span style="font-weight: normal">
+		- </span></span><span lang="ru-RU"><span style="font-weight: normal">секунды;</span></span></p>
+		<li/>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><b>m</b><span style="font-weight: normal">
+		&ndash; </span><span lang="ru-RU"><span style="font-weight: normal">минуты;</span></span></p>
+		<li/>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><b>h</b><span style="font-weight: normal">
+		&ndash; </span><span lang="ru-RU"><span style="font-weight: normal">часы;</span></span></p>
+		<li/>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><b>d</b><span style="font-weight: normal">
+		&ndash; </span><span lang="ru-RU"><span style="font-weight: normal">дни</span></span><span lang="ru-RU"><span style="font-weight: normal">.</span></span><span style="font-weight: normal">
+		</span>
+		</p>
+	</ul>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Если
+	время отсутствия файлов превышает lagInterval, то в журнал
+	выгружаются сообщения уровня WARN </span><span lang="en-US">(</span><span lang="ru-RU">и
+	могут отправляются </span><a href="#smtpAppender">электронной
+	почтой</a><span lang="ru-RU">):</span></p>
+	<p class="western" style="margin-bottom: 0cm"> &quot;lag detected,
+	no files from {дата}&quot; - при обнаружении задержки поступления
+	файлов;</p>
+	<p class="western" style="margin-bottom: 0cm"> &quot;lag continues,
+	no files from {дата}&quot; - если файлов всё ещё нет, период =
+	2*lagInterval; 
+	</p>
+	<p class="western" style="margin-bottom: 0cm"> &quot;lag gone,
+	filesInQueue={кол-во файлов в очереди}&quot; - файлы пошли.</p>
+	<p class="western" style="margin-bottom: 0cm">Примеры: 
+	</p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm">lagInterval = &quot;300&quot;
+		либо lagInterval = &quot;300s&quot; - 300 секунд;</p>
+		<p class="western" style="margin-bottom: 0cm">lagInterval = &quot;30m&quot;
+		- 30 минут;</p>
+		<p class="western" style="margin-bottom: 0cm">lagInterval = &quot;<span lang="en-US">2</span>h&quot;
+		- <span lang="en-US">2</span> часа; 
+		</p>
+		<p class="western" style="margin-bottom: 0cm">lagInterval = &quot;<span lang="en-US">1</span><span lang="en-US">d</span>&quot;
+		- 1 день.</p>
+	</ul>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Если
+	атрибут не задан, либо равен нулю - обнаружение задержек поступления
+	файлов для данного агента выключено. См. также </span><a href="#defaultLagInterval">defaultLagInterval</a>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>name</b> =
+	<span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU"><i>и</i></span><i>мя
+	агента</i><span lang="en-US"><i>&rdquo; - </i></span> <i><u>должно
+	быть уникальным</u></i>. Это же имя получает поток выполнения, в
+	котором работает агент, поэтому в едином журнале работы программы
+	можно легко выделить записи, относящиеся к работе конкретного
+	агента.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>nonStrictOrder</b>
+	<span lang="en-US">= </span> <span lang="en-US"><i>&ldquo;true/false&rdquo;</i></span><span lang="en-US">
+	 - </span><span lang="ru-RU">разрешить</span><span lang="en-US">/</span><span lang="ru-RU">запретить
+	нестрогий порядок обработки файлов. </span><span lang="en-US">Н</span><span lang="ru-RU">естрогий
+	порядок разрешает при сбое обработки файла переходить к следующему
+	файлу &mdash; если он есть. Значение по умолчанию &mdash; </span><span lang="en-US">false,
+	</span><span lang="ru-RU">то есть используется строгий порядок &mdash;
+	пока не обработали самый старый файл, к следующему не переходим.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>param,
+	param1, param2, param3, param4</b>. <span lang="ru-RU">Данные
+	атрибуты мож</span>но использовать для задания значения <a href="#ЛокальныеПараметры">локальных
+	параметров</a>, вместо вложенного тэга &lt;param&gt;. Имеют
+	приоритет выше тэга &lt;param&gt;. 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">Формат: &lt;имя
+	параметра&gt;=&lt;значение&gt;</p>
+	<p class="western" style="margin-bottom: 0cm">Пример: 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">      param =
+	&quot;:dDir=/home/dir&quot;</p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm">param1 =
+		&quot;:<span lang="en-US">someParam</span>=<span lang="en-US">someValue</span>&quot;</p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>pattern</b> =
+	<span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU"><i>и</i></span><i>мя
+	шаблона</i><span lang="en-US"><i>&rdquo; - </i></span>ссылка на
+	шаблон агента , используемый для настройки (см. <a href="#Шаблоны">Шаблоны</a>).</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>pauseFlag</b></span><span lang="en-US"><span style="font-weight: normal">.</span></span><b>
+	- </b><span style="font-weight: normal">п</span>озволяет перевести
+	агент в состояние &laquo;приостановлен&raquo;. Агент не будет
+	обрабатывать файлы до тех пор, пока не будет изменено значение
+	pauseFlag.</p>
+	<p class="western" style="margin-bottom: 0cm">Это может быть сделано
+	двумя способами:</p>
+	<p class="western" style="margin-bottom: 0cm">- выставить
+	pauseFlag=&quot;false&quot; (или просто удалить этот атрибут) и
+	<span lang="ru-RU">перезапустить</span> программу;</p>
+	<p class="western" style="margin-bottom: 0cm">- если задан
+	pauseFlagFile, то pauseFlag сбросится в false при отсутствии файла,
+	заданного в pauseFlagFile.</p>
+	<p class="western" style="margin-bottom: 0cm">Используется для
+	временного прекращения обработки файлов агентом. После сброса флага
+	агент обработает накопившиеся файлы.</p>
+	<p class="western" style="margin-bottom: 0cm">Пример: 
+	</p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm">pauseFlag = &quot;true&quot;</p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="pauseFlagFile"></a>
+	<b>pauseFlagFile</b> = <span lang="en-US"><i>&rdquo;</i></span><i>home/</i><span lang="en-US"><i>data</i></span><i>/pauseFlag</i><span lang="en-US"><i>&rdquo;</i></span>
+	- если такой файл есть, агент приостанавливает работу до его
+	исчезновения; интервал проверки - <span lang="en-US">1</span>0
+	секунд.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="prefix"></a>
+	<b>prefix</b> <span lang="en-US"><i> - </i></span>добавлять к имени
+	файла префикс. Одинарные кавычки служат для экранирования тех
+	подстрок, которые не содержат шаблон вывода даты/времени.</p>
+	<p class="western" style="margin-bottom: 0cm">Пример:</p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><i>prefix
+	= </i></span><span lang="en-US"><i>&rdquo;</i></span><span lang="en-US"><i>'data'yyyyMMdd</i></span><i>_</i><span lang="en-US"><i>&rdquo;
+	 - </i></span><span lang="ru-RU"><i>добавит префикс </i></span><span lang="en-US"><i><b>data&lt;</b></i></span><span lang="ru-RU"><i><b>датаФайла</b></i></span><span lang="en-US"><i><b>&gt;_</b></i></span></p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><i>prefix
+	= </i></span><span lang="en-US"><i>&rdquo;</i></span><span lang="en-US"><i>'data</i></span><span lang="ru-RU"><i>_</i></span><span lang="en-US"><i>'</i></span><span lang="en-US"><i>&rdquo;
+	 - </i></span><span lang="ru-RU"><i>добавит префикс </i></span><span lang="en-US"><i><b>data_</b></i></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="queueWarnInterval"></a>
+	<span lang="en-US"><b>q</b></span><b>ueueWarnInterval </b><span lang="en-US"><b>=
+	</b></span><span lang="en-US"><i><b>&rdquo;</b></i></span><span lang="ru-RU"><i><span style="font-weight: normal">интервал
+	оповещения о состоянии очереди</span></i></span><span lang="en-US"><i><span style="font-weight: normal">&rdquo;</span></i></span><span lang="ru-RU"><i><span style="font-weight: normal">,</span></i></span></p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">формат
+	см. </span></span></span><a href="#lagInterval">lagInterval</a><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">
+	, значение по умолчанию 1 час. См. также </span></span></span><a href="#queueWarnOn">queueWarnOn</a><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">
+	, </span></span></span><a href="#defaultQueueWarnInterval">defaultQueueWarnInterval</a><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="queueWarnOn"></a>
+	<span lang="en-US"><b>q</b></span><b>ueueWarnOn = </b><span lang="en-US"><i><b>&rdquo;</b></i></span><i><span style="font-weight: normal">порог
+	включения контроля очереди</span></i><span lang="en-US"><i><span style="font-weight: normal">&rdquo;.</span></i></span></p>
+	<p class="western" style="margin-bottom: 0cm">При возрастании
+	очереди на входе агента до queueWarnOn файлов, в журнал выгружаются
+	сообщения об этом, уровня WARN <span lang="en-US">(</span><span lang="ru-RU">могут
+	отправляются </span><a href="#smtpAppender">электронной </a><a href="#smtpAppender">почтой</a><span lang="ru-RU">)</span>.
+	Сообщения о состоянии очереди выгружаются в журнал с интервалом
+	queueWarnInterval, пока количество файлов в очереди не уменьшится до
+	 queueWarnOff. Если значение queueWarnOn не задано, либо равно нулю,
+	то проверка очереди отключена.</p>
+	<p class="western" style="margin-bottom: 0cm">Удобно использовать
+	данный атрибут для обнаружения начала поступления файлов из нового
+	источника: выставляем  queueWarnOn=&quot;1&quot; <span lang="ru-RU">и,
+	если настроен</span><span lang="ru-RU">о уведомление электронной
+	почтой, </span><span lang="ru-RU">то </span><span lang="ru-RU">при
+	появлении файлов </span><span lang="ru-RU">получим </span><span lang="ru-RU">сообщение
+	о возникновении очереди.</span></p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm"></p>
+		<p class="western" style="margin-bottom: 0cm">Пример:</p>
+		<ul>
+			<p class="western" style="margin-bottom: 0cm">queueWarnOn = &quot;40&quot;
+			 <font size="2" style="font-size: 10pt"><i>&lt;-- </i></font><font size="2" style="font-size: 10pt"><i>если
+			на входе 40 и более</i></font><font size="2" style="font-size: 10pt"><i>
+			файлов &mdash; </i></font><font size="2" style="font-size: 10pt"><i>возникла
+			очередь</i></font></p>
+			<p class="western" style="margin-bottom: 0cm">queueWarnOff = &quot;2&quot;
+			  <font size="2" style="font-size: 10pt"><i>&lt;-- </i></font><font size="2" style="font-size: 10pt"><i>если
+			на входе 2 и менее</i></font><font size="2" style="font-size: 10pt"><i>
+			файлов &mdash; </i></font><font size="2" style="font-size: 10pt"><i>очереди
+			нет</i></font></p>
+			<p class="western" style="margin-bottom: 0cm">queueWarnInterval =
+			&quot;1h&quot; <font size="2" style="font-size: 10pt"><i>&lt;--
+			</i></font><font size="2" style="font-size: 10pt"><i>пока очередь
+			есть, каждый час </i></font><font size="2" style="font-size: 10pt"><i>журналируем</i></font><font size="2" style="font-size: 10pt"><i>
+			её размер</i></font></p>
+		</ul>
+	</ul>
+	<p class="western" style="margin-bottom: 0cm; font-weight: normal">См.
+	также <a href="#defaultQueueWarnOn">defaultQueueWarnOn</a>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="queueWarnOff"></a>
+	<b>queueWarnOff = </b><span lang="en-US"><i><b>&rdquo;</b></i></span><i><span style="font-weight: normal">п</span></i><i><span style="font-weight: normal">орог
+	отключения контроля очереди</span></i><span lang="en-US"><i><span style="font-weight: normal">&rdquo;</span></i></span><i><span style="font-weight: normal">.
+	</span></i><span style="font-style: normal"><span style="font-weight: normal">См.
+	также <a href="#queueWarnOn">queueWarnOn</a> , <a href="#defaultQueueWarnOff">defaultQueueWarnOff</a>.</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="replaceExistingFiles"></a>
+	<b>replaceExistingFiles</b> = <span lang="en-US"><i>&rdquo;true/false&rdquo;
+	</i></span>- заменять ли существующий файл с тем же именем. 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">При <i>true</i> файл
+	будет заменён (например, пришёл новый файл<span lang="en-US">-</span><span lang="ru-RU">справочник</span>),
+	при <i>false</i> - к имени файла добавляется индекс (&laquo;.1&raquo;,
+	&laquo;.2&raquo; и т.д.). По умолчанию - <i>false</i>. 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">Если у файла
+	расширение <span lang="en-US"><i>&rdquo;</i></span><span lang="en-US">zip</span><span lang="en-US"><i>&rdquo;</i></span><span lang="en-US">
+	</span>или <span lang="en-US"><i>&rdquo;</i></span><span lang="en-US">gz</span><span lang="en-US"><i>&rdquo;</i></span><span style="font-style: normal">,
+	</span><span style="font-style: normal">то </span><span style="font-style: normal">новое
+	</span><span style="font-style: normal">имя файла формируется как
+	</span><font size="2" style="font-size: 11pt"><span lang="en-US"><i><b>&lt;</b></i></span></font><font size="2" style="font-size: 11pt"><i><b>имяФайла</b></i></font><font size="2" style="font-size: 11pt"><span lang="en-US"><i><b>&gt;.&lt;</b></i></span></font><font size="2" style="font-size: 11pt"><i><b>индекс</b></i></font><font size="2" style="font-size: 11pt"><span lang="en-US"><i><b>&gt;.&lt;</b></i></span></font><font size="2" style="font-size: 11pt"><i><b>расширение</b></i></font><font size="2" style="font-size: 11pt"><span lang="en-US"><i><b>&gt;</b></i></span></font><span lang="en-US"><span style="font-style: normal">.</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="saveTime"></a>
+	<b>saveTime</b> =<i> </i><span lang="en-US"><i>&rdquo;true/false&rdquo;
+	</i></span>- сохранять ли оригинальное время изменения файла.</p>
+	<p class="western" style="margin-bottom: 0cm">См. также
+	<a href="#timeStampInName">timeStampInName</a> .</p>
+	<li/>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><a name="sequenceLength"></a>
+	<span style="text-decoration: none"><b>sequenceLength</b></span> =
+	<i>&rdquo;</i><span lang="ru-RU"><i>з</i></span><span lang="ru-RU"><i>наков
+	в последовательности</i></span><i>&rdquo;. </i><span lang="ru-RU"><span style="font-style: normal">Значение
+	по умолчанию 6.</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="slowStop"></a><a name="sequenceLength66"></a>
+	<span lang="en-US"><span style="font-style: normal"><span style="text-decoration: none"><b>s</b></span></span></span><span lang="en-US"><span style="font-style: normal"><span style="text-decoration: none"><b>lowStop</b></span></span></span><span lang="ru-RU"><span style="font-style: normal">
+	= </span></span><span lang="en-US"><i>&rdquo;true/false&rdquo;. </i></span><span lang="ru-RU"><span style="font-style: normal">При
+	</span></span><span lang="en-US"><i>true</i></span><span lang="en-US"><span style="font-style: normal">
+	</span></span><span lang="ru-RU"><span style="font-style: normal">меняет
+	способ </span></span><a href="#cleanStopInfo" name="222">&laquo;</a><a href="#cleanStopInfo" name="222"><span lang="ru-RU"><span style="font-style: normal">чистого</span></span></a><a href="#cleanStopInfo" name="222"><span lang="ru-RU"><span style="font-style: normal">&raquo;
+	</span></span></a><a href="#cleanStopInfo" name="222"><span lang="ru-RU"><span style="font-style: normal">останова</span></span></a><span lang="ru-RU"><span style="font-style: normal">
+	</span></span><span lang="ru-RU"><span style="font-style: normal">для
+	головного агента цепочки &mdash; он остановится только после
+	обработки всех файлов на входе. </span></span><span lang="ru-RU"><span style="font-style: normal">Может
+	использоваться, когда есть агент, отправляющий события журнала
+	какому-либо потребителю. Без этого признака агент сразу завершит
+	работу, и потребитель не получит информацию об остановке программы.
+	</span></span><span lang="ru-RU"><span style="font-style: normal">Значение
+	по умолчанию </span></span><span lang="en-US"><i>false</i></span><span lang="ru-RU"><span style="font-style: normal">.</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>s</b></span><b>rcSubDirs</b>
+	= <span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU"><i>спис</i></span><span lang="ru-RU"><i>ок
+	подкаталогов</i></span><span lang="en-US"><i>&rdquo;</i></span><span lang="ru-RU">
+	- задаёт</span> список подкаталогов, находящихся в входном каталоге
+	<span lang="en-US">(</span>srcDir, <span lang="en-US">ftpSrcDir)</span>,
+	в которых надо искать файлы.</p>
+	<p class="western" style="margin-bottom: 0cm">Внимание, при
+	использовании вместе с атрибутом <a href="#keepLastFiles">keepLastFiles</a>
+	следует иметь в виду, что сначала составляется общий список для
+	загрузки файлов из всех подкаталогов, из которого исключаются
+	<span lang="en-US"><i>keepLastFiles</i></span> файлов с наибольшей
+	датой.</p>
+	<p class="western" style="margin-bottom: 0cm">Разделитель списка -
+	&quot;;&quot;</p>
+	<p class="western" style="margin-bottom: 0cm">Пример<span lang="en-US">:
+	</span>
+	</p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm">srcDir = &quot;/dir1/dir2&quot;</p>
+		<p class="western" style="margin-bottom: 0cm">srcSubDirs =
+		&quot;dir31;dir32;dir33&quot; 
+		</p>
+	</ul>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">для
+	обработки одним агентом файлов из каталогов</span> <i>/dir1/dir2/dir31
+	</i><span style="font-style: normal">,</span>  <i>/dir1/dir2/dir3</i><span lang="en-US"><i>2</i></span><span lang="en-US">
+	</span><span lang="ru-RU">и </span><span lang="en-US"><i>/dir1/dir2/dir33</i></span><span lang="en-US">
+	.</span> 
+	</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>srcTimeZone</b>
+	= <span lang="en-US"><i>&rdquo;</i></span><span lang="en-US"><i>E</i></span><i>urope/Kaliningrad</i><span lang="en-US"><i>&rdquo;.</i></span>
+	Позволяет задать временную зону, используемую для   <a href="#timeBasedSrcDir">timeBasedSrcDir</a>
+	и <a href="#timeStampInName">timeStampInName</a> (по умолчанию &mdash;
+	системная зона).</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b><span lang="en-US">s</span>tartFileDate.
+	</b><span style="font-weight: normal">Позволяет для агентов
+	ftpDownload и sftpDownload включить особый режим работы: если задано
+	значение атрибута </span><span lang="en-US"><span style="font-weight: normal">start</span></span><span lang="en-US"><span style="font-weight: normal">File</span></span><span lang="en-US"><span style="font-weight: normal">Date</span></span><span style="font-weight: normal">
+	= &quot;yyyy-MM-dd HH:mm:ss&quot;, то при составлении списка файлов
+	для загрузки отбрасываем все файлы, дата которых меньше
+	max(start</span><span lang="en-US"><span style="font-weight: normal">File</span></span><span style="font-weight: normal">Date,
+	дата последнего загруженного файла); после успешной загрузки файла
+	запоминаем его дату; удаления/переименования исходных файлов на
+	сервере не происходит. </span><span lang="ru-RU"><span style="font-weight: normal">Таким
+	образом, данный режим можно использовать вместо </span></span><span lang="en-US"><span style="font-weight: normal">deleteAfter=&rdquo;false&rdquo;.</span></span><span lang="ru-RU"><span style="font-weight: normal">
+	</span></span><span style="font-weight: normal">Значение атрибута
+	saveTime на работу в особом режиме не влияет. Пример: startFileDate
+	= &quot;201</span><span lang="en-US"><span style="font-weight: normal">7</span></span><span style="font-weight: normal">-01-01
+	00:00:00&quot;</span><b>. </b>
+	</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="substTimeStamp"></a>
+	<b>substTimeStamp</b> = <span lang="en-US"><span style="font-weight: normal">&rdquo;</span></span><i>true/</i><span lang="en-US"><i>false</i></span><span lang="en-US"><i><span style="font-weight: normal">&rdquo;
+	- </span></i></span>указание, что атрибут substitute содержит шаблон
+	для текущей даты. Не забывать экранировать то, что не входит в
+	шаблон даты, <br/>
+одиночными кавычками. По умолчанию &mdash; <i>false</i>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="substitute"></a>
+	<b>substitute</b><i><b> </b></i><span lang="en-US"><i><b>= </b></i></span><span lang="en-US"><i><span style="font-weight: normal">&rdquo;</span></i></span><span lang="ru-RU"><i><span style="font-weight: normal">шабло</span></i></span><i>н
+	для замены</i><span lang="en-US"><i><span style="font-weight: normal">&rdquo;.
+	</span></i></span>Данный атрибут используется, если в имя файла
+	требуется внести более серьёзные изменения, чем просто добавить
+	суффикс/префикс к имени файла. <br/>
+ Пример<span lang="ru-RU">ы</span>:</p>
+	<p class="western" style="margin-bottom: 0cm; font-weight: normal"></p>
+	<p class="western" style="margin-bottom: 0cm"><i><span style="font-weight: normal">substTimeStamp
+	</span><span lang="en-US"><span style="font-weight: normal">= &ldquo;true&rdquo;</span></span></i></p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="en-US">substitute
+	= </span> <b>&quot;s/^PrefAbc_(.+)/yyyyMMdd_hhmmss_'$1'/&quot;</b> -
+	вырезаем из имени файла &quot;<span lang="en-US">Pref</span><span lang="en-US">A</span><span lang="en-US">bc_</span>&quot;
+	и заменяем <span lang="ru-RU">текущими</span> датой/временем.
+	Одинарные кавычки служат для экранирования тех подстрок, которые не
+	содержат шаблон вывода даты/времени.              
+	</p>
+	<p lang="en-US" class="western" style="margin-bottom: 0cm"></p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="en-US">s</span><span lang="en-US"><i>ubstitute
+	= </i></span><i> </i><i><b>&quot;s/^PrefAbc_//&quot;</b></i> -
+	вырезаем &quot;<span lang="en-US">Pref</span><span lang="en-US">A</span><span lang="en-US">bc_</span>&quot;
+	из начала имени файла.</p>
+	<p class="western" style="margin-bottom: 0cm"></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="suffix"></a>
+	<b>suffix</b> = <i>&quot;_yyyyMMdd_hhmmss'.cdr'&quot;</i> -
+	добавлять к имени файла суффикс с текущей датой. Одинарные кавычки
+	служат для экранирования тех подстрок, которые не содержат шаблон
+	вывода даты/времени.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="timeBasedSrcDir"></a>
+	<b>timeBasedSrcDir</b> = <span lang="en-US"><i>&rdquo;'</i></span><span lang="en-US"><i>d</i></span><i>ata'yyyyMMdd</i><span lang="en-US"><i>&rdquo;</i></span>
+	Данный атрибут используется, когда имя каталога-источника не
+	постоянно, а строится на основе текущей даты. Полное имя каталога
+	строится как &lt;srcDir&gt;/&lt;результат подстановки даты в
+	шаблон&gt;.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="timeStampInName"></a>
+	<b>timeStampInName</b> = <span lang="en-US"><span style="font-weight: normal">&rdquo;</span></span><span lang="en-US"><span style="font-weight: normal">&lt;</span></span><i>рег.
+	выражение, описывает, где в имени файла дата&gt;
+	&lt;пробел&gt;&lt;запятая&gt;&lt;пробел&gt;&lt;шаблон
+	SimpleDateFormat, описывает как переводить полученную строку в
+	дату&gt;</i><span lang="en-US"><i><span style="font-weight: normal">&rdquo;.</span></i></span></p>
+	<p class="western" style="margin-bottom: 0cm">Используется, когда
+	порядок обработки файлов должен определяться не датой файла, а
+	датой, закодированной в имени файла. Строка, к которой применяется
+	шаблон даты, формируется как совокупность групп, полученных в
+	результате применения регулярного  выражения к имени файла. При
+	<a href="#saveTime">saveTime</a> <span lang="en-US">= &quot;true&quot;
+	</span><span lang="ru-RU">полученная дата используется вместо
+	действительной даты изменения файла.</span></p>
+	<p class="western" style="margin-bottom: 0cm">Примеры:  
+	</p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm">timeStampInName = &quot;
+		<b>(</b>\d{8}_\d{6}<b>)</b>  , ddMMyyyy_HHmmss &quot;  - для имён
+		файлов вида <span lang="ru-RU"><i>xxxx</i></span><span lang="ru-RU"><i>3</i></span><span lang="ru-RU"><i>103201</i></span><span lang="ru-RU"><i>7</i></span><span lang="ru-RU"><i>_000517yyyy.cdr</i></span><span lang="en-US"><i>
+		</i></span><span lang="en-US"><span style="font-style: normal">(</span></span><span lang="ru-RU"><span style="font-style: normal">одна
+		группа</span></span><span lang="en-US"><span style="font-style: normal">);</span></span></p>
+		<p class="western" style="margin-bottom: 0cm">timeStampInName =
+		&quot;<b>(</b>\d{2}<b>)</b>.<b>(</b>\d{2}<b>)</b>.<b>(</b>\d{4}<b>)</b><span style="font-weight: normal">.</span>.<b>(</b>\d{6}<b>)</b>
+		, ddMMyyyyHHmmss&quot; - для имён вида <i>comlog04#05#201</i><i>7</i><i>##030102.</i><span lang="en-US"><i>cdr</i></span>
+		(четыре группы).  
+		</p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="unpack"></a>
+	<b>unpack</b> = <span lang="en-US"><i><span style="font-weight: normal">&rdquo;</span></i></span><span lang="en-US"><i><span style="font-weight: normal">t</span></i></span><i>rue/</i><span lang="en-US"><i>false</i></span><span lang="en-US"><i><span style="font-weight: normal">&rdquo;
+	- </span></i></span>если имя файла &lt;filename&gt;.gz -
+	распаковываем и сохраняем как &lt;filename&gt;, если имя файла
+	&lt;filename&gt;.zip - извлекаем из него &lt;filename&gt;, иначе
+	ничего не делаем. По умолчанию &mdash; false.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="zip"></a>
+	<b>zip</b> = <span lang="en-US"><i><span style="font-weight: normal">&rdquo;</span></i></span><span lang="en-US"><i><span style="font-weight: normal">t</span></i></span><i>rue/</i><span lang="en-US"><i>false</i></span><span lang="en-US"><i><span style="font-weight: normal">&rdquo;
+	</span></i></span>- паковать исходный файл методом zip, новое имя
+	файла = &lt;filename&gt;.zip . По умолчанию - false.<br/>
+<br/>
+
+	</p>
+</ul>
+<h2 class="western"><a name="__RefHeading__2860_1809441960"></a>2.2.Агент
+ftpDownload</h2>
+<p class="western" style="margin-bottom: 0cm"><a name="__RefHeading__1722_1809441960"></a>
+	Агент загружает файлы с ftp сервера. Файл загружается сначала в
+каталог для временных файлов, затем переносится в целевой каталог.,
+после чего удаляется/переносится на сервере. 
+</p>
+<p class="western" style="margin-bottom: 0cm">	Атрибуты агента (кроме
+общих для всех агентов):</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><span style="font-style: normal"><b>c</b></span></span><span style="font-style: normal"><b>acheDir
+	= </b></span><span style="font-style: normal"><span style="font-weight: normal">&quot;</span></span><i><span style="font-weight: normal">@/cache</span></i><span style="font-style: normal"><span style="font-weight: normal">&quot;
+	- каталог для временных файлов, @ - ссылка на </span></span><i><span style="font-weight: normal">dstDir</span></i><span style="font-style: normal"><span style="font-weight: normal">.</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="createLinks"></a>
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><font color="#000000"><span style="font-style: normal"><b>c</b></span></font><font color="#000000"><span style="font-style: normal"><b>reateLinks
+	</b></span></font><font color="#000000"><span style="font-style: normal"><b>=
+	</b></span></font><font color="#000000"><i><span style="font-weight: normal">true/false&quot;
+	&mdash;</span></i></font><font color="#000000"><span style="font-style: normal"><span style="font-weight: normal">
+	создавать жёсткие ссылки (</span></span></font><font color="#000000"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">hard
+	link</span></span></span></font><font color="#000000"><span style="font-style: normal"><span style="font-weight: normal">)
+	на загруженный файл в каталогах </span></span></font><font color="#000000"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">srcDir
+	</span></span></span></font><font color="#000000"><span style="font-style: normal"><span style="font-weight: normal">дочерних
+	агентов. </span></span></font><font color="#000000"><span style="font-style: normal"><span style="font-weight: normal">Используется
+	при работе в цепочках агентов.</span></span></font></font></font></p>
+	<p class="western" style="margin-bottom: 0cm"><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">Если
+	значение атрибута </span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><i><span style="font-weight: normal">true</span></i></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">,
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">то
+	после приёма файла в </span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><i><span style="font-weight: normal">cacheDir</span></i></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">не
+	происходит перенос его в </span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">dstDir.
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">Вместо
+	этого агент создаёт </span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">жёсткие
+	ссылки</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">
+	на принятый файл в каталогах </span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">srcDir
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">тех
+	дочерних агентов, которые должны его обработать.</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">См.
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">т</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">акже
+	 </span></span></span></font></font></font><a href="#3.3.Использование жёстких ссылок в работе цепочки агентов.|outline">использование
+	жёстких ссылок</a><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">.
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">Значение
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">атрибута
+	</span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">по
+	умолчанию: </span></span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><i><span style="font-weight: normal">false</span></i></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span style="font-style: normal"><b>dstDir</b></span><span style="font-style: normal"><span style="font-weight: normal">
+	= </span></span><i><span style="font-weight: normal">&quot;/data/CDR&quot;</span></i><span style="font-style: normal"><span style="font-weight: normal">
+	- целевой каталог.</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span style="font-style: normal"><b>ftpActiveMode</b></span><i>
+	= &quot;true/</i><span lang="en-US"><i>false</i></span><i>&quot; </i><span style="font-style: normal">-
+	использовать ли активный режим (по умолчанию - </span><i>true</i><span style="font-style: normal">).</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="ftpDstDir_ftpDownload"></a>
+	<span style="font-style: normal"><b>ftpDstDir</b></span><span style="font-style: normal">
+	= </span><i>&quot;/path/backup&quot;</i><span style="font-style: normal">
+	- задаётся, если необходимо не удалять файл на сервере после
+	загрузки, а переносить в другой каталог.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpPassword</b>
+	= <i>&quot;пароль&quot;</i> .</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpServerPort</b>
+	= <i>&quot;</i><span lang="ru-RU"><i>п</i></span><i>орт ftp
+	сервера&quot;</i>. Значение по умолчанию 21.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpServer</b>
+	= <i>&quot;адрес сервера&quot;</i></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpServerTimeZone
+	</b><span style="font-weight: normal">= </span><span lang="en-US"><i><span style="font-weight: normal">&quot;</span></i></span><span lang="ru-RU"><i><span style="font-weight: normal">временная
+	зона </span></i></span><span lang="en-US"><i><span style="font-weight: normal">ftp
+	</span></i></span><span lang="ru-RU"><i><span style="font-weight: normal">сервера</span></i></span><span lang="en-US"><i><span style="font-weight: normal">&quot;</span></i></span><i><span style="font-weight: normal">.
+	</span></i><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">Значение
+	п</span></span></span><span style="font-style: normal">о умолчанию -
+	системная временная зона. </span>
+	</p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">Пример:</span></span></span><span lang="ru-RU"><i><span style="font-weight: normal">
+	</span></i></span><span lang="en-US"><i><span style="font-weight: normal">ftpServerTimeZone
+	= &quot;GMT&quot; </span></i></span>
+	</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpSrcDir</b>
+	= <i>&quot;/path&quot;</i> - исходный каталог</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpTimeout</b>
+	= <i>&quot;таймаут на соединение/загрузку, секунды&quot;</i>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpUser</b> =
+	<i>&quot;имя пользователя&quot;</i></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>reconnect</b>
+	 = <i>&quot;</i><span lang="en-US"><i>true/</i></span><i>false&quot;</i>
+	- после забора файлов не закрывать соединение (по умолчанию &mdash;
+	<i>true</i>).</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>s</b></span><b>tartFileDate</b>
+	<span lang="en-US">= </span><span lang="en-US"><i>&quot;yyyy-MM-dd
+	HH:mm:ss&quot;</i></span>. Позволяет для агентов ftpDownload и
+	sftpDownload включить особый режим работы:</p>
+	<p class="western" style="margin-bottom: 0cm">если задано значение
+	атрибута startTimeDate = &quot;yyyy-MM-dd HH:mm:ss&quot;, то</p>
+	<p class="western" style="margin-bottom: 0cm">- при составлении
+	списка файлов для загрузки отбрасываем все файлы,</p>
+	<p class="western" style="margin-bottom: 0cm">дата которых меньше
+	max(startTimeDate, дата последнего загруженного файла);</p>
+	<p class="western" style="margin-bottom: 0cm">- после успешной
+	загрузки файла запоминаем его дату на сервере;</p>
+	<p class="western" style="margin-bottom: 0cm">-
+	удаления/переименования исходных файлов на сервере не происходит. 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">Значение атрибута
+	saveTime на работу в особом режиме не влияет.</p>
+	<p class="western" style="margin-bottom: 0cm">Пример:</p>
+	<p class="western" style="margin-bottom: 0cm">	startTimeDate =
+	&quot;2014-01-01 00:00:00&quot; 
+	</p>
+</ul>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__2862_1809441960"></a>2.3.Агент
+sftpDownload.</h2>
+<p class="western" style="margin-bottom: 0cm">	Агент загружает файлы
+с sftp сервера. Файл загружается сначала в каталог для временных
+файлов, затем переносится в целевой каталог., после чего
+удаляется/переносится на сервере. Поддерживает безпарольную
+аутентификацию (по ключам). Используются те же атрибуты, что и у
+ftpDownload, за исключением ftpActiveMode. Значение по умолчанию для
+атрибута <span lang="en-US">ftp</span><span lang="en-US">Server</span><span lang="en-US">Port</span>
+= &quot;22&quot;.<br/>
+<br/>
+<br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__2864_1809441960"></a>2.4.Агент
+copy. 
+</h2>
+<p class="western" style="margin-bottom: 0cm">	Несмотря на название,
+данный агент может копировать, переносить и удалять файлы, в
+зависимости от конфигурации. Если <i>dstDir = &quot;/</i><span lang="en-US"><i>dev</i></span><i>/</i><span lang="en-US"><i>null</i></span><i>&quot;
+, </i><span style="font-style: normal">то исходный файл  удаляется.
+</span>Если агент входит в цепочку и не последний в ней, а также
+значение атрибута <i>moveToNext</i> не равно &quot;<i>false</i>&quot;,
+то файл копируется. Иначе файл переносится.</p>
+<p class="western" style="margin-bottom: 0cm">	Если в качестве
+<span lang="en-US"><i>cacheDir</i></span><span lang="en-US"> </span>задан<span lang="ru-RU">а
+пустая строка (</span><span lang="en-US"><i>cacheDir</i></span><span lang="ru-RU"><i>=</i></span><span lang="en-US"><i>&rdquo;&rdquo;</i></span><span lang="ru-RU">),
+</span><span lang="ru-RU">то </span><span lang="ru-RU">это является
+для агента указанием, что файл надо не копировать, а переносить.
+</span><span lang="ru-RU">Перенос возможен только в пределах одного
+раздела, и при условии, что не требуется изменение файла
+(</span><span lang="en-US"><i>zip/gzip/unpack</i></span><span lang="ru-RU">).</span></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0.8cm">	Атрибуты агента
+(кроме общих для всех агентов):</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>srcDir</b> =
+	<i>&quot;/path&quot;</i> - исходный каталог</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>dstDir</b> =<i>
+	&quot;/data/CDR&quot;</i> - целевой каталог</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>cacheDir</b>=<i>&quot;@/cache&quot;</i>
+	- каталог для временных файлов, @ - ссылка на <i>dstDir</i>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="dstDirTimeBased_copy"></a>
+	<span lang="en-US"><b>d</b></span><b>stDirTimeBased</b> =
+	<span lang="en-US"><i>&quot;true/false</i></span><i>&quot; </i><span lang="en-US"><i>-
+	</i></span><span lang="ru-RU"><i>у</i></span>казывает, что <i>dstDir</i>
+	содержит шаблон имени целевого каталога в формате SimpleDateFormat,
+	а фактическое значение пути до целевого каталога формируется с
+	использованием  даты файла (см. также <a href="#timeStampInName">timeStampInName</a>)
+	либо системной даты (см. dstDirTimeByFile).</p>
+	<p class="western" style="margin-bottom: 0cm">Отсутствующие каталоги
+	создаются. Значение по умолчанию - <i>false</i>.</p>
+	<p class="western" style="margin-bottom: 0cm">Фрагменты <i>dstDir</i>,
+	которые не содержат шаблон даты, должны экранироваться одиночными
+	кавычками.</p>
+	<p class="western" style="margin-bottom: 0cm">Пример: 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">  <i>dstDirTimeBased =
+	&quot;true&quot; </i>
+	</p>
+	<p class="western" style="margin-bottom: 0cm">  <i>dstDir =
+	&quot;'/dir1/dir2/data'yyyy/MM/dd/HH&quot;</i></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>dstDirTimeByFile</b>
+	= <i>&quot;true</i><span lang="en-US"><i>/false</i></span><i>&quot;</i>
+	 Задаёт источник времени для формирования пути до целевого каталога
+	при dstDirTimeBased = &quot;true&quot;. Если false, то используется
+	системное время, если true - время файла (внимание, saveTime при
+	этом должен быть true, иначе получим системное время). По умолчанию
+	&mdash; true.</p>
+	<p class="western" style="margin-bottom: 0cm"><i>После выполнения
+	операции перемещать исходный файл во входной каталог следующего
+	агента в цепочке. Значение по умолчанию &mdash; true.</i></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>moveToNext</b>
+	=<i> &quot;true/</i><span lang="en-US"><i>false</i></span><i>&quot;</i>
+	. После выполнения операции перемещать исходный файл во входной
+	каталог следующего агента в цепочке. Значение по умолчанию &mdash;
+	<i>true</i>.</p>
+</ul>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__2866_1809441960"></a>2.5.Агент
+ftpUpload.</h2>
+<p class="western" style="margin-bottom: 0cm"><a name="__RefHeading__2245_1809441960"></a>
+	Агент выгружает файлы на ftp cервер. Файл выгружается сначала в
+каталог для временных файлов, затем переносится в целевой каталог,
+после чего <span lang="ru-RU">исходный файл </span>удаляется/переносится.</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>srcDir</b> =
+	<i>&quot;/path&quot;</i> - исходный каталог</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpServer</b>
+	= <i>&quot;адрес сервера&quot;</i></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpUser</b> =
+	<i>&quot;имя пользователя&quot;</i></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpPassword</b>
+	= <i>&quot;пароль&quot;</i></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpServerPort</b>
+	= <i>&quot;</i><span lang="ru-RU"><i>п</i></span><i>орт
+	ftp-сервера&quot;</i>. Значение по умолчанию 21.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpActiveMode</b>
+	= <i>&quot;true/</i><span lang="en-US"><i>false</i></span><i>&quot;</i>-
+	использовать ли активный режим (по умолчанию - true )</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpTimeout</b>
+	= <i>&quot;таймаут на соединение/загрузку, секунды&quot;. </i><span style="font-style: normal">Значение
+	по умолчанию </span><span style="font-style: normal">6</span><span style="font-style: normal">0
+	секунд.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpServerTimeZone
+	</b><span style="font-weight: normal">= </span><span lang="en-US"><i><span style="font-weight: normal">&quot;</span></i></span><span lang="ru-RU"><i><span style="font-weight: normal">временная
+	зона </span></i></span><span lang="en-US"><i><span style="font-weight: normal">ftp
+	</span></i></span><span lang="ru-RU"><i><span style="font-weight: normal">сервера</span></i></span><span lang="en-US"><i><span style="font-weight: normal">&quot;</span></i></span><i><span style="font-weight: normal">.
+	</span></i><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">Значение
+	п</span></span></span><span style="font-style: normal">о умолчанию -
+	системная временная зона. </span>
+	</p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">Пример:</span></span></span><span lang="ru-RU"><i><span style="font-weight: normal">
+	</span></i></span><span lang="en-US"><i><span style="font-weight: normal">ftpServerTimeZone
+	= &quot;GMT&quot; </span></i></span>
+	</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpDstDir</b>
+	= <i>&quot;/path/backup&quot;</i> - целевой каталог.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>ftpCacheDir</b>
+	=<i>&quot;@/cache&quot;</i> - каталог для временных файлов, @ -
+	ссылка на ftpDstDir.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>reconnect</b>
+	= <i>&quot;</i><span lang="en-US"><i>true/</i></span><i>false&quot;</i>
+	- после забора файлов не закрывать соединение (по умолчанию - true).
+		</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><a name="dstDirTimeBased_ftpup"></a>
+	<span lang="en-US"><b>d</b></span><b>stDirTimeBased</b> =
+	<span lang="en-US"><i>&quot;true/false</i></span><i>&quot; </i><span lang="en-US"><i>-
+	</i></span><span lang="ru-RU"><i>у</i></span>казывает, что <i>ftpDstDir</i>
+	содержит лишь шаблон имени целевого каталога в формате
+	SimpleDateFormat, а фактическое значение пути до целевого каталога
+	формируется с использованием даты файла (см. также <a href="#timeStampInName">timeStampInName</a>)
+	либо системной даты (см. dstDirTimeByFile).</p>
+	<p class="western" style="margin-bottom: 0cm">Отсутствующие каталоги
+	создаются. Значение по умолчанию - false.</p>
+	<p class="western" style="margin-bottom: 0cm">Фрагменты <span lang="en-US"><i>ftpD</i></span><i>stDir</i>,
+	которые не содержат шаблон даты, должны экранироваться одиночными
+	кавычками.</p>
+	<p class="western" style="margin-bottom: 0cm">Пример: 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">  dstDirTimeBased =
+	&quot;true&quot; 
+	</p>
+	<p class="western" style="margin-bottom: 0cm">  <span lang="en-US">ftpD</span>stDir
+	= &quot;'/dir1/dir2/data'yyyy/MM/dd/HH&quot;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>dstDirTimeByFile</b>
+	= <i>&quot;true</i><span lang="en-US"><i>/false</i></span><i>&quot;</i>
+	 Задаёт источник времени для формирования пути до целевого каталога
+	при dstDirTimeBased = &quot;true&quot;. Если false, то используется
+	системное время, если true - время файла (внимание, saveTime при
+	этом должен быть true, иначе получим системное время). По умолчанию
+	&mdash; true.</p>
+	<p class="western" style="margin-bottom: 0cm">После выполнения
+	операции перемещать исходный файл во входной каталог следующего
+	агента в цепочке. Значение по умолчанию &mdash; true.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>moveToNext</b>
+	= <i>&quot;true&quot;</i> . После выполнения операции перемещать
+	исходный файл во входной каталог следующего агента в цепочке.
+	Значение по умолчанию &mdash; true.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>s</b></span><b>martFtpRename</b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span><span lang="en-US"><span style="font-weight: normal">
+	</span></span><span lang="ru-RU"><span style="font-weight: normal">Значение
+	по умолчанию </span></span><span lang="en-US"><span style="font-weight: normal">&ldquo;true&rdquo;.
+	</span></span><span lang="ru-RU"><span style="font-weight: normal">Это
+	означает, что если</span></span><span lang="en-US"><span style="font-weight: normal">
+	</span></span>
+	</p>
+	<p class="western" style="margin-bottom: 0cm; font-weight: normal">1)
+	файл был успешно выгружен на ftp сервер в рабочий каталог
+	(ftpCacheDir),</p>
+	<p class="western" style="margin-bottom: 0cm; font-weight: normal">2)
+	но при переносе его в целевой каталог (ftpDstDir) случился таймаут, 
+	</p>
+	<p class="western" style="margin-bottom: 0cm"><span style="font-weight: normal">3)
+	и при этом последний ответ сервера был 350 (типовой ответ на </span><span lang="en-US"><span style="font-weight: normal">ftp
+	</span></span><span style="font-weight: normal">команду </span><span style="font-weight: normal">RNFR
+	- &laquo;rename from&raquo;)</span></p>
+	<p class="western" style="margin-bottom: 0cm; font-weight: normal">
+	- то считаем, что RNTO (rename to) мог отработать, только
+	подтверждение этого не было получено.</p>
+	<p class="western" style="margin-bottom: 0cm; font-weight: normal">Для
+	проверки этого помещаем имя файла в &quot;чёрный&quot; список на
+	отправку. Если при попытке отправки имя файла есть в
+	uploadBlackList, проверяем наличие файла в ftpCacheDir. Если файла
+	нет, считаем, что он был перенесён, т.е. файл уже был выгружен в
+	целевой каталог, иначе заново выгружаем файл.</p>
+	<p class="western" style="margin-bottom: 0cm; font-weight: normal">Ранее,
+	в случае ошибки переименования, независимо от её причины, файл
+	считался невыгруженным, и процедура обработки для него повторялась.
+	В тех случаях, когда файл был успешно переименован, но ответ не
+	дошёл до <span lang="en-US">FileChief</span> из-за сетевых проблем,
+	файл выгружался дважды, как &quot;&lt;filename&gt;&quot; и
+	&quot;&lt;filename&gt;.1&quot;.</p>
+</ul>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3144_475473340"></a><i><b>2.6.Агент
+<span lang="en-US">s</span>ftpUpload.</b></i></h2>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal">Аналог
+<span lang="en-US">ftpUpload, </span>но выгружаем файлы по протоколу
+<span lang="en-US">sftp. </span>Атрибуты аналогичны  <span lang="en-US">ftpUpload,
+</span>только порт по умолчанию 22, а <span lang="en-US">ftpActiveMode
+</span>не используется.</p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3790_664749018"></a><a name="2.7.Агент link.|outline"></a>
+<i><b>2.7.Агент <span lang="en-US">link</span>.</b></i></h2>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">Вспомогательный
+агент. Используется при описании цепочек агентов, в которых файлы
+агентами должны обрабатываться не последовательно, а параллельно.
+А</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">гент
+создаёт </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">жёсткие
+ссылки</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">
+на </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">каждый
+исходный </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">файл
+в каталогах </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal">srcDir
+</span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">тех
+дочерних агентов, которые должны его обработать. </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">После
+того, как для файла созданы все ссылки, он удаляется.</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">См.
+</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">т</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">акже
+ </span></font></font></font><a href="#3.3.Использование жёстких ссылок в работе цепочки агентов.|outline">использование
+жёстких ссылок</a><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">.
+</span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">П</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">ример
+использования:</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>&lt;link
+name=&rdquo;a1&rdquo; srcDir=&rdquo;/path&rdquo; &gt;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>	&lt;copy
+name=&rdquo;a2&rdquo; dstDir=&rdquo;/dstPath1&rdquo; /&gt;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload
+name=&rdquo;a3&rdquo; ftpDstDir=&rdquo;/remoteDstPath1&rdquo;..... /&gt;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload
+name=&rdquo;a4&rdquo; ftpDstDir=&rdquo;/remoteDstPath2&rdquo;..... /&gt;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>&lt;/link&gt;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading___Toc12171_1080271330"></a><i><b>2.8.Агент
+<span lang="en-US">demux</span>.</b></i></h2>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">Вспомогательный
+агент &mdash; </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">демультиплексор,
+последовательно перемещает файлы из srcDir в каталоги, описанные в
+dstDirList. </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">Разделитель
+имён каталогов в dstDirList: </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal">&lt;</span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">пробел</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal">&gt;&lt;</span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">точка
+с запятой</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal">&gt;&lt;</span></span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">пробел</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span lang="en-US"><span style="font-style: normal">&gt;.</span></span></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">Внимание!!!
+</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">Агент</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">
+ПЕРЕМЕЩАЕТ файлы </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">(в
+пределах одного раздела файловой системы)</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">,
+а не копирует их, как следствие, у него всегда moveToNext=false, т.е.
+ничего следующему за ним в цепочке агенту </span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">он
+</span></font></font></font><font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">не
+передаёт.</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Пример:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<font color="#000000"> </font><font color="#000000"> </font><font size="3" style="font-size: 12pt"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>&lt;demux
+name = &quot;mss_split&quot;</i></font></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>	srcDir
+= &quot;{in}/mssAll&quot;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>	dstDirList
+= &quot;{in}/Collector1 ; {in}/Collector2 ; {in}/Collector3 ;
+{in}/Collector4&quot;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>	dstFileLimit
+= &quot;2&quot;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><font color="#000000">
+ <font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>/&gt;</i></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">При
+таких настройках первый файл из srcDir перемещается в каталог
+{in}/Collector1, второй в {in}/Collector2, третий в {in}/Collector3,
+четвёртый в {in}/Collector4, пятый опять в {in}/Collector1 и т.д.
+Если в целевом каталоге будет более dstFileLimit файлов, то он будет 
+пропущен.</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__2890_1809441960"></a>3.Цепочки
+агентов.</h1>
+<p class="western" style="margin-bottom: 0cm">	Для построения более
+сложных схем обработки файлов, когда исходный файл должен поступить
+нескольким получателям, используются цепочки агентов. 
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;agent&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;agent/&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&hellip;.</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;agentN/&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;/agen1&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 150%"><font size="2" style="font-size: 10pt"><i><br/>
+</i></font>Агенты
+- <i>обработчики локальных файлов </i><span lang="en-US"><i>(copy,
+ftpUpload, sftpUpload)</i></span>, входящие в цепочку, после
+выполнения своей операции не удаляют исходный файл, а переносят его в
+исходный каталог (<b>srcDir</b>) следующего агента в цепочке.<br/>
+	Если
+исходный каталог для дочерних агентов не задан <span lang="en-US">(</span><span lang="ru-RU">что
+рекомендуется</span><span lang="en-US">)</span>, то он будет назначен
+автоматически. Все локальные каталоги <b>srcDir</b>, <b>cacheDir</b>
+, отсутствующие на момент запуска агента, создаются автоматически.
+Также автоматически создаётся каталог для временных файлов на ftp
+сервере <b>(ftpCacheDir)</b> для агентов <b>ftpUpload</b><span style="font-weight: normal">,</span><b>
+</b><span lang="en-US"><b>s</b></span><b>ftpUpload </b>.<br/>
+	В
+цепочке выделяется первый агент (родительский агент), и последующие
+(дочерние агенты) , которые описываются внутри родительского агента. 
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 150%"><a href="#solidAgent">Одиночный
+агент</a><span lang="ru-RU"> считается </span><span lang="ru-RU">вырожденной
+</span><span lang="ru-RU">цепочкой, состоящей только из
+агента-родителя.</span></p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3347_425227061"></a>3.1.Принципы
+построения цепочек</h2>
+<p class="western" style="margin-bottom: 0cm">	Агенты
+ftpDownload/sftpDownload не передают файлы следующим агентам <span lang="en-US">(</span><span lang="ru-RU">если
+не задано </span><a href="#createLinks"><span lang="en-US"><i>createLinks=&rdquo;true&rdquo;</i></span></a><span lang="en-US">)</span>,
+их задача только доставить удалённый файл в локальный каталог.
+Поэтому у следующего за ним агента  в цепочке <i>srcDir</i> <i>должен</i>
+указывать туда же, куда <i>dstDir</i> ftpDownload. <span lang="ru-RU">Для
+упрощения настройки агентов в цепочке</span><span lang="ru-RU">, </span><span lang="ru-RU">а
+также что бы избежать ошибок,</span><span lang="ru-RU"> </span><span lang="ru-RU">атрибут
+</span><span lang="ru-RU">srcDir</span><span lang="ru-RU"> дочерних
+</span><span lang="ru-RU">агентов </span><span lang="ru-RU"><b>лучше
+не задавать</b></span><span lang="ru-RU"> (без необходимости)</span><span lang="ru-RU">,
+тогда он буд</span><span lang="ru-RU">е</span><span lang="ru-RU">т
+настроен автоматически</span><span lang="ru-RU">. </span>
+</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	<span style="text-decoration: none"><b>Общий
+принцип построения цепочек, если источник файлов &ndash; удалённый</b></span>:</p>
+<p class="western" style="margin-bottom: 0cm">- головной
+агент-загрузчик</p>
+<p class="western" style="margin-bottom: 0cm">- и в нём столько
+агентов, сколько получателей.</p>
+<p class="western" style="margin-bottom: 0cm">Таким образом, для
+одного удалённого источника и трёх получателей (два локальных, один
+удалённый) получаем цепочку из четырёх агентов:</p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>&lt;ftpDownload
+<span lang="en-US">name=&rdquo;a1&rdquo; </span>&hellip; dstDir =
+&ldquo;<span lang="en-US">workDir</span>&rdquo; &gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>	&lt;copy
+name=&rdquo;a<span lang="en-US">2</span>&rdquo; <span lang="en-US">dstDir
+= &ldquo;</span><span lang="en-US">dstPath1&rdquo;</span> /&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>	&lt;copy
+name=&rdquo;<span lang="en-US">a</span><span lang="en-US">3</span>&rdquo;
+<span lang="en-US">dstDir = &ldquo;</span><span lang="en-US">dstPath2&rdquo;</span>
+/&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload
+name=&rdquo;a<span lang="en-US">4</span>&rdquo; &hellip;  <span lang="en-US">ftpD</span><span lang="en-US">stDir
+= &ldquo;</span><span lang="en-US">remoteDstPath3&rdquo;</span>  /&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>&lt;/ftpDownload&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	<b>Общий принцип
+построения цепочек, если источник файлов &ndash; </b><b>локальный.</b></p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">При
+</span>единственном локальным получателе никакой цепочки не надо,
+сразу грузим в нужный каталог:</p>
+<p class="western" style="margin-bottom: 0cm">&lt;ftpDownload  &hellip;
+dstDir = &rdquo;&hellip;&rdquo; /&gt;</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	Если же получателей
+больше, то в цепочке столько агентов, сколько получателей. Таким
+образом, для трёх получателей (два локальных, один удалённый)
+получаем цепочку из трёх агентов:</p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>&lt;copy
+name=&rdquo;a1&rdquo; srcDir=&rdquo;<span lang="en-US">localSrcDir</span>&rdquo;
+dstDir = &rdquo;<span lang="en-US">dstPath1</span>&rdquo;  /&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>	&lt;copy
+name=&rdquo;<span lang="en-US">a2</span>&rdquo; dstDir = &rdquo;<span lang="en-US">dstPath2</span>&rdquo;
+/&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload
+&hellip; ftpDstDir = &rdquo;<span lang="en-US">remoteDstPath3</span>&rdquo;
+/&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><i>&lt;/copy
+&gt;</i></font></p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3350_425227061"></a>3.2.Пример
+описания цепочки агентов.</h2>
+<p class="заметки-western" style="line-height: 100%">------------
+начало файла ---------------------------------<br/>
+&lt;?xml
+version=&quot;1.0&quot; encoding=&quot;windows-1251&quot;
+?&gt;<br/>
+&lt;fileChief pathSymbol = &quot;@&quot; port = &quot;8899&quot;
+&gt;<br/>
+ ...... <br/>
+&lt;!-- Начало цепочки. Родительский агент.
+Загружает файлы с ftp сервера &rarr;<br/>
+&lt;ftpDownload name =
+&quot;<span lang="en-US">agent1</span>&quot; <br/>
+	ftpServer =
+&quot;10.1.1.1&quot; ftpUser = &quot;user&quot; ftpPassword =
+&quot;pwd&quot;<br/>
+	ftpSrcDir = &quot;/data&quot; ftpActiveMode =
+&quot;true&quot;</p>
+<p class="заметки-western" style="line-height: 100%">	<span lang="en-US">delayBetween
+= &ldquo;5&rdquo;</span></p>
+<p lang="en-US" class="заметки-western" style="line-height: 100%">	ftpTimeout
+= &ldquo;30&rdquo;</p>
+<p lang="en-US" class="заметки-western" style="line-height: 100%">	reconnect
+= &ldquo;false&rdquo;</p>
+<p class="заметки-western" style="line-height: 100%">	dstDir =
+&quot;/home/down/<span lang="en-US">data</span>1&quot; &lt;-- этот
+каталог будет назначен в качестве srcDir 									следующему
+агенту<br/>
+	cacheDir =&quot;@/cache&quot;<br/>
+	fileMask =
+&quot;^cdr.*dat$&quot;<br/>
+ &gt;</p>
+<p class="заметки-western" style="line-height: 100%"><br/>
+ &lt;!--
+Дочерний агент 1, {:super} - ссылка на имя агента-родителя.  Делает
+копии для резервного копирования.и передаёт файлы в srcDir следующего
+агента.--&gt;</p>
+<p class="заметки-western" style="line-height: 100%"> &lt;copy name =
+&quot;{:super}_to_backup&quot; dstDir = &quot;/backup/<span lang="en-US">data1</span>&quot;
+/&gt;<br/>
+<br/>
+
+</p>
+<p class="заметки-western" style="line-height: 100%"><br/>
+&lt;!--
+Дочерний агент 2. Копирует файлы на обработчик №1 и передаёт файлы в
+srcDir следующего агента. Атрибут srcDir данного агента будет
+заполнен автоматически. 
+</p>
+<p class="заметки-western" style="line-height: 100%">--&gt;<br/>
+&lt;copy
+name = &quot;{:super}<span lang="en-US">_to_</span><span lang="en-US">dst1&rdquo;</span>
+dstDir = &quot;/home/input/<span lang="en-US">dst1</span>&quot;
+/&gt;<br/>
+<br/>
+&lt;!-- Дочерний агент 3. Отправляем файлы на
+обработчик №<span lang="en-US">2</span>. После обработки данным
+агентом файлы удаляются.--&gt;<br/>
+&lt;ftpUpload name =
+&quot;{:super}<span lang="en-US">_to_</span><span lang="en-US">dst2</span>&quot;
+<br/>
+ ftpServer = &quot;10.0.0.1&quot; ftpUser = &quot;<span lang="en-US">xxx</span>&quot;
+ftpPassword = &quot;<span lang="en-US">yyyy</span>&quot;<br/>
+
+ftpDstDir = &quot;/input/<span lang="en-US">ready</span>/<span lang="en-US">data1</span>&quot;
+ftpCacheDir = &quot;@/cache&quot;<br/>
+/&gt;<br/>
+&lt;!-- Конец
+цепочки. --&gt;<br/>
+&lt;/ftpDownload&gt;<br/>
+ ......
+<br/>
+&lt;fileChief&gt;<br/>
+------------ конец файла
+---------------------------------<br/>
+<br/>
+
+</p>
+<p class="заметки-western"><br/>
+
+</p>
+<p class="заметки-western"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3792_664749018"></a><a name="3.3.Использование жёстких ссылок в работе цепочки агентов.|outline"></a><a name="3.3.Использование жёстких ссылок в работе цепочки агентов.|outline"></a>
+3.3.<span lang="ru-RU">Использование жёстких ссылок в работе</span>
+цепочки агентов.</h2>
+<p class="western">	Рассмотрим две цепочки агентов, доставляющих
+исходные файлы двум потребителям:  в локальный каталог, и в удалённый
+каталог на <span lang="en-US">f</span><span lang="en-US">t</span><span lang="en-US">p
+</span>сервере.</p>
+<p class="western" style="line-height: 100%"><i><span style="text-decoration: none">Цепочка
+А.</span></i><i> Обрабатывает данные </i><i>из </i><i><u>удалённого</u></i><i>
+источника.</i></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;ftpDownload name=&rdquo;a<span lang="ru-RU">0</span>&rdquo;
+ftpSrcDir = &ldquo;/remote/dir&rdquo; dstDir=&rdquo;/path1/work&rdquo;
+ftpServer=&rdquo;...&rdquo; ... &gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;copy name=&rdquo;<span lang="ru-RU">a</span><span lang="ru-RU">1</span>&rdquo;
+dstDir=&rdquo;/path2/dst1&rdquo; /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a<span lang="ru-RU">2</span>&rdquo;
+ftpDstDir=&rdquo;/remotePath/dst2&rdquo; ftpServer=&rdquo;...&rdquo;
+...  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;/ftpDownload&gt;</i></font></p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p class="western" style="line-height: 100%"><i><span style="text-decoration: none">Цепочка
+Б.</span> Обрабатывает данные из <u>локального</u> источника.</i></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;copy name=&rdquo;a1&rdquo;
+ srcDir =&rdquo;/local/dir&rdquo; dstDir=&rdquo;/path2/dst1&rdquo; /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a2&rdquo;
+ftpDstDir=&rdquo;/remotePath/dst2&rdquo; ftpServer=&rdquo;...&rdquo;
+...  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;/ftpDownload&gt;</i></font></p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p class="western">	В этих цепочках каждый исходный файл будут
+сначала обработан агентом <span lang="en-US"><b>a1</b></span><span lang="en-US"><span style="font-weight: normal">,
+</span></span><span style="font-weight: normal">который затем
+переместит его в </span><span lang="en-US"><i><span style="font-weight: normal">srcDir</span></i></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span style="font-weight: normal">агента </span><b>a2</b><span style="font-weight: normal">,
+и только тогда его сможет обработать </span><b>a2</b><span style="font-weight: normal">.</span></p>
+<p class="western"><span style="font-weight: normal">Задержка
+поступления файла на вход агенту </span><b>a2 </b><span style="font-weight: normal">определяется
+значением </span><span style="font-weight: normal">атрибута
+</span><span lang="en-US"><i><span style="font-weight: normal">delayBetween</span></i></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span style="font-weight: normal">агент</span><span style="font-weight: normal">а</span><span style="font-weight: normal">
+</span><span lang="en-US"><b>a1</b></span><span lang="en-US"><span style="font-weight: normal">,
+</span></span><span style="font-weight: normal">а также временем,
+которое </span><span lang="en-US"><b>a1</b></span><span style="font-weight: normal">
+потратит на копирование файла.</span></p>
+<p class="western"><span style="font-weight: normal">К</span><span style="font-weight: normal">ак
+правило, это несколько секунд, подобные задержки на практике никакой
+роли не играют.</span></p>
+<p class="western">	Однако ситуация изменится, если в агент <b>а1</b><span style="font-weight: normal">
+будет добавлен атрибут </span><span lang="en-US"><i><span style="font-weight: normal">dsfFileLimit</span></i></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">либо
+</span></span><span lang="en-US"><i><span style="font-weight: normal">stopFlagFile</span></i></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">,
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">или
+же между агентами </span></span><span lang="en-US"><span style="font-style: normal"><b>a1</b></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">и
+</span></span><span lang="en-US"><span style="font-style: normal"><b>a2</b></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">будет
+вставлен агент </span></span><span style="font-style: normal"><b>а1х</b></span><span style="font-style: normal"><span style="font-weight: normal">
+(с типом </span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">ftpUpload</span></span></span><span style="font-style: normal"><span style="font-weight: normal">).</span></span></p>
+<p class="western"><span style="font-style: normal"><span style="font-weight: normal">Теперь
+время доставки файла </span></span><span style="font-style: normal"><span style="font-weight: normal">на
+вход агенту </span></span><span style="font-style: normal"><b>a2
+</b></span><span style="font-style: normal"><span style="font-weight: normal">зависит
+от дополнительных условий (возникновение очереди в целевом каталоге
+</span></span><span lang="en-US"><span style="font-style: normal"><b>a1,</b></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">приостановка
+работы агентом </span></span><span lang="en-US"><span style="font-style: normal"><b>a1
+</b></span></span><span style="font-style: normal"><span style="font-weight: normal">при
+обнаружении флаг-файла, проблемы с сервером  агента </span></span><span style="font-style: normal"><b>а1х</b></span><span style="font-style: normal"><span style="font-weight: normal">),
+и может значительно вырасти.</span></span></p>
+<p class="western"><span style="font-style: normal"><span style="font-weight: normal">	</span></span><span style="font-style: normal"><span style="font-weight: normal">Что
+можно сделать, что бы гарантировать отсутствие подобных з</span></span><span style="font-style: normal"><span style="font-weight: normal">адерж</span></span><span style="font-style: normal"><span style="font-weight: normal">е</span></span><span style="font-style: normal"><span style="font-weight: normal">к
+обработки файл</span></span><span style="font-style: normal"><span style="font-weight: normal">ов</span></span><span style="font-style: normal"><span style="font-weight: normal">
+? </span></span><span style="font-style: normal"><span style="font-weight: normal">Создать
+для каждого исходного файла жёсткие ссылки в каталогах </span></span><span lang="en-US"><i><span style="font-weight: normal">srcDir</span></i></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">всех
+агентов, работающих с локальными файлами </span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">(</span></span></span><span lang="en-US"><i><span style="font-weight: normal">copy,
+ftpUpload, sftpUpload</span></i></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">)</span></span></span><span style="font-style: normal"><span style="font-weight: normal">.
+</span></span>
+</p>
+<p class="western"><span style="font-style: normal"><span style="font-weight: normal">	Логично,
+если ссылки будет создавать головной агент, отвечающий за появление
+локальных файлов. Для цепочки А это агент  </span></span><span style="font-style: normal"><b>а0</b></span><span style="font-style: normal"><span style="font-weight: normal">.
+</span></span><span style="font-style: normal"><span style="font-weight: normal">У
+агентов с типами </span></span><span lang="en-US"><i><span style="font-weight: normal">ftpDownload,
+ sftpDownload</span></i></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">есть
+атрибут </span></span><a href="#createLinks">createLinks</a><span lang="en-US"><i><span style="font-weight: normal">.</span></i></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">Задав
+</span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">createLinks=&rdquo;true&rdquo;,
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">мы
+разрешаем агенту создавать ссылки </span></span><span style="font-style: normal"><span style="font-weight: normal">на
+исходный файл</span></span><span style="font-style: normal"><span style="font-weight: normal">
+в </span></span><span lang="en-US"><i><span style="font-weight: normal">srcDir</span></i></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">всех
+агентов, которые должны </span></span><span style="font-style: normal"><span style="font-weight: normal">этот
+файл </span></span><span style="font-style: normal"><span style="font-weight: normal">обработать.</span></span></p>
+<p class="western" style="line-height: 100%"><i><span style="text-decoration: none"><span style="font-weight: normal">Цепочка
+А. </span></span></i><i><span style="font-weight: normal">Вариант с
+использованием жёстких ссылок.</span></i></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;ftpDownload name=&rdquo;a<span lang="ru-RU">0</span>&rdquo;
+ftpSrcDir = &ldquo;/remote/dir&rdquo; dstDir=&rdquo;/path1/work&rdquo;
+ftpServer=&rdquo;...&rdquo; ... </i></font>
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	<font color="#ff0000"><b>createLinks
+= &ldquo;true&rdquo;</b></font>&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;copy name=&rdquo;<span lang="ru-RU">a</span><span lang="ru-RU">1</span>&rdquo;
+dstDir=&rdquo;/path2/dst1&rdquo; /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a<span lang="ru-RU">2</span>&rdquo;
+ftpDstDir=&rdquo;/remotePath/dst2&rdquo; ftpServer=&rdquo;...&rdquo;
+...  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;/ftpDownload&gt;</i></font></p>
+<p class="western" style="font-style: normal; font-weight: normal"><br/>
+<br/>
+
+</p>
+<p class="western"><span style="font-style: normal"><span style="font-weight: normal">	Но
+для цепочки Б такой вариант не подходит. Файлы уже существуют
+локально, кто-то должен сделать на них ссылки, но это не может быть
+ни один из агентов цепочки, </span></span><span style="font-style: normal"><span style="font-weight: normal">так
+как его работа может быть приостановлена.</span></span></p>
+<p class="western"><span style="font-style: normal"><span style="font-weight: normal">	В
+таком случае мы </span></span><span style="font-style: normal"><span style="font-weight: normal">размещаем
+во главе </span></span><span style="font-style: normal"><span style="font-weight: normal">цепочк</span></span><span style="font-style: normal"><span style="font-weight: normal">и</span></span><span style="font-style: normal"><span style="font-weight: normal">
+вспомогательн</span></span><span style="font-style: normal"><span style="font-weight: normal">ый</span></span><span style="font-style: normal"><span style="font-weight: normal">
+агент </span></span><a href="#2.7.Агент link.|outline"><i><span style="font-weight: normal">link</span></i></a><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">,
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">и
+переносим в него атрибут </span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">srcDir
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">из
+агента, бывшего до этого первым (</span></span><span lang="en-US"><span style="font-style: normal"><b>a1</b></span></span><span style="font-style: normal"><span style="font-weight: normal">).
+</span></span>
+</p>
+<p class="western" style="line-height: 100%"><i><span style="text-decoration: none">Цепочка
+Б.</span> <span style="font-weight: normal">Вариант с использованием
+жёстких ссылок.</span></i></p>
+<p lang="en-US" class="western" style="line-height: 100%"><font color="#ff0000"><i><b><font size="2" style="font-size: 10pt">&lt;</font><font size="2" style="font-size: 10pt">link
+name=&rdquo;a0&rdquo; </font><font size="2" style="font-size: 10pt">srcDir
+=&rdquo;/</font><font size="2" style="font-size: 10pt">local/dir</font><font size="2" style="font-size: 10pt">&rdquo;
+/</font><font size="2" style="font-size: 10pt">&gt;</font></b></i></font></p>
+<p class="western" style="line-height: 100%"><i><font size="2" style="font-size: 10pt"><span lang="en-US">	&lt;copy
+name=&rdquo;a</span></font><font size="2" style="font-size: 10pt"><span lang="en-US">1</span></font><font size="2" style="font-size: 10pt"><span lang="en-US">&rdquo;
+ dstDir=&rdquo;/path2/dst1&rdquo; /&gt;</span></font></i></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a2&rdquo;
+ftpDstDir=&rdquo;/remotePath/dst2&rdquo; ftpServer=&rdquo;...&rdquo;
+...  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font color="#ff0000"><font size="2" style="font-size: 10pt"><i><b>&lt;/link&gt;</b></i></font></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="line-height: 150%"><i><b>Внимание!</b><span style="font-weight: normal">
+У </span><span lang="en-US"><span style="font-weight: normal">агент</span></span><span style="font-weight: normal">ов</span><span style="font-weight: normal">
+</span><b>а1, а</b><b>2</b><span style="font-weight: normal"> при
+этом </span><b>не </b><b>должен быть</b><span style="font-weight: normal">
+</span><span style="font-weight: normal">тот же </span><span lang="en-US"><span style="font-weight: normal">srcDir,
+</span></span><span style="font-weight: normal">что и у </span><b>а0.
+</b><span style="font-weight: normal">А</span><span style="text-decoration: none"><span style="font-weight: normal">
+</span></span><span style="text-decoration: none"><span style="font-weight: normal">лучше
+вообще не задаём его &mdash; </span></span><span style="text-decoration: none"><span style="font-weight: normal">тогда
+</span></span><span lang="en-US"><span style="text-decoration: none"><span style="font-weight: normal">srcDir
+</span></span></span><span style="text-decoration: none"><span style="font-weight: normal">будет
+настроен автоматически.</span></span></i></p>
+<p class="western" style="font-weight: normal; line-height: 100%"><br/>
+<br/>
+
+</p>
+<p class="western"><span style="font-style: normal"><span style="font-weight: normal">	</span></span><span style="font-style: normal"><span style="font-weight: normal">Полученные
+конфигурации обеспечивают одновременную обработку файлов дочерними
+агентами. Но их можно ещё оптимизировать. </span></span>
+</p>
+<p class="western" style="line-height: 100%"><span style="font-style: normal"><span style="font-weight: normal">	Если</span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">:</span></span></span></p>
+<p class="western" style="line-height: 100%"><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">-</span></span></span><span style="font-style: normal"><span style="font-weight: normal">
+агент </span></span><i><span lang="en-US"><span style="font-weight: normal">copy</span></span></i><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">не
+должен производить изменение файла (упаковка/распаковка)</span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">,</span></span></span></p>
+<p class="western" style="font-style: normal; font-weight: normal; line-height: 100%">
+- после обработки, файл передавать следующему агенту не надо,</p>
+<p class="western" style="line-height: 100%"><span style="font-style: normal"><span style="font-weight: normal">-
+</span></span><i><span lang="en-US"><span style="font-weight: normal">dstDir</span></span></i><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span style="font-style: normal"><span style="font-weight: normal">находится
+на том же разделе диска,</span></span></p>
+<p class="western" style="line-height: 100%"><span style="font-style: normal"><span style="font-weight: normal">то
+можно разрешить не копировать файл, а перемещать его, задав </span></span><i><span lang="en-US"><span style="font-weight: normal">cacheDir
+= &ldquo;&rdquo;.</span></span></i></p>
+<p class="western" style="line-height: 100%; text-decoration: none"><br/>
+<br/>
+
+</p>
+<p class="western" style="line-height: 100%"><i><span style="text-decoration: none">Цепочка
+Б.</span> <span style="font-weight: normal">Вариант с использованием
+жёстких ссылок </span><span style="font-weight: normal">и переноса
+файлов</span><span style="font-weight: normal">.</span></i></p>
+<p lang="en-US" class="western" style="line-height: 100%"><font color="#ff0000"><i><b><font size="2" style="font-size: 10pt">&lt;</font><font size="2" style="font-size: 10pt">link
+name=&rdquo;a0&rdquo; </font><font size="2" style="font-size: 10pt">srcDir
+=&rdquo;...&rdquo; /</font><font size="2" style="font-size: 10pt">&gt;</font></b></i></font></p>
+<p class="western" style="line-height: 100%"><i><font size="2" style="font-size: 10pt"><span lang="en-US">	&lt;copy
+name=&rdquo;a</span></font><font size="2" style="font-size: 10pt"><span lang="en-US">1</span></font><font size="2" style="font-size: 10pt"><span lang="en-US">&rdquo;
+ </span></font><font color="#ff0000"><font size="2" style="font-size: 10pt"><span lang="en-US"><b>cacheDir
+= &ldquo;&rdquo;</b></span></font></font><font size="2" style="font-size: 10pt"><span lang="en-US">
+dstDir=&rdquo;/path2/dst1&rdquo; /&gt;</span></font></i></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a2&rdquo;
+ftpDstDir=&rdquo;/remotePath/dst2&rdquo; ftpServer=&rdquo;...&rdquo;
+...  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font color="#ff0000"><font size="2" style="font-size: 10pt"><i><b>&lt;/link&gt;</b></i></font></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<font size="3" style="font-size: 12pt">	Жесткие ссылки можно
+создавать лишь в пределах одного раздела. Можно ли гарантировать
+отсутствие задержек обработки файлов без использования жёстких ссылок
+? Рассмотрим цепочку В. </font>
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; font-weight: normal; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="line-height: 100%"><i><span style="text-decoration: none">Цепочка
+</span><span style="text-decoration: none">В</span><span style="text-decoration: none">.</span>
+</i>
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;copy name=&rdquo;a1&rdquo;
+ srcDir =&rdquo;/local/dir&rdquo; dstDir=&rdquo;/path2/dst1&rdquo; /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a2&rdquo;
+ftpDstDir=&rdquo;/remotePath/dst2&rdquo; ftpServer=&rdquo;Server1&rdquo;
+...  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a<span lang="ru-RU">3</span>&rdquo;
+ftpDstDir=&rdquo;/remotePath/dst<span lang="ru-RU">3</span>&rdquo;
+ftpServer=&rdquo;.Server2&rdquo; ...  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; font-weight: normal; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;/ftpDownload&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; font-weight: normal; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<font size="3" style="font-size: 12pt">Агенты <b>а2</b> и <b>а3
+</b>одного типа &mdash; <span lang="en-US">ftpUpload. </span>При
+проблемах с доставкой файлов агентом <b>а2</b> (сбой на <span lang="en-US">ftp-</span>сервере
+<span lang="en-US">Server1</span>)<span lang="en-US"> </span>мы
+получим и задержку доставки файлов агентом <b>а3</b>. Если
+нежелательно использовать жесткие ссылки, но надо обеспечить доставку
+файлов агентом <b>а3 </b>независимо от <b>а2</b> , то можно настроить
+такую конфигурацию:</font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="line-height: 100%"><i><span style="text-decoration: none">Цепочка
+</span><span style="text-decoration: none">В</span><span style="text-decoration: none">2</span><span style="text-decoration: none">.</span>
+</i>
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;copy name=&rdquo;a1&rdquo;
+ srcDir =&rdquo;/local/dir&rdquo; dstDir=&rdquo;/path2/dst1&rdquo; /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font color="#ff3366"><font size="2" style="font-size: 10pt"><i><b>	&lt;copy
+name=&rdquo;b1&rdquo; dstDir=&rdquo;/local/dst_b1&rdquo; /&gt;</b></i></font></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font color="#ff3366"><font size="2" style="font-size: 10pt"><i><b>	&lt;copy
+name=&rdquo;b2&rdquo; dstDir=&rdquo;/local/dst_b2&rdquo; moveToNext =
+&ldquo;false&rdquo; /&gt;</b></i></font></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a2&rdquo;
+<font color="#ff3366"><b>s</b></font><font color="#ff3366"><b>rc</b></font><font color="#ff3366"><b>Dir=&rdquo;/</b></font><font color="#ff3366"><b>local</b></font><font color="#ff3366"><b>/dst_</b></font><font color="#ff3366"><b>b1</b></font><font color="#ff3366"><b>&rdquo;
+</b></font>ftpDstDir=&rdquo;/remotePath/dst2&rdquo;
+ftpServer=&rdquo;Server1&rdquo; ... 	<font color="#ff3366"><b>moveToNext
+= &ldquo;false&rdquo;</b></font> /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>	&lt;ftpUpload name=&rdquo;a<span lang="ru-RU">3</span>&rdquo;
+<font color="#ff3366"><b>s</b></font><font color="#ff3366"><b>rc</b></font><font color="#ff3366"><b>Dir=&rdquo;/</b></font><font color="#ff3366"><b>local</b></font><font color="#ff3366"><b>/dst_</b></font><font color="#ff3366"><b>b2</b></font><font color="#ff3366"><b>&rdquo;
+</b></font>ftpDstDir=&rdquo;/remotePath/dst<span lang="ru-RU">3</span>&rdquo;
+ftpServer=&rdquo;Server2&rdquo; &hellip; 	<font color="#ff3366"><b>moveToNext
+= &ldquo;false&rdquo;</b></font>  /&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; font-weight: normal; line-height: 100%">
+<font size="2" style="font-size: 10pt"><i>&lt;/ftpDownload&gt;</i></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0.11cm; font-weight: normal; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<font size="3" style="font-size: 12pt">	Теперь в цепочке после <b>а1</b>
+идут агенты <span lang="en-US"><b>b1</b></span><span lang="en-US"> </span>и<span lang="en-US">
+</span><span lang="en-US"><b>b2</b></span><span lang="en-US">,
+</span>которые создают копии исходного файла в каталогах
+<b>/</b><span lang="en-US"><b>local/dst_b1</b></span> и
+<b>/</b><span lang="en-US"><b>local/dst_b</b></span><b>2</b>. Причём
+у агента <span lang="en-US"><b>b2</b></span><span lang="en-US"> </span>в
+конфигурации указано <font color="#000000"><span lang="en-US"><b>moveToNext
+= &ldquo;false&rdquo;</b></span></font><font color="#000000"><span lang="en-US">.
+</span></font><font color="#000000">Тем самым мы запрещаем </font><font color="#000000">агент</font><font color="#000000">у</font><font color="#000000">
+</font><font color="#000000"><span lang="en-US"><b>b2 </b></span></font><font color="#000000">после
+копирования исходного файла передавать его следующему агенту в
+цепочке. </font><font color="#000000">А </font><font color="#000000"><span lang="en-US"><i>srcDir</i></span></font><font color="#000000"><span lang="en-US">
+</span></font><font color="#000000">следующего агента (</font><font color="#000000"><b>а2</b></font><font color="#000000">)
+ настроен на </font><font color="#000000"><b>/</b></font><font color="#000000"><span lang="en-US"><b>local/dst_b1
+</b></span></font><font color="#000000">(вот один из тех редких
+случаев, когда нужно явно задавать значение </font><font color="#000000"><span lang="en-US"><i>srcDir
+</i></span></font><font color="#000000">для</font><font color="#000000"><i>
+</i></font><font color="#000000">дочернего агента</font><font color="#000000">).
+У агента  </font><font color="#000000"><b>а2 </b></font><font color="#000000">также
+видим </font><font color="#000000"><span lang="en-US"><b>moveToNext =
+&ldquo;false&rdquo;</b></span></font><font color="#000000"><span lang="en-US">,</span></font></font></p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<font size="3" style="font-size: 12pt"><font color="#000000">то есть
+и он будет лишь отправлять файл по </font><font color="#000000"><span lang="en-US">ftp,
+</span></font><font color="#000000">без передачи следующему агенту.</font></font></p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<font size="3" style="font-size: 12pt"><font color="#000000">Атрибут
+</font><font color="#000000"><span lang="en-US"><i>srcDir</i></span></font><font color="#000000"><span lang="en-US">
+</span></font><font color="#000000">следующего агента (</font><font color="#000000"><b>а</b></font><font color="#000000"><b>3</b></font><font color="#000000">)
+ настроен на </font><font color="#000000"><b>/</b></font><font color="#000000"><span lang="en-US"><b>local/dst_b</b></span></font><font color="#000000"><b>2</b></font><font color="#000000">.
+Итак, мы сначала создаём две локальные копии файла, а затем
+отправляем их независимыми друг от друга агентами. 	Можно ли вынести
+</font><font color="#000000"><b>а</b></font><font color="#000000"><span lang="en-US"><b>2</b></span></font><font color="#000000"><span lang="en-US">
+</span></font><font color="#000000">и </font><font color="#000000"><b>а</b></font><font color="#000000"><span lang="en-US"><b>3</b></span></font><font color="#000000"><span lang="en-US">
+</span></font><font color="#000000">из цепочки и оформить их как
+одиночных агентов, раз они  независимые ? Можно, но нецелесообразно.
+</font><font color="#000000">Включение в цепочку </font><font color="#000000"><b>а</b></font><font color="#000000"><span lang="en-US"><b>2</b></span></font><font color="#000000"><span lang="en-US">
+</span></font><font color="#000000">и </font><font color="#000000"><b>а</b></font><font color="#000000"><span lang="en-US"><b>3
+</b></span></font><font color="#000000"><span lang="en-US">
+</span></font><font color="#000000">подчёркивает их участие в едином
+процессе обработки.</font><font color="#000000"> </font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<font size="3" style="font-size: 12pt"><font color="#000000">	</font><font color="#000000">А
+нужен ли </font><font color="#000000"><span lang="en-US"><b>moveToNext
+= &ldquo;false&rdquo; </b></span></font><font color="#000000">в
+агенте </font><font color="#000000"><b>а3</b></font><font color="#000000">
+? Строго говоря, нет. Ведь </font><font color="#000000"><b>а3</b></font><font color="#000000">
+последний в цепочке, и передавать файл после обработки ему просто
+некому. Добавлен он для единообразия с </font><font color="#000000"><b>а2</b></font><font color="#000000">.
+А также как предупреждение тому, кто будет редактировать данную
+цепочку с целью добавить в неё ещё получателей - &laquo;внимание,
+есть нюансы&raquo;.</font></font></p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 150%">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0.11cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__2892_1809441960"></a>4.Параметры.</h1>
+<p class="western" style="margin-bottom: 0cm">	Параметр - именованная
+строка. Один раз задав значение параметра, можно в дальнейшем
+ссылаться на него по имени. По области видимости параметры делятся на
+глобальные и локальные.</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__2894_1809441960"></a>4.1.Глобальные
+параметры.</h2>
+<p class="western" style="margin-bottom: 0cm">	Глобальные параметры
+содержат значения, доступные всем агентам. Задаются внутри корневого
+элемента конфигурации (fileChief) следующим образом:<br/>
+	<b>&lt;param
+name=&quot;имя параметра&quot; value=&quot;значение параметра&quot;
+/&gt;</b> .<br/>
+	Имя параметра может содержать буквы (латиница),
+цифры, и подчерк ('_'), <i><span style="font-weight: normal">должно
+начинаться </span></i><span lang="ru-RU"><i><span style="font-weight: normal">с</span></i></span><i><span style="font-weight: normal">
+букв</span></i><span lang="ru-RU"><i><span style="font-weight: normal">ы</span></i></span>,
+может быть длиной от 2 до 40 <span lang="ru-RU">символов</span><span lang="en-US">.</span>
+</p>
+<p class="western" style="margin-bottom: 0cm">Для подстановки
+значения параметра в нужном месте конфигурации, используется
+выражение <span lang="en-US"><b>{&lt;</b></span><b>имя параметра</b><span lang="en-US"><b>&gt;}</b></span>
+.</p>
+<p class="western" style="margin-bottom: 0cm">Пример использования: 
+</p>
+<p class="заметки-western" style="line-height: 150%">------------
+начало файла ---------------------------------<br/>
+&lt;?xml
+version=&quot;1.0&quot;?&gt; <br/>
+&lt;fileChief pathSymbol = &quot;@&quot;
+port=&quot;<span lang="en-US">8</span><span lang="en-US">899</span>&quot;
+&gt;</p>
+<p class="заметки-western" style="line-height: 150%"><span lang="en-US">&lt;param
+name=&rdquo;</span><span lang="en-US"><b>baseDir</b></span><span lang="en-US">&rdquo;
+value=&ldquo;/var/input&rdquo;/&gt;</span><br/>
+ .....<br/>
+<span lang="en-US">&lt;copy
+name=&rdquo;..&rdquo; &hellip; dstDir = &ldquo;{</span><span lang="en-US"><b>baseDir</b></span><span lang="en-US">}/subdir&rdquo;
+ .../&gt;</span></p>
+<p class="заметки-western" style="line-height: 150%">&hellip;<span lang="en-US">..</span><br/>
+&lt;/fileChief&gt;<br/>
+------------
+конец файла ---------------------------------<br/>
+<br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__2896_1809441960"></a><a name="ЛокальныеПараметры"></a>
+4.2.Локальные параметры.</h2>
+<p class="western" style="margin-bottom: 0cm">	Локальные параметры
+содержат значения, доступные всем агентам только той цепочки, в
+которой были заданы. Задаются внутри <span lang="ru-RU">агента</span>
+следующим образом:</p>
+<p class="western" style="margin-bottom: 0cm"><font size="2" style="font-size: 11pt"><b>	&lt;тип_агента
+....&gt;<br/>
+		&lt;param name=&quot;имя параметра&quot;
+value=&quot;значение параметра&quot; /&gt; <br/>
+	&lt;/тип_агента&gt;</b></font></p>
+<p class="western" style="margin-bottom: 0cm">	Имя может содержать
+буквы (латиница), цифры, и подчерк ('_'), <i>должно начинаться
+двоеточием</i>, <i>за которым следует буква</i>, может быть длиной от
+3 до 40 символов. <br/>
+	Имя &laquo;<b>:super&raquo;</b>
+зарезервировано. Параметр с этим именем заполняется, при
+инициализации цепочки агентов, именем родительского агента цепочки.</p>
+<p class="western" style="margin-bottom: 0cm; font-weight: normal"><br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__2898_1809441960"></a>5.Шаблоны.</h1>
+<p class="western" style="margin-bottom: 0cm">	Построение цепочек
+агентов позволяет выстраивать самые разнообразные схемы передачи
+файлов. Однако набивать, внося небольшие изменения, одну и ту же
+конфигурацию цепочки агентов для обработки файлов от десятков
+источников не очень удобно, к тому же можно ненароком внести ошибку.
+Поэтому в <span lang="en-US">F</span>ileChief был реализован механизм
+шаблонов, позволяющий более лаконично описывать типовые узлы/цепочки.
+<br/>
+	<i><span style="font-weight: normal">Шаблон</span></i> - агент
+или цепочка агентов, описанные в в секции fileChief/patterns файла
+конфигурации. 
+</p>
+<p class="заметки-western" style="line-height: 150%">------------
+начало файла ---------------------------------<br/>
+&lt;?xml
+version=&quot;1.0&quot;?&gt; <br/>
+&lt;fileChief pathSymbol = &quot;@&quot;
+port=&quot;<span lang="en-US">8</span><span lang="en-US">899</span>&quot;
+&gt;<br/>
+ .....<br/>
+<b>&lt;patterns&gt;<br/>
+&lt;!-- Описание
+шаблонов --&gt;<br/>
+&lt;/patterns&gt;</b><br/>
+ .......<br/>
+&lt;!--
+Описание агентов --&gt;<br/>
+&lt;/fileChief&gt;<br/>
+------------
+конец файла ---------------------------------<br/>
+ 
+</p>
+<p class="western" style="margin-bottom: 0cm">	Для того, чтобы
+применить шаблон к агенту/цепочке, необходимо указать имя шаблона в
+атрибуте <b>pattern</b>. То, как именно шаблон применится, зависит от
+значения атрибута <b>applyMethod</b>.<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	Возможные значения
+атрибута <b>applyMethod</b>:</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>set</b>  -
+	простое наложение атрибутов на существующих агентов цепочки, то есть
+	копирование значений атрибутов шаблона в одноимённые незаполненные
+	атрибуты. Если значение атрибута агента уже задано, шаблон его не
+	изменит.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>add</b></span><b>
+	</b> - <span lang="ru-RU"><span style="font-style: normal">создание
+	цепочки агентов из одиночного узла и шаблона цепочки, с добавлением
+	недостающих агентов, </span></span><span lang="ru-RU"><span style="font-style: normal">плюс
+	наложение атрибутов</span></span>.</p>
+	<li/>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><b>append</b>
+	-  <span lang="ru-RU"><span style="font-style: normal">создание
+	цепочки агентов из цепочки и шаблона цепочки, с добавлением
+	недостающих агентов, </span></span><span lang="ru-RU"><span style="font-style: normal">плюс
+	наложение атрибутов</span></span><span lang="ru-RU"><span style="font-style: normal">.</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b>after</b> <span lang="en-US">-
+	</span>вставка дочерних агентов из шаблона в хвост цепочки, <span lang="ru-RU"><span style="font-style: normal">,
+	</span></span><span lang="ru-RU"><span style="font-style: normal">плюс
+	наложение атрибутов</span></span>.</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>b</b></span><b>efore</b>
+	<span lang="en-US">-</span> вставка дочерних агентов из шаблона
+	сразу после узла-родителя (перед первым дочерним узлом), с
+	последующим наложением атрибутов.</p>
+</ul>
+<p class="western" style="margin-bottom: 0cm">	</p>
+<p class="western" style="margin-bottom: 0cm">	Действие <span lang="en-US"><b>add</b></span><span lang="en-US">
+</span>и <span lang="en-US"><b>append</b></span><span lang="en-US">
+</span>одно и тоже, зачем это понадобилось, почему бы не обойтись
+одним <span lang="en-US"><b>add</b></span> ? Чтобы исключить
+возможность ошибки в ситуации, когда одиночному агенту, к которому
+применён шаблон методом <span lang="en-US"><b>add</b></span><span lang="en-US"><span style="font-weight: normal">,
+</span></span><span style="font-weight: normal">добавляется дочерний
+агент &mdash; без правки applyMethod. </span><span lang="en-US"><span style="font-weight: normal">FileChief
+</span></span><span style="font-weight: normal">посчитает такую
+конфигурацию неверной и не запустится, пока  applyMethod не будет
+изменён на один из 3-х разрешённых для цепочки. вариантов
+(</span><span lang="en-US"><span style="font-weight: normal">append</span></span><span style="font-weight: normal">/</span><span lang="en-US"><span style="font-weight: normal">after</span></span><span style="font-weight: normal">/</span><span lang="en-US"><span style="font-weight: normal">before</span></span><span style="font-weight: normal">).</span></p>
+<p class="western" style="margin-bottom: 0cm">	Если к одному узлу
+надо применить несколько шаблонов, их имена указываются через
+разделитель - точка с запятой, в порядке убывания приоритета. То же
+самое для <b>applyMethod</b>.<br/>
+	 Если применяется единственный
+шаблон методом <b>set</b>, то атрибут <b>applyMethod</b> можно не
+заполнять.</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3123_1809441960"></a>5.1.Пример
+простого шаблона. 
+</h2>
+<p class="western" style="margin-bottom: 0cm">	Допустим, необходимо
+загружать несколько потоков файлов с одного ftp сервера. Тогда,
+описав один раз шаблон</p>
+<p class="заметки-western" style="line-height: 150%">&lt;patterns&gt;<br/>
+....<br/>
+&lt;ftpDownload
+name = &quot;<b>pLoadFromSrv1</b>&quot; <br/>
+	ftpServer = &quot;10.0.0.1&quot;
+ftpUser = &quot;user&quot; ftpPassword = &quot;pwd&quot; 
+<br/>
+	ftpActiveMode = &quot;false&quot; ftpTimeout =
+&quot;60&quot;<br/>
+	delayBetween = &quot;10&quot; reconnect =
+&quot;false&quot; saveTime = &quot;false&quot;<br/>
+	cacheDir =
+&quot;@/temp&quot; /&gt;<br/>
+....<br/>
+&lt;/patterns&gt;<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"> мы можем использовать
+его, указывая в агентах только исходный и целевой каталоги<span lang="en-US">:</span></p>
+<p class="заметки-western" style="line-height: 150%">&lt;ftpDownload
+name = &quot;sms&quot; pattern = &quot;<b>pLoadFromSrv1</b>&quot; <br/>
+
+ftpSrcDir = &quot;/data/sms&quot; <br/>
+ dstDir = &quot;/input/data/sms&quot;
+&gt;<br/>
+&lt;/ftpDownload&gt;<br/>
+....<br/>
+&lt;ftpDownload name =
+&quot;<span lang="en-US">agentXXX</span>&quot; pattern =
+&quot;<b>pLoadFromSrv1</b>&quot; <br/>
+ ftpSrcDir = &quot;/data/mms&quot;
+dstDir = &quot;/input/data/mms&quot; &gt;<br/>
+&lt;/ftpDownload&gt;<br/>
+<br/>
+
+</p>
+<p class="заметки-western"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3125_1809441960"></a>5.2.Пример
+шаблона для цепочки агентов. 
+</h2>
+<p class="western" style="margin-bottom: 0cm">	Пусть типовая цепочка
+включает в себя: загрузку файла с ftp сервера, копирование под
+обработку, перемещение в каталог для резервного копирования.<br/>
+	Тогда
+шаблон может выглядеть так<span lang="en-US">:</span></p>
+<p class="заметки-western">&lt;patterns&gt;<br/>
+....<br/>
+&lt;ftpDownload
+</p>
+<p class="заметки-western">	name = &quot;<b>pChain</b>&quot; 
+</p>
+<p class="заметки-western">	 delayBetween = &quot;10&quot; &lt;--
+проверять наличие новых файлов р<span lang="ru-RU">аз в</span> 10
+секунд.</p>
+<p class="заметки-western"><span lang="en-US">	r</span>econnect =
+&quot;false&quot; &lt;-- сохранять ftp сессию</p>
+<p class="заметки-western">	saveTime = &quot;false&quot;&lt;-- не
+сохранять оригинальное время файла</p>
+<p class="заметки-western">	cacheDir = &quot;@/temp&quot; 
+</p>
+<p class="заметки-western">	dstDir = &quot;/input/data/<b>{:super}</b>&quot;
+</p>
+<p class="заметки-western">&gt;</p>
+<p class="заметки-western">	&lt;copy name = &quot;<b>{:super}</b><span lang="en-US">_to_</span><span lang="en-US">dst&rdquo;</span>
+dstDir = &quot;<b>{in}</b>/<span lang="en-US">ready</span>/<b>{:data}</b>&quot;
+/&gt;</p>
+<p class="заметки-western">	&lt;copy name = &quot;<b>{:super}</b>_to_backup&quot;
+dstDir = &quot;<b>{in}</b>/toBackup/<b>{:data}&quot;</b> /&gt;</p>
+<p class="заметки-western">&lt;/ftpDownload&gt;<br/>
+
+....<br/>
+&lt;/patterns&gt;<br/>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">где <b>{in}</b> -
+ссылка на значение глобального параметра &laquo;<b>in&raquo;</b>,
+общий путь для всех входящих файловых потоков; <br/>
+<b>{:super} </b>-
+ссылка на имя узла-родителя, <br/>
+<b>{:data} </b>- ссылка на
+значение локального параметра &laquo;<b>:data&raquo;</b><span style="font-weight: normal">.</span><br/>
+<br/>
+	Строим
+цепочку на основе описанных выше шаблонов.</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="заметки-western">&lt;ftpDownload name = &quot;<span lang="en-US">cdr1</span>&quot;</p>
+<p class="заметки-western">	pattern = &quot;<b>pLoadFromSrv1; </b><span lang="en-US"><b>pChain</b></span><span lang="en-US">&quot;
+applyMethod</span> = &quot;<b>set; add</b>&quot;</p>
+<p class="заметки-western">	ftpSrcDir = <span lang="en-US">&quot;/data/cdr&quot;</span>
+&gt;</p>
+<p class="заметки-western">	&lt;param name = <span lang="en-US">&quot;</span><span lang="en-US"><b>{:</b></span><b>data</b><span lang="en-US"><b>}</b></span>&quot;
+value = &quot;<span lang="en-US"><b>cdr1</b></span>&quot;/&gt;<br/>
+&lt;/ftpDownload&gt;</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	Если же вместо
+локального параметра <b>&laquo;:data&raquo;</b> в атрибутах <b>dstDir</b>
+шаблона прописать <b>&laquo;:super&raquo;</b>, то описание всей
+цепочки при помощи шаблона сократится до:</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="заметки-western">&lt;ftpDownload name = &quot;<span lang="en-US">cdr1</span>&quot;
+</p>
+<p class="заметки-western">	pattern = &quot;pLoadFromSrv1; pChain&quot;
+ applyMethod = &quot;set; add&quot;</p>
+<p class="заметки-western">	ftpSrcDir = &quot;/data/<span lang="en-US">cdr</span>&quot;
+ /&gt;</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+	Предположим, в
+конец данной цепочки необходимо добавить агента, например ftpUpload,
+для отправки файла ещё куда-нибудь. Это может быть сделано следующим
+образом: 
+</p>
+<p class="заметки-western">&lt;ftpDownload name = &quot;msc1_spb&quot;
+</p>
+<p class="заметки-western">	pattern = &quot;pLoadFromSrv1; pChain&quot;
+applyMethod = &quot;set; <b>before</b>&quot;</p>
+<p class="заметки-western">	ftpSrcDir = &quot;/data/msc1&quot; &gt;</p>
+<p class="заметки-western"><br/>
+
+</p>
+<p class="заметки-western">	<b>&lt;ftpUpload name =
+&quot;{:super}_upload_to...&quot; .................... /&gt;</b></p>
+<p class="заметки-western"><br/>
+
+</p>
+<p class="заметки-western">&lt;/ftpDownload&gt;</p>
+<p class="заметки-western"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><b>	</b><i><b>Настоятельно
+рекомендуется</b></i><b> :</b> после создания шаблона использовать
+запуск <span lang="en-US">F</span>ileChief-а в <a href="#ЗапускТестовый">тестовом
+режиме</a>, дабы убедиться, что использование шаблона формирует
+нужную нам конфигурацию агентов.</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__2900_1809441960"></a>6.Структура
+конфигурационного файла.</h1>
+<p class="заметки-western">------------ начало файла
+---------------------------------<br/>
+&lt;?xml version=&quot;1.0&quot;?&gt;	&lt;--
+заголовок xml файла.</p>
+<p class="заметки-western">&lt;-- корневой элемент, атрибуты:</p>
+<p class="заметки-western"><span lang="en-US">	</span><span lang="en-US"><b>p</b></span><b>athSymbol
+</b> - символ, используемый в значении атрибута cacheDir
+(ftpCacheDir),</p>
+<p class="заметки-western">как ссылка на значение атрибута dstDir
+(ftpDstDir);</p>
+<p class="заметки-western"><b>	</b><span lang="en-US"><b>p</b></span><b>ort
+</b>- tcp порт, который занимается программой, что делает невозможным
+запуск нескольких экземпляров fileChief-а с одинаковой конфигурацией.
+Используется для получения команд на остановку (stop и halt);</p>
+<p class="заметки-western"><a name="defaultLagInterval"></a>	<span lang="en-US"><b>d</b></span><b>efaultLagInterval
+</b><span style="font-weight: normal"> </span><span lang="en-US"><span style="font-weight: normal">-
+</span></span><span lang="ru-RU">задаёт</span> значение по умолчанию
+атрибута <a href="#lagInterval">lagInterval</a> для всех родительских
+агентов в цепочках (и в одиночных агентах);</p>
+<p class="заметки-western"><a name="defaultQueueWarnOn"></a><span lang="en-US"><b>	d</b></span><b>efaultQueueWarnOn</b><span style="font-weight: normal">
+</span><span lang="en-US"><span style="font-weight: normal">- </span></span><span lang="ru-RU"><span style="font-weight: normal">задаёт</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">значение</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">по</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">умолчанию</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">атрибута</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><a href="#queueWarnOn">queueWarnOn</a><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">для</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">всех</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">родительских</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">агентов</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">в</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">цепочках</span></span><span lang="en-US"><span style="font-weight: normal">
+(</span></span><span lang="ru-RU"><span style="font-weight: normal">и</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">в</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">одиночных</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">агентах</span></span><span lang="en-US"><span style="font-weight: normal">);</span></span></p>
+<p class="заметки-western"><a name="defaultQueueWarnOff "></a><span lang="en-US"><span style="font-weight: normal">	</span></span><b>defaultQueueWarnOff</b><span style="font-weight: normal">
+&ndash;</span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">задаёт</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">значение</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">по</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">умолчанию</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">атрибута
+</span></span><a href="#queueWarnOff">queueWarnOff</a><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">для</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">всех</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">родительских</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">агентов</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">в</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">цепочках</span></span><span lang="en-US"><span style="font-weight: normal">
+(</span></span><span lang="ru-RU"><span style="font-weight: normal">и</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">в</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">одиночных</span></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="ru-RU"><span style="font-weight: normal">агентах</span></span><span lang="en-US"><span style="font-weight: normal">);</span></span></p>
+<p class="заметки-western"><a name="defaultQueueWarnInterval"></a><span lang="en-US"><span style="font-weight: normal">	</span></span><b>defaultQueueWarnInterval</b>
+<span lang="en-US">- </span> <span lang="ru-RU">задаёт</span>
+значение по умолчанию атрибута <a href="#queueWarnInterval">queueWarnInterval</a>
+для всех родительских агентов в цепочках (и в одиночных агентах);</p>
+<p class="заметки-western">	<span lang="en-US"><b>dataDir</b></span><span lang="en-US">
+&ndash; </span><span lang="ru-RU">задаёт каталог для хранения файлов
+статистики и &laquo;чёрных&raquo; списков.</span></p>
+<p class="заметки-western"><span lang="ru-RU">Если не задан, то
+используется значение по умолчанию </span><span lang="en-US">&laquo;</span><span lang="en-US"><b>data</b></span><span lang="en-US">&raquo;.</span></p>
+<p class="заметки-western">	<b>defaultSaveTime</b> - позволяет
+изменить значение по умолчанию для атрибута <b>saveTime</b> во всех
+агентах.</p>
+<p class="заметки-western"><span lang="en-US">	</span><span lang="en-US"><b>defaultSmartFtpRename</b></span><span lang="en-US">
+&ndash; </span><span lang="ru-RU">задаёт </span><span lang="ru-RU">значение
+задать значение атрибута smartFtpRename для всех агентов типа
+ftpUpload. </span><span lang="ru-RU">Если не задан, то используется
+значение по умолчанию </span><span lang="en-US">&laquo;</span><span lang="en-US"><b>true</b></span><span lang="en-US">&raquo;.</span></p>
+<p class="заметки-western">--<span lang="en-US">&gt;</span><br/>
+&lt;fileChief
+<span lang="en-US"><b>p</b></span><b>athSymbol</b> = &quot;@&quot; 
+</p>
+<p class="заметки-western"><b>	port</b>=&quot;<span lang="en-US">8899</span>&quot;</p>
+<p class="заметки-western"><b>	defaultLagInterval</b> = &quot;30m&quot;
+</p>
+<p class="заметки-western"><b>	defaultQueueWarnOn</b> = &quot;30&quot;
+</p>
+<p class="заметки-western">	<b>defaultQueueWarnOff</b> = &quot;1&quot;</p>
+<p class="заметки-western">	<span lang="en-US"><b>defaultSaveTime</b></span><span lang="en-US">
+= &quot;false&quot;</span></p>
+<p class="заметки-western">	<b>defaultQueueWarnInterval</b> = &quot;60m&quot;&gt;
+<br/>
+<br/>
+&lt;!-- Описание глобальных параметров --&gt;<br/>
+
+&lt;param name=&quot;main&quot; value=&quot;/home/<span lang="en-US">data</span>&quot;
+/&gt; <br/>
+ &lt;param name=&quot;in&quot; value=&quot;{main}/input&quot;
+/&gt; <br/>
+ &lt;param name=&quot;out&quot; value=&quot;{main}/output&quot;
+/&gt; <br/>
+ .....<br/>
+	&lt;patterns&gt;<br/>
+	&lt;!-- Описание
+шаблонов --&gt;<br/>
+	&lt;/patterns&gt;<br/>
+<br/>
+	&lt;!-- Описание
+агентов --&gt;<br/>
+	&lt;copy name=&quot;copy1&quot; ...
+/&gt;<br/>
+	&lt;ftpUpload name = &quot;up1&quot; ... 
+/&gt;<br/>
+	&lt;ftpDownload name = &quot;down1&quot; ... /&gt;<br/>
+	
+.......<br/>
+&lt;/fileChief&gt;<br/>
+------------ конец файла
+---------------------------------<br/>
+<br/>
+<br/>
+
+</p>
+<p class="заметки-western"><br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__2612_1809441960"></a>7.Настройка.</h1>
+<p class="western" style="margin-bottom: 0cm"><a name="__RefHeading__2255_1809441960"></a>
+	Перед запуском надо (применительно к ОС Linux): <br/>
+<br/>
+
+</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">Изменить файл
+	<span lang="en-US"><b>param</b></span><span lang="en-US"><b>.sh</b></span><b>:</b></p>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Задать
+		путь до </span><span lang="en-US">java-машины</span>: <br/>
+<b>JAVA_</b>=&lt;путь
+		до <span lang="en-US">Java</span>-машины&gt;</p>
+	</ul>
+</ul>
+<p class="western" style="margin-bottom: 0cm">	Если будет
+использоваться почтовое информирование о работе программы, то задать</p>
+<p class="western" style="margin-bottom: 0cm">	MDC_&hellip; параметры
+(и в файле <b>log4j.properties </b><span lang="ru-RU"><b>подключить
+</b></span><span lang="en-US"><b>MAIL appender:</b></span></p>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US"><b>log4j.rootCategory=INFO,A2</b></span><font color="#800000"><span lang="en-US"><b>,MAIL
+</b></span></font>)</p>
+<ul>
+	<ul>
+		<p class="western" style="margin-bottom: 0cm"></p>
+	</ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">Сформировать
+	файл fileChief.xml требуемой конфигурации.<br/>
+<br/>
+
+	</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><i><b>Не
+	забываем проверять</b></i> корректность конфигурации после <span lang="ru-RU">любых</span>
+	изменений, путём запуска программы в тестовом режиме ( <b>./run.sh
+	test</b> )!  Смотрим в получившийся файл &laquo;<span lang="en-US"><b>logs</b></span><span lang="ru-RU"><b>/</b></span><span lang="en-US"><b>tst&raquo;
+	, </b></span><span lang="ru-RU"><span style="font-weight: normal">и
+	убеждаемся, что итоговая конфигурация изменённого агента
+	соответствует ожиданиям. </span></span><br/>
+ <br/>
+<br/>
+
+	</p>
+</ul>
+<h1 class="western"><a name="__RefHeading__2614_1809441960"></a>8.Журналирование
+работы.</h1>
+<p class="western" style="margin-bottom: 0cm">	<span lang="ru-RU">Для
+журналирования работы программы используется пакет </span><span lang="en-US">log4j.
+</span>Журнал ведётся в каталоге <b>logs</b>. В полночь <span lang="ru-RU">создаётся</span>
+новый файл. Старые файлы журнала переименовываются и
+пакуются.<br/>
+	Уровень журналирования можно менять без перезапуска -
+достаточно раскомментировать нужную строку в файле <b>log4j.properties</b>.
+Например, для более детального анализа проблем в обработке файлов,
+можно временно разрешить выгрузку в журнал событий уровня DEBUG и
+выше :</p>
+<p class="заметки-western">----------------------------------<br/>
+log4j.rootCategory=DEBUG,A2,MAIL
+ &lt;-- раскомментировать<br/>
+#log4j.rootCategory=INFO,A2,MAIL  &lt;--
+закомментировать<br/>
+#log4j.rootCategory=WARN,A2,MAIL<br/>
+----------------------------------</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><a name="smtpAppender"></a>
+	В качестве обработчика событий журнала (appender), осуществляющего
+отправку по электронной почте<span lang="ru-RU">, используется класс
+</span><span lang="en-US"><i>psn.f</i></span><span lang="en-US"><i>ilechief</i></span><span lang="en-US"><i>.log4j.FilterSMTPAppender</i></span><span lang="ru-RU"><i>
+</i></span><span lang="ru-RU"><span style="font-style: normal">&mdash;
+расширение</span></span><span lang="ru-RU"><i>
+org.apache.log4j.net.SMTPAppender . </i></span>
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal">	Данный
+обработчик позволяет задавать условия, при которых информация о
+событии будет отправлена почтой, а также производить накопление
+событий и группировку их по  агентам.</p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">	По
+умолчанию,  </span><span lang="ru-RU"><i>FilterSMTPAppender
+</i></span><span lang="ru-RU"><span style="font-style: normal">отправляет
+письма с информацией о событиях уровня </span></span><span lang="en-US"><span style="font-style: normal">ERROR
+</span></span><span lang="ru-RU"><span style="font-style: normal">(по
+одному письму на событие)</span></span><span lang="en-US"><span style="font-style: normal">
+, </span></span><span lang="ru-RU"><span style="font-style: normal">игнорируя
+события других уровней. Это поведение можно изменить, задав правила
+обработки событий.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal">	Синтаксис
+описания правила:</p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU"><span style="font-style: normal"><b>{</b></span></span><span lang="ru-RU"><span style="font-style: normal">
+</span></span><span lang="en-US"><span style="font-style: normal"><b>&lt;</b></span></span><span lang="ru-RU"><span style="font-style: normal"><b>регулярное
+выражение</b></span></span><span lang="en-US"><span style="font-style: normal"><b>&gt;</b></span></span><span lang="en-US"><span style="font-style: normal">&lt;</span></span><span lang="ru-RU"><span style="font-style: normal">пробел</span></span><span lang="en-US"><span style="font-style: normal">&gt;&lt;</span></span><span lang="ru-RU"><span style="font-style: normal">точка
+с запятой</span></span><span lang="en-US"><span style="font-style: normal">&gt;&lt;</span></span><span lang="ru-RU"><span style="font-style: normal">пробел</span></span><span lang="en-US"><span style="font-style: normal">&gt;</span></span><span lang="ru-RU"><span style="font-style: normal"><b>&lt;действие&gt;</b></span></span><span lang="ru-RU"><span style="font-style: normal">
+</span></span><span lang="ru-RU"><span style="font-style: normal"><b>}</b></span></span><span lang="ru-RU"><span style="font-style: normal">
+.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal">	Регулярное
+выражение определяет, на какие события сработает данное правило.</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal">	Варианты
+действий:</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><font size="3" style="font-size: 12pt"><span lang="ru-RU"><span style="font-style: normal"><b>+
+	(плюс)</b></span></span></font><font size="4" style="font-size: 14pt"><span lang="ru-RU"><span style="font-style: normal"><b>
+	</b></span></span></font><span lang="ru-RU"><span style="font-style: normal">для
+	события будет сформировано письмо;</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><font size="4" style="font-size: 14pt"><span lang="ru-RU"><span style="font-style: normal"><b>-</b></span></span></font><span lang="ru-RU"><span style="font-style: normal"><b>
+	(минус)</b></span></span><span lang="ru-RU"><span style="font-style: normal">
+	для события не будет сформировано письмо, правила, идущие за данным,
+	игнорируются;</span></span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b><span lang="ru-RU"><span style="font-style: normal">time:</span></span><span lang="en-US"><span style="font-style: normal">&lt;</span></span><span lang="ru-RU"><span style="font-style: normal">минуты</span></span><span lang="en-US"><span style="font-style: normal">&gt;</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">пробел</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&gt;</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">count:</span></span><span lang="en-US"><span style="font-style: normal">&lt;</span></span><span lang="ru-RU"><span style="font-style: normal">количество</span></span><span lang="en-US"><span style="font-style: normal">&gt;</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">пробел</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&gt;</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">;</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">пробел</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&gt;</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">t
+	</span></span></b><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">или</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">
+	</span></span><span lang="en-US"><span style="font-style: normal">k&gt;</span></span></b></p>
+	<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">события
+	накапливаются, группируясь по имени потока (имени агента); если за
+	время  </span></span></span><b><span lang="en-US"><span style="font-style: normal">time</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+	</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">для
+	какого-нибудь агента будет накоплено не менее </span></span></span><b><span lang="en-US"><span style="font-style: normal">count</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+	</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">сообщений,
+	то они будут отправлены в одном письме. </span></span></span>
+	</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><b><span lang="ru-RU"><span style="font-style: normal">count:</span></span><span lang="en-US"><span style="font-style: normal">&lt;</span></span><span lang="ru-RU"><span style="font-style: normal">количество</span></span><span lang="en-US"><span style="font-style: normal">&gt;</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">пробел</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&gt;</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">time:</span></span><span lang="en-US"><span style="font-style: normal">&lt;</span></span><span lang="ru-RU"><span style="font-style: normal">минуты</span></span><span lang="en-US"><span style="font-style: normal">&gt;</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">пробел</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&gt;</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">;</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">пробел</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&gt;</span></span></span><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">&lt;</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">t
+	</span></span></b><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">или</span></span></span><b><span lang="ru-RU"><span style="font-style: normal">
+	</span></span><span lang="en-US"><span style="font-style: normal">k&gt;</span></span></b></p>
+</ul>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">события
+накапливаются, группируясь по имени потока (имени агента); как только
+для какого-нибудь агента будет накоплено не менее </span></span></span><b><span lang="en-US"><span style="font-style: normal">count</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">
+</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">сообщений
+за время меньшее, чем </span></span></span><b><span lang="en-US"><span style="font-style: normal">time</span></span></b><span lang="en-US"><span style="font-style: normal"><span style="font-weight: normal">,</span></span></span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">
+они будут отправлены в одном письме.</span></span></span></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+При накоплении, события группируются по заданному признаку:</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; font-weight: normal">
+<span style="font-style: normal">	</span><span style="font-style: normal"><b>t</b></span><span style="font-style: normal">
+</span><span lang="ru-RU"><span style="font-style: normal">(от
+</span></span><span style="font-style: normal">thread</span><span lang="ru-RU"><span style="font-style: normal">)
+- группировать по имени потока (т.е. имени агента);</span></span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; font-weight: normal">
+<span style="font-style: normal">	</span><span style="font-style: normal"><b>k</b></span><span style="font-style: normal">
+(</span><span lang="ru-RU"><span style="font-style: normal">от </span></span><span style="font-style: normal">key)
+- </span><span lang="ru-RU"><span style="font-style: normal">группировать
+по </span></span><span lang="ru-RU"><span style="font-style: normal">значению
+ключа, сейчас значение ключа одинаково во всех случаях, </span></span><span lang="ru-RU"><span style="font-style: normal">т.е.
+</span></span><span lang="ru-RU"><span style="font-style: normal">все
+события, </span></span><span lang="ru-RU"><span style="font-style: normal">соответствующие
+правилу, </span></span><span lang="ru-RU"><span style="font-style: normal">копятся
+в одной очереди.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU"><span style="font-style: normal">	Правила
+задаются двумя отдельными списками для уровней журналирования </span></span><span lang="en-US"><span style="font-style: normal">WARN
+(warnRules) </span></span><span lang="ru-RU"><span style="font-style: normal">и
+</span></span><span lang="en-US"><span style="font-style: normal">ERROR
+(errorRules).</span></span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; font-style: normal">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; font-style: normal">Примеры
+описания правил:</p>
+<p class="заметки-western" style="margin-left: 0cm; font-style: normal">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">----------------------------------</font></font></p>
+<p class="заметки-western" style="margin-left: 0cm; font-style: normal">
+<br/>
+
+</p>
+<p class="заметки-western" style="margin-left: 0cm; font-style: normal">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">log4j.appender.MAIL.warnRules=
+<b>{ Started, locked|(Stop|Halt) signal ; + } { Lag |Queue
+|paused|resumed|batchMode(Start|Stop) ; time:2 count:1 ; k }</b></font></font></p>
+<p class="заметки-western" style="margin-left: 0cm; font-style: normal">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">log4j.appender.MAIL.errorRules=
+<b>{ CRITICAL|BATCH ; time:2 count:1 ; k } { .* ; time:</b><b>60</b><b>
+count:</b><b>4</b><b>0</b><b> ; t }</b></font></font></p>
+<p class="заметки-western" style="margin-left: 0cm; font-style: normal">
+<br/>
+
+</p>
+<p class="заметки-western" style="margin-left: 0cm; font-style: normal">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">----------------------------------</font></font></p>
+<p class="western" style="margin-left: -1.25cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-left: -1.25cm; margin-bottom: 0cm">	Данный
+набор правил означает, что:</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">Сообщения с
+	уровнем журналирования <span lang="en-US">WARN, </span><span lang="ru-RU">содержа</span><span lang="ru-RU">щие</span><span lang="ru-RU">
+	строки </span><span lang="ru-RU"><i>&laquo;</i></span><span lang="en-US"><i>Started,
+	locked</i></span><span lang="ru-RU"><i>&raquo;, &laquo;</i></span><span lang="en-US"><i>Stop
+	signal</i></span><span lang="ru-RU"><i>&raquo;, &laquo;</i></span><span lang="en-US"><i>Halt
+	signal</i></span><span lang="ru-RU"><i>&raquo;</i></span><span lang="en-US">
+	</span><span lang="ru-RU">(</span><span lang="ru-RU">то есть
+	сообщения о запуске программы </span><span lang="ru-RU">и</span><span lang="ru-RU">
+	сигналах останова</span><span lang="ru-RU">) &mdash; отправляются
+	</span><span lang="ru-RU">незамедлительно.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">Все сообщения с
+	уровнем журналирования <span lang="en-US">WARN, </span><span lang="ru-RU">содержа</span><span lang="ru-RU">щие</span><span lang="ru-RU">
+	строки</span><span lang="en-US"> </span><span lang="ru-RU"><i>&laquo;</i></span><span lang="en-US"><i>Lag
+	</i></span><span lang="ru-RU"><i>&raquo;, &laquo;</i></span><span lang="en-US"><i>Queue
+	</i></span><span lang="ru-RU"><i>&raquo;, </i></span><span lang="en-US"><i>&laquo;paused&raquo;,
+	&laquo;resumed&raquo;, </i></span><span lang="ru-RU"><i>&laquo;</i></span><span lang="en-US"><i>batchModeStart</i></span><span lang="ru-RU"><i>&raquo;</i></span><span lang="en-US"><i>,
+	</i></span><span lang="ru-RU"><i>&laquo;</i></span><span lang="en-US"><i>batchModeStop</i></span><span lang="ru-RU"><i>&raquo;</i></span><span lang="en-US">
+	</span><span lang="en-US">(</span><span lang="ru-RU">сообщения о
+	задержках поступления файлов, файловых очередях, приостановке и
+	возобновлении работы агентов, </span><span lang="ru-RU">работе в
+	пакетном режиме</span><span lang="en-US">)  - </span><span lang="ru-RU">копятся
+	в общей очереди и </span><span lang="ru-RU">отправл</span><span lang="ru-RU">яются
+	</span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">в
+	одном письме </span></span></span><span lang="ru-RU">не чаще чем раз
+	в две минуты</span><span lang="ru-RU">.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Все
+	</span><span lang="ru-RU">прочие </span><span lang="ru-RU">сообщения
+	с уровнем журналирования </span><span lang="en-US">WARN </span><span lang="ru-RU">будут
+	отбрасываться.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Все
+	сообщения с уровнем журналирования </span><span lang="en-US">ERROR,
+	</span><span lang="ru-RU">содержащие строку &laquo;</span><span lang="en-US">CRITICAL</span><span lang="ru-RU">&raquo;
+	</span><span lang="en-US"> </span><span lang="ru-RU">копятся в общей
+	очереди и </span><span lang="ru-RU">отправл</span><span lang="ru-RU">яются
+	</span><span lang="ru-RU"><span style="font-style: normal"><span style="font-weight: normal">в
+	одном письме </span></span></span><span lang="ru-RU">не чаще чем раз
+	в две минуты</span><span lang="ru-RU">.</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Все
+	</span><span lang="ru-RU">прочие </span><span lang="ru-RU">сообщения
+	с уровнем журналирования </span><span lang="en-US">ERROR, </span><span lang="ru-RU">будут
+	группироваться по именам агентов. Если для какого-либо агента за </span><span lang="ru-RU">6</span><span lang="ru-RU">0
+	минут поступит </span><span lang="ru-RU">40</span><span lang="ru-RU">
+	и более сообщений, они будут отправлены одним письмом. Такой подход
+	позволяет фильтровать редкие сообщения об ошибках, связанные с
+	проблемами на каналах связи или сбоями в работе </span><span lang="en-US">ftp
+	</span><span lang="ru-RU">сервера. </span>
+	</p>
+</ul>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">Наибольшее
+количество сообщений журнала, которые будут доставлены письмом,
+определяется значением параметра </span><span lang="ru-RU"><i>log4j.appender.MAIL.BufferSize</i></span><span lang="ru-RU">
+файла log4j.</span><span lang="en-US">properties.</span></p>
+<p class="western" style="margin-bottom: 0cm">Например, если
+<i>BufferSize=30</i><span style="font-style: normal"><span style="font-weight: normal">
+и накоплено для отправки в одном письме 50 сообщений, то в итоге
+будет отправлено только 30 последних сообщений, а первые 20 будут
+отброшены.</span></span></p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">Такой подход позволяет,
+с одной стороны, своевременно получать информацию о работе программы
+и проблемах обработки файлов, а с другой стороны, ограничить частоту
+отправки и размер почтового сообщения. 
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	Тема отправляемых
+писем задаётся в файле log4j.properties атрибутом Subject, в значение
+которого могут содержаться ссылки %t и %i,</p>
+<p class="western" style="margin-bottom: 0cm">где 
+</p>
+<p class="western" style="margin-bottom: 0cm"> %t - имя потока(имя
+агента). При использовании группировки по ключу (<span lang="en-US"><b>&laquo;k&raquo;</b></span>)
+в качестве имени потока буде выгружено <b>&laquo;...&raquo;</b><span style="font-weight: normal">
+(три точки), если информация относится более чем к четырём агентам,
+либо список агентов.</span></p>
+<p class="western" style="margin-bottom: 0cm"> %i - строка,
+соответствующая группе, полученной из тела письма при помощи
+регулярного выражения, заданного атрибутом subjInfoPattern.</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">Пример: 
+</p>
+<p class="заметки-western" style="margin-left: 0cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">log4j.appender.MAIL.warnRules=<b>{
+Started, locked|(Stop|Halt) signal|Lag |Queue |paused|resumed ; + }</b></font></font></p>
+<p class="western" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>log4j.appender.MAIL.Subject=ftpUpload
+host1 : [<b>%t</b>] <b>%i</b></i></font></font></p>
+<p class="western" style="margin-bottom: 0cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt"><i>log4j.appender.MAIL.subjInfoPattern=<b>(.*(Lag
+|Queue |locked|signal|CRITICAL).{1,120}|.*(paused|resumed))</b></i></font></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><font size="3" style="font-size: 12pt">В
+данном случае в тему письма попадёт информация (не более 120
+символов) о произошедших событиях.</font></p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><font size="3" style="font-size: 12pt">События
+журнала также могут быть записаны, при необходимости, в базу данных,
+либо отправлены в качестве <span lang="en-US">snmp </span>трапа.</font></p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h1 class="western"><a name="__RefHeading__2616_1809441960"></a>9.Запуск
+и остановка программы.</h1>
+<h2 class="western"><a name="__RefHeading__2257_1809441960"></a><a name="ЗапускТестовый"></a>
+9.1.Запуск в тестовом режиме.</h2>
+<p class="western" style="margin-bottom: 0cm">	После любых изменений
+конфигурации настоятельно рекомендуется запустить программу в
+тестовом режиме:</p>
+<p class="western" style="margin-bottom: 0cm"><span lang="en-US">&gt;</span>
+<b>./</b><font size="4" style="font-size: 14pt"><b>run.sh test</b></font><br/>
+	При
+этом никакой работы агентами не производится, только их настройка и
+вывод <span lang="ru-RU">получившейся </span>конфигурации. Результаты
+запуска будут выведены на консоль и в файл <b>logs/testlog</b><span style="font-weight: normal">
+, после чего можно убедиться в правильности настроек. </span>
+</p>
+<p class="western" style="margin-bottom: 0cm"><span style="font-weight: normal">	Также
+при запуске в этом режиме </span><span style="font-weight: normal">формируется
+новый </span><span style="font-weight: normal">файл </span><b>logs/tlog</b><span style="font-weight: normal">,
+</span><span style="font-weight: normal">старый же переименовывается</span><span style="font-weight: normal">.
+</span><span style="font-weight: normal">В файлах  </span><b>logs/tlog</b><b>*
+</b><span style="font-weight: normal">нет даты и времени событий,
+поэтому их удобно использовать для сравнения конфигураций агентов, до
+и после внесения изменений.</span></p>
+<p class="western" style="margin-bottom: 0cm">	</p>
+<h2 class="western"><a name="__RefHeading__3127_1809441960"></a>9.2.Запуск
+в &quot;боевом&quot; режиме.</h2>
+<p class="заметки-western">-----------------------------------------<br/>
+$
+<b>./</b><font size="3" style="font-size: 12pt"><b>run.sh
+start</b></font><br/>
+Starting : PID=24673<br/>
+waiting 5
+sec...<br/>
+<b>Started, locked port </b><span lang="en-US"><b>8899</b></span><b>
+  </b><span lang="en-US"><b>&lt;= </b></span><span lang="ru-RU"><b>Запуск
+успешен</b></span><br/>
+-----------------------------------------</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	</p>
+<p class="western" style="margin-bottom: 0cm">	Если же <span lang="en-US">F</span><span lang="en-US">ileChief
+</span>уже запущен (либо порт занят другой программой), то при
+попытке запуска получим:</p>
+<p class="заметки-western">-----------------------------------------<br/>
+$
+./run.sh start<br/>
+Starting : PID=24673<br/>
+waiting 5
+sec...<br/>
+<b>Another instance is already running ( port </b><span lang="en-US"><b>8899</b></span><b>
+is busy)</b><br/>
+-----------------------------------------<br/>
+<br/>
+
+</p>
+<p class="заметки-western"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3129_1809441960"></a>9.3.Срочная
+остановка работы программы.</h2>
+<p class="заметки-western">-----------------------------------------<br/>
+$
+./<font size="3" style="font-size: 12pt"><b>run.sh halt</b></font></p>
+<p class="заметки-western">&hellip;..</p>
+<p class="заметки-western">2012-04-27 15:43:09,631  WARN  [Main
+Thread] @@@@@@@@-- FileChief, version 1.3. Running in halt mode.
+--@@@@@@@@</p>
+<p class="заметки-western">2012-04-27 15:43:10,476  WARN  [Main
+Thread] <b>send halt signal OK</b></p>
+<p class="заметки-western">-----------------------------------------</p>
+<p class="заметки-western"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	Тот же эффект получим,
+выполнив <span lang="en-US">&laquo;</span><span lang="en-US"><b>kill
+pid</b></span><span lang="en-US">&raquo;, </span><span lang="ru-RU">где
+</span><span lang="en-US">pid &ndash; </span><span lang="ru-RU">идентификатор
+процесса </span><span lang="en-US">java </span><span lang="ru-RU">машины,
+в которой выполняется </span><span lang="en-US">fileChief.</span></p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm">	<span lang="ru-RU">При
+срочной остановке все агенты уведомляются о необходимости остановки,
+после чего ожидается их нормальное завершение (но не больше 30
+секунд), и </span><span lang="en-US">F</span><span lang="en-US">ileChief
+</span><span lang="ru-RU">завершает работу</span><span lang="en-US">
+</span><span lang="ru-RU">.</span>	</p>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<h2 class="western"><a name="__RefHeading__3131_1809441960"></a>9.4.&laquo;Чистая&raquo;
+остановка работы программы.</h2>
+<p class="western" style="margin-bottom: 0cm">	При срочной остановке
+работы агентов, входящих в цепочку, во входных каталогах дочерних
+агентов могут оставаться файлы, ещё не прошедшие всю цепочку.</p>
+<p class="western" style="margin-bottom: 0cm">	Если после этого
+запустить программу с новой конфигурацией, в  которой произошло хотя
+бы одно из следующих изменений: 
+</p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">изменилось имя
+	агента;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">изменился
+	порядок расположения агентов в цепочке;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">был изменён явно
+	заданный каталог-источник <span lang="en-US">(srcDir), </span><span lang="ru-RU">либо
+	</span><span lang="en-US">(</span><span lang="ru-RU">для </span><span lang="en-US">ftpDownload
+	</span><span lang="ru-RU">и </span><span lang="en-US">sftpDownload)
+	</span><span lang="ru-RU">целевой каталог </span><span lang="en-US">(dstDir);</span></p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">в цепочку был
+	добавлен, либо из неё был удалён агент;</p>
+</ul>
+<p class="western" style="margin-bottom: 0cm">то может получиться
+так, что файлы, не до конца прошедшие цепочку, останутся в
+неиспользуемом отныне каталоге.</p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">	Избежать
+этого можно, используя безопасную, &laquo;чистую&raquo; остановку
+работы </span><span lang="en-US">F</span><span lang="en-US">ileChief</span><span lang="ru-RU">.
+</span>
+</p>
+<p class="заметки-western">--------------------------------------------</p>
+<p class="заметки-western"><span lang="ru-RU">$ ./</span><font size="3" style="font-size: 12pt"><span lang="ru-RU"><b>run.sh
+stop</b></span></font></p>
+<p class="заметки-western">&hellip;............</p>
+<p class="заметки-western">201<span lang="en-US">2</span>-04-28
+15:57:16,633  WARN  [Main Thread] @@@@@@@@-- FileChief, version 1.7.
+Running in stop mode. --@@@@@@@@</p>
+<p class="заметки-western"><span lang="ru-RU">2012-04-28 15:57:18,007
+ WARN  [Main Thread] </span><span lang="ru-RU"><b>send stop signal OK</b></span></p>
+<p class="заметки-western">2012-04-28 15:57:18,010  WARN  [Main
+Thread] Exit.</p>
+<p class="заметки-western">sleep 5 sec</p>
+<p class="заметки-western">---------- tail of the log -------------</p>
+<p class="заметки-western"><span lang="ru-RU">2012-04-28 15:57:18,284
+WARN  [</span><span lang="en-US">agent1</span><span lang="ru-RU">_backup]
+*** Stop work (</span><span lang="ru-RU"><b>clean</b></span><span lang="ru-RU">)
+***</span></p>
+<p class="заметки-western">2012-04-28 15:57:18,286 WARN 
+[<span lang="en-US">agent22</span>_backup] *** Stop work (clean) ***</p>
+<p class="заметки-western">2012-04-28 15:57:18,306 WARN  [<span lang="en-US">agent3</span>]
+*** Stop work (clean) ***</p>
+<p class="заметки-western">2012-04-28 15:57:18,308 WARN 
+[<span lang="en-US">agent7</span>_backup] *** Stop work (clean) ***</p>
+<p class="заметки-western">2012-04-28 15:57:18,318 WARN 
+[<span lang="en-US">testData</span>_backup] *** Stop work (clean) ***</p>
+<p class="заметки-western">2012-04-28 15:57:18,331 WARN  [<span lang="en-US">testData</span>]
+*** Stop work (clean) ***</p>
+<p class="заметки-western"><a name="stopingStat"></a><span lang="ru-RU">2012-04-28
+15:57:20,930 WARN  [Main Thread] </span><span lang="ru-RU"><b>agents
+stopped: 130</b></span></p>
+<p class="заметки-western"><span lang="ru-RU">2012-04-28 15:57:20,930
+WARN  [Main Thread] </span><span lang="ru-RU"><b>agents cleaning: 0;</b></span></p>
+<p class="заметки-western"><span lang="ru-RU">2012-04-28 15:57:20,930
+WARN  [Main Thread] </span><span lang="ru-RU"><b>agents running: 1;
+</b></span><span lang="en-US"><b>agent17</b></span></p>
+<p class="заметки-western">-------------------------------------------
+</p>
+<p class="заметки-western"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm"><a name="cleanStopInfo"></a>
+	При безопасной остановке в первую очередь завершают работу
+агенты-родители, то есть прекращается поступление новых файлов (если
+не задано <a href="#slowStop">slowStop</a><span lang="en-US"> </span>=
+<span lang="en-US">&rdquo;true&rdquo;</span>) на вход цепочки. Затем
+последовательно каждый дочерний агент полностью обрабатывает файлы из
+своей очереди, сообщает следующему агенту в цепочке о необходимости
+безопасной остановки и завершает работу. Таким образом, после того,
+как завершающий элемент цепочки остановится, внутри цепочки не
+останется не до конца обработанных файлов. 
+</p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">	В
+отличие от срочной остановки, безопасная </span><span lang="ru-RU"><i>не
+гарантирует</i></span><span lang="ru-RU"> завершение программы в
+течение определённого времени. Например, если один из агентов цепочки
+приостановил работу из-за переполнения целевого каталога (см. атрибут
+</span><a href="#dstFileLimit">dstFileLimit</a><span lang="ru-RU">),
+либо появления файла-флага (см. атрибут </span><a href="#pauseFlagFile">pauseFlagFile</a><span lang="ru-RU">).
+В таком случае, если не требуется безопасная остановка агентов именно
+этой цепочки, можно воспользоваться срочной остановкой.</span></p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">	</span><span lang="ru-RU"><i>Дважды
+отправленный</i></span><span lang="ru-RU"> сигнал чистой остановки
+</span><span lang="ru-RU">(</span><span lang="en-US">stop</span><span lang="ru-RU">)</span><span lang="ru-RU">
+эквивалентен запросу срочной остановки.</span></p>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">	Для
+контроля процесса безопасной остановки, в журнал периодически
+выгружается информация о состоянии агентов. Так, в приведённом выше
+</span><a href="#stopingStat">примере</a><span lang="ru-RU"> видно,
+что</span></p>
+<ul>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">уже прекратили
+	работу : 130 агентов;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm">в состоянии
+	&laquo;очистки&raquo; : 0 агентов;</p>
+	<li/>
+<p class="western" style="margin-bottom: 0cm"><span lang="ru-RU">работает
+	в обычном режиме : один агент по имени </span><span lang="en-US">agent17</span><span lang="ru-RU">.</span></p>
+</ul>
+<p class="western" style="margin-bottom: 0cm"><br/>
+
+</p>
+<div id="sdfootnote1">
+	<p class="sdfootnote"><a class="sdfootnotesym" name="sdfootnote1sym" href="#sdfootnote1anc">*</a><span lang="ru-RU">
+	Единственное исключение: последний агент типа </span><font size="2" style="font-size: 10pt"><span lang="en-US"><i><b>copy</b></i></span></font><font size="3" style="font-size: 12pt"><span lang="en-US">
+	</span></font><span lang="ru-RU">в цепочке, </span><span lang="ru-RU">и
+	</span><span lang="ru-RU">при этом не требуется изменение файла
+	(архивация/разархивация/смена даты), и </span><span lang="en-US"><i>cacheDir</i></span><span lang="en-US">
+	= &ldquo;&rdquo;. </span><span lang="ru-RU">При выполнении этих
+	условий производится перенос файла, а не копирование через
+	промежуточный каталог.</span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.1.2.2 (Windows)"/>
+	<meta name="created" content="2016-08-23T09:41:13.845000000"/>
+	<meta name="changed" content="2017-10-22T17:15:35.119000000"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 120% }
+		h1 { margin-bottom: 0.21cm }
+		h1.western { font-family: "Times New Roman", serif; font-size: 18pt }
+		h1.cjk { font-family: "Microsoft YaHei"; font-size: 18pt }
+		h1.ctl { font-family: "Mangal"; font-size: 18pt }
+		h2.western { font-family: "Times New Roman", serif; font-size: 16pt }
+		h2.cjk { font-family: "Microsoft YaHei"; font-size: 16pt }
+		h2.ctl { font-family: "Mangal"; font-size: 16pt }
+		h3.western { font-family: "Times New Roman", serif; font-size: 14pt }
+		h3.cjk { font-family: "Microsoft YaHei"; font-size: 14pt }
+		h3.ctl { font-family: "Mangal"; font-size: 14pt }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<h1 class="western" align="center">Решение типовых задач при помощи
+<span lang="en-US">FileChief</span><span lang="en-US">.</span></h1>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h2 class="western">1. Доставка данных одиночному получателю.</h2>
+<p style="margin-bottom: 0cm; line-height: 100%">Простейшая задача,
+решается, обычно, одиночным агентом.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u>Удалённый
+источник, локальный получатель.</u></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftDownload
+name=&rdquo;...&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpSrcDir
+= &ldquo;<span lang="ru-RU">удалённый исходный каталог</span>&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpServer
+= &ldquo;...&rdquo; ftpUser = &ldquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>dstDir
+= &ldquo;<span lang="ru-RU">локальный целевой каталог</span>&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u>Локальный
+источник, локальный получатель.</u></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;copy
+name=&rdquo;...&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>srcDir
+= &ldquo;<span lang="ru-RU">локальный исходный каталог</span>&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>dstDir
+= &ldquo;<span lang="ru-RU">локальный целевой каталог</span>&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><u>Локальный
+источник, удалённый получатель.</u></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftpUpload
+name=&rdquo;...&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>srcDir
+= &ldquo;<span lang="ru-RU">локальный исходный каталог</span>&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpDdstDir
+= &ldquo;<span lang="ru-RU">удалённый целевой каталог</span>&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpServer
+= &ldquo;...&rdquo; ftpUser = &ldquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Для случая
+&laquo;<u>Удалённый источник, </u><u>у</u><u>далённый получатель</u>&raquo;
+потребуется цепочка из двух агентов.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftDownload
+name=&rdquo;down&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpSrcDir
+= &ldquo;<span lang="ru-RU">удалённый исходный каталог</span>&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpServer
+= &ldquo;...&rdquo; ftpUser = &ldquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>dstDir
+= &ldquo;<span lang="ru-RU">рабочий </span><span lang="ru-RU">каталог</span>&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftpUpload
+name=&rdquo;up&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">     
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpDdstDir
+= &ldquo;<span lang="ru-RU">удалённый целевой каталог</span>&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">     
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpServer
+= &ldquo;...&rdquo; ftpUser = &ldquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>/&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;/sftpDownload</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Для агента <span lang="en-US"><b>up</b></span><span lang="en-US">
+</span>атрибут <span lang="en-US"><span style="font-style: normal"><span style="text-decoration: none"><b>srcDir</b></span></span></span><span lang="en-US">
+</span>не указан, поэтому он будет настроен на <span lang="en-US"><b>dstDir</b></span><span lang="en-US">
+</span>агента <span lang="en-US"><b>down</b></span><span lang="en-US">.</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%; text-decoration: none">
+<span style="background: #ffff00"><u><b>Внимание, правило:</b></u>
+что-бы упростить настройку агентов в цепочке, а также избежать
+ошибок, <b>а</b><b>трибут </b><u><b>srcDir дочерних агентов</b></u><b>
+лучше не задавать (без необходимости), тогда он будет настроен
+автоматически.</b></span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h2 class="western" style="page-break-before: always">2. Доставка
+файлов нескольким получателям.</h2>
+<p style="margin-bottom: 0cm; line-height: 100%">То есть каждый файл,
+получаемый из источника, должен быть доставлен и первому и второму и
+т.д. получателю. Для этой задачи необходимо строить цепочку агентов.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h3 class="western">2.1 Удалённый источник файлов, доставка <b>Х</b>
+получателям.</h3>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span style="background: #ffff00">Минимальное
+количество агентов = <b>Х+1</b>.</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%">Первый агент цепочки
+&mdash; ftpDownload/sftpDownload, его задача только доставить
+удалённый файл в локальный каталог (если не задано
+createLinks=&rdquo;true&rdquo;).</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Далее следуют <span lang="en-US"><b>X</b></span><span lang="en-US">
+</span><span lang="en-US">агент</span>ов, задача которых &mdash;
+доставить локальный файл локальному либо удалённому потребителю.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftpDownload
+ name=&rdquo;agent_0&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpServer
+= &ldquo;..&rdquo; ftpUser = &ldquo;..&rdquo; ftpPassword = &ldquo;..&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>ftpSrcDir
+= &ldquo;...&rdquo; dstDir = &ldquo;/path/workDir&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;copy
+ name=&rdquo;agent_1&rdquo;  dstDir = &ldquo;/path1&rdquo; /&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;copy
+ name=&rdquo;agent_2&rdquo;  dstDir = &ldquo;/path2&rdquo; /&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   &hellip;<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>.</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftUpload
+name=&rdquo;agent_X&rdquo; ftpDstDir = &ldquo;/pathX&rdquo; ftpServer
+= &ldquo;..&rdquo; ftpUser = &ldquo;..&rdquo; ftpPassword = &ldquo;..&rdquo;
+/&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;/sftpDownload&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h3 class="western">2.2 Локальный источник файлов, доставка <b>Х</b>
+получателям. 
+</h3>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Минимальное
+количество агентов = <b>Х</b>.</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Цепочка состоит из <b>X</b>
+агентов, задача которых &mdash; доставить локальный файл локальному
+либо удалённому потребителю.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;copy
+ name = &rdquo;agent_1&rdquo;  </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="en-US">srcDir
+= &ldquo;/source&rdquo; </span>dstDir = &ldquo;/path1&rdquo; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;copy
+ name=&rdquo;agent_2&rdquo;  dstDir = &ldquo;/path2&rdquo; /&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   &hellip;<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>.</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftUpload
+name=&rdquo;agent_X&rdquo; ftpDstDir = &ldquo;/pathX&rdquo; ftpServer
+= &ldquo;..&rdquo; ftpUser = &ldquo;..&rdquo; ftpPassword = &ldquo;..&rdquo;
+/&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;/<span lang="en-US">copy</span>&gt;</b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h2 class="western" style="page-break-before: always"><span lang="en-US">3.
+</span><span lang="ru-RU">Работа со справочниками.</span></h2>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h3 class="western" align="left">3.1 Загрузка новых версий
+<span lang="en-US">фа</span><span lang="en-US">й</span><span lang="ru-RU">ла</span>-справочника
+по <span lang="en-US">ftp, </span>без удаления файла на сервере.</h3>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">	То
+есть на сервере есть файл с известным именем, который периодически
+обновляется, задача &mdash; после обновления файла на сервере
+обновить его локальную копию.</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Использование
+<b>startFileDate</b> включает следующий режим работы: </font></font></font>
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">-
+при составлении списка файлов для загрузки отбрасываем все файлы,
+дата которых меньше max(startFileDate, дата последнего загруженного
+файла); </font></font></font>
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">-
+после успешной загрузки файла запоминаем его дату;</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">-
+удаления/переименования исходных файлов на сервере не происходит.</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font color="#000000"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Не
+забываем указывать на необходимость замещения существующего файла
+(<b>replaceExistingFiles = &quot;true&quot;</b>).</font></font></font></p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;ftpDownload
+name = &quot;data_from_srv&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	ftpServer
+= &quot;...&quot; ftpUser = &rdquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	ftpSrcDir
+= &quot;/home/<span lang="en-US">data</span>/tables/&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	fileMask
+= &quot;^<font color="#000000"><span lang="en-US">thesaurus</span></font><font color="#000000"><span lang="en-US">\</span></font><font color="#000000"><span lang="en-US">.</span></font>csv$&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	dstDir
+= &quot;/home/local/tables&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	<font color="#ff0000">startFileDate</font>
+= &quot;201<span lang="ru-RU">7</span>-01-01 00:00:00&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	<font color="#ff0000">replaceExistingFiles</font>
+= &quot;true&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	delayBetween
+= &quot;300&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	ftpServerTimeZone
+= &quot;GMT&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	lagInterval
+= &quot;26h&quot;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">     <font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>/&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h3 class="western">3.2. <span lang="ru-RU">Загрузка новых версий
+файла справочника, с удалением на сервере.</span></h3>
+<p style="margin-bottom: 0cm; line-height: 100%">Пусть стоит задача:</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU">-
+надо загружать новые версии файла справочника &laquo;</span><font color="#000000"><b>thesaurus</b></font><font color="#000000"><span lang="ru-RU"><b>.txt</b></span></font><font color="#000000"><span lang="ru-RU"><span style="font-weight: normal">&raquo;</span></span></font><font color="#ff0000"><span lang="ru-RU">
+</span></font><span lang="ru-RU">по </span>sftp;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- с удалением на
+сервере;</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU">-
+</span><span lang="ru-RU">и созданием резервных копий </span><span lang="ru-RU">на
+</span>ftp <span lang="ru-RU">сервере</span><span lang="ru-RU"> &mdash;
+</span><span lang="ru-RU">для отслеживания истории изменений.</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><span lang="ru-RU">У
+нас два получателя: целевой каталог и удалённый каталог для 
+</span><span lang="ru-RU">резервных копий. </span><span lang="ru-RU">Следовательно,
+как было указано выше, </span><span lang="ru-RU">требуется цепочка
+минимум из трёх агентов. </span>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;sftpDownload
+name = &quot;<span lang="en-US">load_thesaurus</span>&quot; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	ftpServer
+= &quot;...&quot; ftpUser = &rdquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	ftpSrcDir
+= &ldquo;/remotePath&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	<font color="#ff0000">fileMask
+= &quot;^</font><font color="#ff0000"><span lang="en-US">thesaurus</span></font><font color="#ff0000"><span lang="en-US">\</span></font><font color="#ff0000">.txt$&quot;</font></b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	dstDir
+= &ldquo;/workDir&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	&lt;copy
+name = &ldquo;<span lang="en-US">thesaurus_</span><span lang="en-US">to_dst</span>&rdquo;
+</b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>		<font color="#ff0000">replaceExistingFiles
+= &quot;true&quot;</font> </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>		dstDir
+= &ldquo;/destDir&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	/&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	&lt;ftpUpload
+name = &ldquo;<span lang="en-US">thesaurus_</span><span lang="en-US">to_</span><span lang="en-US">backup</span>&rdquo;
+</b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>		ftpServer
+= &quot;...&quot; ftpUser = &rdquo;...&rdquo; ftpPassword = &ldquo;...&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>		ftpDstDir
+= &ldquo;/remoteDestDir&rdquo;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>		<font color="#ff0000">suffix
+= &quot;_yyyyMMdd_HHmmss&quot; </font></b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	/&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;/ftpDownload&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"> 
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h2 class="western">4. Включение в конфигурацию данных из других
+файлов.</h2>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	При необходимости,
+конфигурация программы может состоять из нескольких файлов. Для этого
+используются штатные возможности <span lang="en-US">xml. </span>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">	Например, нам
+требуется, что бы общие для всех конфигураций шаблоны хранились в
+отдельном файле <span lang="en-US"><b>patterns.xml</b></span><span lang="en-US"><span style="font-weight: normal">
+</span></span><span lang="en-US"><span style="font-weight: normal">(</span></span><span style="font-weight: normal">для
+удобства репликации</span><span lang="en-US"><span style="font-weight: normal">)</span></span><span lang="en-US"><span style="font-weight: normal">,</span></span><span lang="en-US">
+</span>а также необходимо добавить  к агентам, описанным в файле
+конфигурации, ещё и те, что описаны в файле <span lang="en-US"><b>agents.xml</b></span><span lang="en-US">.
+</span>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">	</span>Вот
+как это можно сделать:</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">----------------
+</span>файл <span lang="en-US">f</span><span lang="en-US">ileChief</span><span lang="en-US">.xml
+-------------------</span></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;?xml
+version=&quot;1.0&quot;?&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#ff0000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;!DOCTYPE
+doc [</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#ff0000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;!ENTITY
+patternsExt SYSTEM &quot;patterns.xml&quot;&gt;</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#ff0000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;!ENTITY
+agentsExt SYSTEM &quot;agents.xml&quot;&gt;</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#ff0000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>]&gt;</b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;fileChief
+pathSymbol = &quot;@&quot; port=&quot;7081&quot; </b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"> 
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;patterns&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><font color="#ff0000"><span lang="en-US">&amp;pat</span></font><font color="#ff0000"><span lang="en-US">terns</span></font><font color="#ff0000"><span lang="en-US">Ext;</span></font></b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="en-US">&lt;ftpDownload
+&hellip; /&gt;</span></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">    <font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>...</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"> 
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;/patterns&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"> 
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">  
+<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&lt;copy
+name = &quot;c01&quot; srcDir = &quot;/tests/c1&quot; dstDir = &quot;/c1&quot;
+ /&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">   <font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="ru-RU">...</span></b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font color="#ff0000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="en-US">&amp;</span><span lang="en-US">agents</span><span lang="en-US">Ext;</span></b></font></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>	</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="en-US">&lt;/f</span><span lang="en-US">ileChief</span><span lang="en-US">&gt;</span>
+</b></font></font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">----------------
+</span>конец файла <span lang="en-US">f</span><span lang="en-US">ileChief</span><span lang="en-US">.xml
+-------------------</span></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">----------------
+файл patterns.xml -------------------</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="en-US">&lt;</span><span lang="en-US">sftpDownload
+name=&rdquo;pattern1&rdquo;  </span></b></font></font>
+</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">&hellip;<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>.</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>&gt;</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">&hellip;<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>.</b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="en-US">&lt;/</span><span lang="en-US">sftpDownload&gt;</span></b></font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">----------------
+</span>конец <span lang="en-US">файл</span>а<span lang="en-US">
+patterns.xml -------------------</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">----------------
+файл agents.xml -------------------</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b><span lang="en-US">&lt;</span><span lang="en-US">copy
+... /&gt;</span></b></font></font></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%">----------------
+конец файла agents.xml -------------------</p>
+</body>
+</html>

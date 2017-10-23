@@ -1,0 +1,32 @@
+#log4j.rootCategory=DEBUG,A1,A2,A3
+log4j.rootCategory=INFO,A1,A2,A3
+#log4j.rootCategory=WARN,A1,A2,A3
+
+#
+# A1-console
+#
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d  %-5p [%t] %m%n
+#log4j.appender.A1.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %c - %m%n
+
+#
+# A2 - DailyRollingFileAppender
+#
+log4j.appender.A2=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.A2.file=logs/tst
+log4j.appender.A2.datePattern='.'yyyyMMdd_HHmmss
+log4j.appender.A2.append=true
+log4j.appender.A2.layout=org.apache.log4j.PatternLayout
+log4j.appender.A2.layout.ConversionPattern=%-5p [%t] %m%n
+
+#
+# A3 - DailyRollingFileAppender3
+#
+log4j.appender.A3=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.A3.file=logs/fctest
+log4j.appender.A3.datePattern='.'yyyy-MM-dd
+log4j.appender.A3.append=true
+log4j.appender.A3.layout=org.apache.log4j.PatternLayout
+log4j.appender.A3.layout.ConversionPattern=%d %-5p [%t] %m%n
+#log4j.appender.A2.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %c - %m%n

@@ -1,0 +1,8 @@
+JAVA_=java
+#
+MDC_ZONE=zoneName
+MDC_SERVER=serverName
+MDC_MAIL_HOST=127.0.0.1
+MDC_MAIL_FROM=zzz@host.ru
+MDC_MAIL_TO=xxx@host.ru,yyy@host.ru
+export MDC_ZONE MDC_SERVER MDC_MAIL_HOST MDC_MAIL_FROM MDC_MAIL_TO

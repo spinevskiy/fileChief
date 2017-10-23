@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="fileChief" type="fileChief"/>
+
+  <xs:complexType name="fileChief">
+    <xs:sequence>
+
+      <xs:element name="param" type="param" minOccurs="0" maxOccurs="unbounded"/>
+
+      <xs:element name="patterns" type="patterns" minOccurs="0" maxOccurs="1"/>
+
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="copy" type="copy"/>
+        <xs:element name="ftpDownload" type="ftpDownload"/>
+        <xs:element name="sftpDownload" type="sFtpDownload"/>
+        <xs:element name="ftpUpload" type="ftpUpload"/>
+        <xs:element name="sftpUpload" type="sFtpUpload"/>
+        <xs:element name="demux" type="demux"/>
+        <xs:element name="link" type="linker"/>
+      </xs:choice>
+
+    </xs:sequence>
+
+    <xs:attribute name="password" type="xs:string"/>
+    <xs:attribute name="pathSymbol" type="xs:string"/>
+    <xs:attribute name="port" type="xs:string"/>
+    <xs:attribute name="tdnSeparator" type="xs:string"/>
+    <xs:attribute name="defaultQueueWarnOn" type="xs:int"/>
+    <xs:attribute name="defaultQueueWarnOff" type="xs:int"/>
+    <xs:attribute name="dataDir" type="xs:string"/>
+    <xs:attribute name="defaultSmartRemoteRename" type="xs:boolean"/>
+    <xs:attribute name="defaultSaveTime" type="xs:boolean"/>
+    <xs:attribute name="defaultLagInterval" type="xs:string"/>
+    <xs:attribute name="defaultQueueWarnInterval" type="xs:string"/>
+  </xs:complexType>
+
+        <xs:complexType name="patterns">
+          <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="copy" type="copy"/>
+              <xs:element name="ftpDownload" type="ftpDownload"/>
+              <xs:element name="sftpDownload" type="sFtpDownload"/>
+              <xs:element name="ftpUpload" type="ftpUpload"/>
+              <xs:element name="sftpUpload" type="sFtpUpload"/>
+              <xs:element name="demux" type="demux"/>
+              <xs:element name="link" type="linker"/>
+            </xs:choice>
+          </xs:sequence>
+        </xs:complexType>
+
+
+  <xs:complexType name="copy">
+    <xs:complexContent>
+      <xs:extension base="localSource">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="localSource" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="cfg">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="cfg" abstract="true">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="copy" type="copy"/>
+        <xs:element name="ftpDownload" type="ftpDownload"/>
+        <xs:element name="sftpDownload" type="sFtpDownload"/>
+        <xs:element name="ftpUpload" type="ftpUpload"/>
+        <xs:element name="sftpUpload" type="sFtpUpload"/>
+        <xs:element name="demux" type="demux"/>
+        <xs:element name="link" type="linker"/>
+      </xs:choice>
+      <xs:element name="param" type="param" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="ftpServer" type="xs:string"/>
+    <xs:attribute name="ftpServerPort" type="xs:int"/>
+    <xs:attribute name="ftpSeparator" type="xs:string"/>
+    <xs:attribute name="ftpRemoteVerification" type="xs:boolean"/>
+    <xs:attribute name="ftpUser" type="xs:string"/>
+    <xs:attribute name="ftpPassword" type="xs:string"/>
+    <xs:attribute name="srcDir" type="xs:string"/>
+    <xs:attribute name="ftpSrcDir" type="xs:string"/>
+    <xs:attribute name="ftpDstDir" type="xs:string"/>
+    <xs:attribute name="ftpCacheDir" type="xs:string"/>
+    <xs:attribute name="dsc" type="xs:string"/>
+    <xs:attribute name="ftpActiveMode" type="xs:boolean"/>
+    <xs:attribute name="ftpFileType" type="xs:string"/>
+    <xs:attribute name="fileMask" type="xs:string"/>
+    <xs:attribute name="delayBetween" type="xs:int"/>
+    <xs:attribute name="ftpTimeout" type="xs:int"/>
+    <xs:attribute name="zip" type="xs:boolean"/>
+    <xs:attribute name="gzip" type="xs:boolean"/>
+    <xs:attribute name="reconnect" type="xs:boolean"/>
+    <xs:attribute name="saveTime" type="xs:boolean"/>
+    <xs:attribute name="substitute" type="xs:string"/>
+    <xs:attribute name="substTimeStamp" type="xs:boolean"/>
+    <xs:attribute name="suffix" type="xs:string"/>
+    <xs:attribute name="prefix" type="xs:string"/>
+    <xs:attribute name="pauseFlagFile" type="xs:string"/>
+    <xs:attribute name="cacheDir" type="xs:string"/>
+    <xs:attribute name="dstDir" type="xs:string"/>
+    <xs:attribute name="unpack" type="xs:boolean"/>
+    <xs:attribute name="timeBasedSrcDir" type="xs:string"/>
+    <xs:attribute name="srcTimeZone" type="xs:string"/>
+    <xs:attribute name="dstDirTimeBased" type="xs:boolean"/>
+    <xs:attribute name="dstTimeZone" type="xs:string"/>
+    <xs:attribute name="dstDirTimeByFile" type="xs:boolean"/>
+    <xs:attribute name="statDir" type="xs:string"/>
+    <xs:attribute name="dstFileLimit" type="xs:int"/>
+    <xs:attribute name="inputFlag" type="xs:boolean"/>
+    <xs:attribute name="slowStop" type="xs:boolean"/>
+    <xs:attribute name="moveToNext" type="xs:boolean"/>
+    <xs:attribute name="keepLastFiles" type="xs:int"/>
+    <xs:attribute name="replaceExistingFiles" type="xs:boolean"/>
+    <xs:attribute name="queueWarnOn" type="xs:int"/>
+    <xs:attribute name="queueWarnOff" type="xs:int"/>
+    <xs:attribute name="ftpServerTimeZone" type="xs:string"/>
+    <xs:attribute name="checkFtpFileLength" type="xs:boolean"/>
+    <xs:attribute name="batchMode" type="xs:boolean"/>
+    <xs:attribute name="deleteAfter" type="xs:boolean"/>
+    <xs:attribute name="timeByFile" type="xs:boolean"/>
+    <xs:attribute name="sequenceLength" type="xs:int"/>
+    <xs:attribute name="sequenceFormat" type="xs:string"/>
+    <xs:attribute name="startFileDate" type="xs:string"/>
+    <xs:attribute name="startFileDateLong" type="xs:long"/>
+    <xs:attribute name="smartRemoteRename" type="xs:boolean"/>
+    <xs:attribute name="nonStrictOrder" type="xs:boolean"/>
+    <xs:attribute name="srcSubDirs" type="xs:string"/>
+    <xs:attribute name="applyMethod" type="xs:string"/>
+    <xs:attribute name="lagInterval" type="xs:string"/>
+    <xs:attribute name="param" type="xs:string"/>
+    <xs:attribute name="param1" type="xs:string"/>
+    <xs:attribute name="param2" type="xs:string"/>
+    <xs:attribute name="param3" type="xs:string"/>
+    <xs:attribute name="param4" type="xs:string"/>
+    <xs:attribute name="pattern" type="xs:string"/>
+    <xs:attribute name="pauseFlag" type="xs:boolean"/>
+    <xs:attribute name="queueWarnInterval" type="xs:string"/>
+    <xs:attribute name="timeStampInName" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="ftpDownload">
+    <xs:complexContent>
+      <xs:extension base="remoteSource">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="remoteSource" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="cfg">
+        <xs:sequence/>
+        <xs:attribute name="createLinks" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sFtpDownload">
+    <xs:complexContent>
+      <xs:extension base="remoteSource">
+        <xs:sequence/>
+        <xs:attribute name="proxyType" type="xs:string"/>
+        <xs:attribute name="proxyHost" type="xs:string"/>
+        <xs:attribute name="proxyPort" type="xs:int"/>
+        <xs:attribute name="proxyUser" type="xs:string"/>
+        <xs:attribute name="proxyPassword" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ftpUpload">
+    <xs:complexContent>
+      <xs:extension base="localSource">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sFtpUpload">
+    <xs:complexContent>
+      <xs:extension base="localSource">
+        <xs:sequence/>
+        <xs:attribute name="proxyType" type="xs:string"/>
+        <xs:attribute name="proxyHost" type="xs:string"/>
+        <xs:attribute name="proxyPort" type="xs:int"/>
+        <xs:attribute name="proxyUser" type="xs:string"/>
+        <xs:attribute name="proxyPassword" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="demux">
+    <xs:complexContent>
+      <xs:extension base="localSource">
+        <xs:sequence/>
+        <xs:attribute name="dstDirList" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="linker">
+    <xs:complexContent>
+      <xs:extension base="localSource">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="param">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:schema>
+
