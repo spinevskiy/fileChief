@@ -1,8 +1,8 @@
-#FileChief
+# FileChief
 
 **FileChief:** a open sourse file load/delivery utility.
 
-###Features
+### Features
 
 + send/receive files across the Internet(FTP,SFTP) and locally
 + simple configuration
@@ -12,17 +12,17 @@
 + email notifications
 + automatic compression(zip,gzip) and rename
 
-###Build
+### Build
 
 To build FileChief on your machine, checkout the repository, cd into it, and call:
 ```
 mvn clean install
 ```
 
-###Documentation
+### Documentation
 FileChief [manuals](./docs)
 
-###Usage
+### Usage
 1. build
 2. unpack target/filechief*bin.zip into work directory
 3. set path to JVM in param.sh(param.bat)
@@ -32,7 +32,7 @@ and add MAIL appender in log4j.properties (log4j.rootCategory=INFO,A2,MAIL)
 6. check configuration ```./run.sh test``` or ```test.bat```
 7. start FileChief ```./run.sh``` or ```start.bat```
 
-###Example
+### Example
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 <fileChief port="8771"
@@ -111,5 +111,5 @@ and add MAIL appender in log4j.properties (log4j.rootCategory=INFO,A2,MAIL)
 
 </fileChief>
 ```
-###License
+### License
 Apache Software License 2.0
